@@ -17,7 +17,7 @@ describe('hint', () => {
       <dss-hint state="error" message="message"></dss-hint>
     `);
 
-    expect(screen.getByShadowTestId('error-icon')).toHaveAttribute('icon', 'sign_stop');
+    expect(screen.getByShadowTestId('error-icon')).toHaveAttribute('icon', 'stop-circle');
   });
 
   test('shows icon when state warning', async () => {
@@ -25,6 +25,6 @@ describe('hint', () => {
       <dss-hint state="warning" message="message"></dss-hint>
     `);
 
-    expect(screen.getByShadowTestId('error-icon')).toHaveAttribute('icon', 'sign_warning');
+    expect(screen.getByShadowTestId('error-icon')).toHaveAttribute('icon', 'warning-circle');
   });
 });

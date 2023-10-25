@@ -39,7 +39,7 @@ describe('Checkbox', () => {
     expect(screen.getByShadowTestId('label')).toHaveClass('filled');
     expect(screen.getByShadowTestId('label')).not.toHaveClass('warning');
     expect(screen.getByShadowTestId('label')).not.toHaveClass('error');
-    expect(screen.queryByShadowRole('figure')).toHaveAttribute('icon', 'navigate_check');
+    expect(screen.queryByShadowRole('figure')).toHaveAttribute('icon', 'so-checkmark');
   });
 
   test('displays indeterminate state correctly', async () => {
@@ -50,7 +50,7 @@ describe('Checkbox', () => {
     expect(screen.getByShadowTestId('label')).toHaveClass('filled');
     expect(screen.getByShadowTestId('label')).not.toHaveClass('warning');
     expect(screen.getByShadowTestId('label')).not.toHaveClass('error');
-    expect(screen.queryByShadowRole('figure')).toHaveAttribute('icon', 'navigate_minus');
+    expect(screen.queryByShadowRole('figure')).toHaveAttribute('icon', 'minus-sm');
   });
 
   test('displays error state correctly', async () => {
