@@ -35,6 +35,19 @@ properties.
   ))}
 </ColorPalette>
 
+## Gradients
+
+<ColorPalette>
+  {Object.entries(groupColors(tokens.gradient.gradient)).map(([name, swatches], index) => (
+    <ColorItem
+      key={index}
+      title={name}
+      subtitle={''}
+      colors={swatches}
+    />
+  ))}
+</ColorPalette>
+
 ## Typography
 
 <Canvas>

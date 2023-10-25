@@ -40,6 +40,9 @@ module.exports = {
     colors: {
       ...transformLeafsToKeyValuePairs(tokens.color, 'color-'),
     },
+    backgroundImage: {
+      ...transformLeafsToKeyValuePairs(tokens.gradient, 'gradient-'),
+    },
     boxShadow: {
       ...transformToKeyValuePairsByType(tokens.effect, 'custom-shadow', 'effect-'),
     },
