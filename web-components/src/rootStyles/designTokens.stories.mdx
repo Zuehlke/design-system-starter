@@ -1,0 +1,138 @@
+import React from 'react';
+import {Canvas, ColorItem, ColorPalette, Meta} from '@storybook/blocks';
+import tokens from './design-tokens.json';
+import {groupColors} from "./color.helper";
+
+<Meta title="Design Tokens"/>
+
+## Brand Colors
+
+These colors show the base colors of the theme. In components, don't use these colors directly but prefer using the
+abstract colors below. This allows for later color changes/theming/dark mode without having to rename a lot of
+properties.
+
+<ColorPalette>
+  {Object.entries(groupColors(tokens.color.brand)).map(([name, swatches], index) => (
+    <ColorItem
+      key={index}
+      title={name}
+      subtitle={''}
+      colors={swatches}
+    />
+  ))}
+</ColorPalette>
+
+## Universal Colors
+
+<ColorPalette>
+  {Object.entries(groupColors(tokens.color.universal)).map(([name, swatches], index) => (
+    <ColorItem
+      key={index}
+      title={name}
+      subtitle={''}
+      colors={swatches}
+    />
+  ))}
+</ColorPalette>
+
+## Typography
+
+<Canvas>
+  <div>
+    <small>Small</small>
+    <p>Text</p>
+    <h4>h4. Title</h4>
+    <h3>h3. Title</h3>
+    <h2>h2. Title</h2>
+    <h1>h1. Title</h1>
+  </div>
+</Canvas>
+
+## Sizes
+
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "min-content 5rem auto",
+    gap: "var(--size-2)",
+    alignItems: "center"
+  }}
+>
+  {Object.entries(tokens.size)
+    .sort(([, tokenA], [, tokenB]) => {
+      if (tokenA.value.includes('px')) {
+        return -1;
+      }
+      if (tokenB.value.includes('px')) {
+        return 1;
+      }
+      const numberA = parseFloat(tokenA.value);
+      const numberB = parseFloat(tokenB.value);
+      return numberA - numberB;
+    })
+    .map(([, token], index) => (
+      <React.Fragment key={index}>
+        <div
+          style={{
+            width: token.value,
+            height: token.value,
+            backgroundColor: "var(--color-brand-brand-100)",
+          }}
+        />
+        <span>{token.value}</span>
+        <strong>{token.name}</strong>
+      </React.Fragment>
+    ))}
+</div>
+
+## Effects
+
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "min-content auto",
+    gap: "var(--size-4)",
+    alignItems: "center",
+  }}
+>
+  {Object.entries(tokens.effect).map(([name, token], index) => (
+    <React.Fragment key={index}>
+      <div
+        style={{
+          boxShadow: token.value,
+          height: 'var(--size-6)',
+          width: 'var(--size-6)',
+          borderRadius: 'var(--radius-4)',
+          backgroundColor: "var(--color-brand-brand-100)",
+        }}
+      />
+      <strong>{token.name}</strong>
+    </React.Fragment>
+  ))}
+</div>
+
+## Border radius
+
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "min-content min-content auto",
+    gap: "var(--size-4)",
+    alignItems: "center"
+  }}
+>
+  {Object.entries(tokens.radius).map(([, token], index) => (
+    <React.Fragment key={index}>
+      <div
+        style={{
+          border: `var(--size-0-25) solid var(--color-brand-brand-100)`,
+          height: 'var(--size-6)',
+          width: 'var(--size-6)',
+          borderRadius: token.value,
+        }}
+      />
+      <span>{token.value}</span>
+      <strong>{token.name}</strong>
+    </React.Fragment>
+  ))}
+</div>

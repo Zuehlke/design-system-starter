@@ -1,0 +1,18 @@
+:host {
+  --menu-item-padding: var(--size-1) var(--size-2);
+
+  display: flex;
+  padding: var(--menu-item-padding);
+  gap: var(--size-1);
+
+  align-items: center;
+  cursor: pointer;
+}
+
+:host(:is(:hover,:focus-visible)) {
+  background: var(--color-brand-interaction-10);
+}
+
+:host(:focus-visible) {
+  outline-style: none;
+}

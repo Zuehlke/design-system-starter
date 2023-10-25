@@ -1,0 +1,112 @@
+::slotted(input) {
+  position: absolute;
+  opacity: 0;
+  height: auto;
+  width: auto;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: var(--size-2);
+}
+
+.basic-radio {
+  flex: none;
+  appearance: none;
+  border-radius: var(--radius-50percent);
+  border: var(--size-border-width-medium) solid var(--color-brand-interaction-100);
+}
+
+label:not(.checked,.disabled,:active):hover .basic-radio {
+  background-color: var(--color-brand-interaction-25);
+}
+
+.checked .basic-radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--color-brand-interaction-100);
+}
+
+.checked .basic-radio::before {
+  position: absolute;
+  content: '';
+  border-radius: var(--radius-50percent);
+  height: calc(100% - var(--size-0-5));
+  width: calc(100% - var(--size-0-5));
+  background-color: var(--color-brand-interaction-100);
+}
+
+.checked:not(:active,.disabled):hover .basic-radio {
+  border-color: var(--color-brand-interaction-75);
+}
+
+.checked:not(:active,.disabled):hover .basic-radio::before {
+  background-color: var(--color-brand-interaction-75);
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.disabled .basic-radio {
+  border-color: var(--color-universal-grey-50);
+}
+
+.disabled.checked .basic-radio {
+  border-color: var(--color-universal-grey-50);
+}
+
+.disabled.checked .basic-radio::before {
+  background-color: var(--color-universal-grey-50);
+}
+
+.error .basic-radio {
+  border-color: var(--color-universal-red-100);
+}
+
+.error.checked .basic-radio::before {
+  background-color: var(--color-universal-red-100);
+}
+
+.error.checked:not(:active):hover .basic-radio {
+  border-color: var(--color-universal-red-75);
+}
+
+.error.checked:not(:active):hover .basic-radio::before {
+  background-color: var(--color-universal-red-75);
+}
+
+.warning .basic-radio {
+  border-color: var(--color-universal-yellow-100);
+}
+
+.warning.checked .basic-radio::before {
+  background-color: var(--color-universal-yellow-100);
+}
+
+.warning.checked:not(:active):hover .basic-radio {
+  border-color: var(--color-universal-yellow-75);
+}
+
+.warning.checked:not(:active):hover .basic-radio::before {
+  background-color: var(--color-universal-yellow-75);
+}
+
+.compact {
+  width: var(--typography-main-line-height);
+  height: var(--typography-main-line-height);
+}
+
+.comfortable {
+  height: var(--typography-h3-line-height);
+  width: var(--typography-h3-line-height);
+}
+
+.focused .basic-radio {
+  border-color: var(--color-brand-interaction-100);
+  box-shadow: var(--effect-glow-focus);
+}

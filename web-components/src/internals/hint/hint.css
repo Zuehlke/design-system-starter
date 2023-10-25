@@ -1,0 +1,19 @@
+.message-wrapper {
+  display: flex;
+  margin-top: var(--size-0-5);
+  gap: var(--size-0-5);
+  font-size: var(--typography-small-font-size);
+  line-height: var(--typography-small-line-height);
+}
+
+:host(:not([state])) {
+  color: var(--color-brand-text-75);
+}
+
+:host([state="error"]) dss-icon {
+  color: var(--color-universal-red-100);
+}
+
+:host([state="warning"]) dss-icon {
+  color: var(--color-universal-yellow-100);
+}

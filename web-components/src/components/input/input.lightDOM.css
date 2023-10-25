@@ -1,0 +1,69 @@
+/**
+ * ::slotted styles do not get any benefit in specificity so they get overridden by normalize/reset css styles setting
+ * plain `input` styles. Therefore these styles are imported in the global.css using the lightDOM styling which has a
+ * higher specificity than ::slotted.
+ */
+
+dss-input :is(input, textarea)::placeholder {
+  color: var(--color-universal-blue-75);
+}
+
+dss-input :is(input, textarea) {
+  margin: 0;
+  outline: none;
+  border: var(--size-border-width-small) solid var(--color-brand-interaction-75);
+  border-radius: var(--radius-4);
+  padding: calc(var(--size-0-5) + var(--size-border-width-small)) var(--size-1);
+  font-size: var(--typography-main-font-size);
+  line-height: var(--typography-main-line-height);
+}
+
+dss-input:has(:is(input,textarea):required)::part(required) {
+  display: inline;
+}
+
+dss-input:has(dss-button) :is(input,textarea):not(:disabled):hover,
+dss-input:has(dss-button:hover) :is(input,textarea):not(:disabled) {
+  border-color: var(--color-brand-interaction-75);
+}
+
+:is(dss-input:has(dss-button), dss-input[loading]) input {
+  padding-right: calc(var(--size-3) + var(--size-1));
+}
+
+dss-input[size="compact"] input {
+  font-size: var(--typography-small-font-size);
+  line-height: var(--typography-small-line-height);
+}
+
+dss-input :is(input,textarea):focus-visible {
+  outline: var(--color-brand-interaction-100) solid 0.1rem;
+  box-shadow: var(--effect-glow-focus);
+}
+
+dss-input :is(input,textarea):disabled {
+  border-color: var(--color-universal-grey-25);
+  color: var(--color-brand-text-100);
+  background: transparent;
+  cursor: not-allowed;
+}
+
+dss-input[errorstate="error"] :is(input,textarea) {
+  border-color: var(--color-universal-red-100);
+}
+
+dss-input[errorstate="warning"] :is(input,textarea) {
+  border-color: var(--color-universal-yellow-100);
+}
+
+dss-input input[type="date"]::-webkit-inner-spin-button,
+dss-input input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+dss-input input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}

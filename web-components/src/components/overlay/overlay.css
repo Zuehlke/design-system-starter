@@ -1,0 +1,62 @@
+:host {
+  --overlay-animation-duration: .250s;
+  --overlay-animation-function: ease-in-out;
+
+  display: block;
+}
+
+.container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: var(--z-index-overlay);
+  max-width: 90vw;
+  width: max-content;
+  background-color: var(--color-brand-white-100);
+  border-radius: var(--radius-4);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--overlay-animation-duration) var(--overlay-animation-function),
+  box-shadow var(--overlay-animation-duration) var(--overlay-animation-function),
+  visibility var(--overlay-animation-duration) var(--overlay-animation-function);
+  transform: translateX(100%);
+  box-shadow: none;
+  visibility: hidden;
+}
+
+.container.show {
+  transform: translateX(0);
+  box-shadow: var(--effect-shadow-far);
+  visibility: visible;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-2);
+  padding: var(--size-4);
+  padding-bottom: var(--size-3);
+  cursor: move;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--size-4);
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--size-2);
+  padding: var(--size-3) var(--size-4) var(--size-4);
+}
+
+.footer.empty {
+  padding-top: 0;
+}

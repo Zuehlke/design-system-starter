@@ -1,0 +1,20 @@
+:host {
+  --disabled-dropdown-button-padding: calc(var(--size-0-5) - var(--size-border-width-small));
+}
+
+dss-floating::part(container) {
+  --drop-shadow: var(--drop-shadow-far);
+}
+
+dss-floating::part(content) {
+  padding: var(--size-0-5) 0;
+}
+
+.trigger-area {
+  display: inline-block;
+  vertical-align: top;
+}
+
+:host([aria-expanded]) .trigger-area {
+  z-index: var(--z-index-floating-plus-1);
+}

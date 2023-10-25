@@ -1,0 +1,13 @@
+form {
+  padding: var(--size-1);
+  display: flex;
+  flex-direction: column
+}
+
+form dss-button {
+  align-self: flex-end;
+}
+
+.text-right {
+  text-align: right;
+}

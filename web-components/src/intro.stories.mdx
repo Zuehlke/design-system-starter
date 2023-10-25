@@ -1,0 +1,33 @@
+import {Meta} from '@storybook/blocks';
+
+<Meta title="Intro"/>
+
+# Design System Starter
+
+## Get Started
+
+Design System Starter is a reusable component library. All components are native web components, which allow to be used
+in any framework.
+
+## React
+
+For current React versions there is a separate "wrapper" package to make it easier to use:
+`@design-system-starter/web-components-react`.
+
+### Tailwind
+
+The package `@design-system-starter/tailwind-preset` provides a configuration for using the design system in TailwindCSS
+is provided. There the standard Tailwind constants are overwritten with the design tokens of the design system.
+The usage is simple via configuration presets:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  presets: [
+    require('@design-system-starter/tailwind-preset')
+  ],
+  content: [
+    './src/**/*.tsx'
+  ]
+};
+```

@@ -1,0 +1,73 @@
+:host {
+  display: block;
+}
+
+.container {
+  display: flex;
+  gap: var(--size-1);
+  padding: var(--size-1) var(--size-1) var(--size-1) var(--size-2);
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--size-0-5);
+}
+
+.error {
+  background-color: var(--color-universal-red-10);
+}
+
+.error::before {
+  background-color: var(--color-universal-red-100);
+}
+
+.error .icon-container {
+  color: var(--color-universal-red-100);
+}
+
+.warning {
+  background-color: var(--color-universal-yellow-10);
+}
+
+.warning::before {
+  background-color: var(--color-universal-yellow-100);
+}
+
+.warning .icon-container {
+  color: var(--color-universal-yellow-100);
+}
+
+.info {
+  background-color: var(--color-brand-interaction-10);
+}
+
+.info::before {
+  background-color: var(--color-brand-interaction-75);
+}
+
+.info .icon-container {
+  color: var(--color-brand-interaction-75);
+}
+
+.text-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-0-5);
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.close-container {
+  flex: none;
+  padding-left: var(--size-0-5);
+}

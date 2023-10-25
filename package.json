@@ -1,0 +1,24 @@
+{
+  "name": "design-system-workspace",
+  "version": "1.0.0",
+  "description": "Root project for the web-components monorepo",
+  "scripts": {
+    "check": "npm run check --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "version:major": "npm version major --workspaces",
+    "version:minor": "npm version minor --workspaces",
+    "version:patch": "npm version patch --workspaces"
+  },
+  "workspaces": [
+    "tailwind-preset",
+    "web-components",
+    "web-components-react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zuehlke/design-system-starter"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.tab-group {
+  display: flex;
+  margin-bottom: calc(var(--size-border-width-small) * -1);
+}
+
+.show-more-container {
+  flex: none;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: var(--size-1);
+}
+
+.show-more-text {
+  font-size: var(--typography-h3-font-size);
+  line-height: var(--typography-h3-line-height);
+  margin-left: var(--size-1-5);
+}

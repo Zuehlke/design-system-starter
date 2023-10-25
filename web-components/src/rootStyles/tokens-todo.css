@@ -1,0 +1,12 @@
+:root {
+    --size-border-width-medium: .2rem;
+    --size-border-width-small: .1rem;
+
+    --font-family-base: Open Sans;
+
+    --drop-shadow-far: 0px 3px 20px #00000049;
+    --drop-shadow-close: 0px 1px 4px #0000001c;
+
+    --shadow-sticky-bottom: 0px -4px 2px -2px rgba(0, 0, 0, 0.2);
+    --shadow-sticky-top: 0px 4px 2px -2px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,75 @@
+:host {
+  display: grid;
+  align-items: center;
+  grid-column-gap: var(--size-1);
+}
+
+:host([block]) ::slotted(:is(input,textarea)) {
+  width: 100%;
+}
+
+:host([labelPlacement="top"]) {
+  grid-template-areas: "label"
+                        "input"
+                        "count"
+                        "hint";
+}
+
+:host([labelPlacement="left"]) {
+  grid-template-columns: auto 1fr;
+  grid-template-areas:  "label input"
+                        ". count"
+                        ". hint";
+}
+
+:host([labelPlacement="right"]) {
+  grid-template-columns: auto 1fr;
+  grid-template-areas:  "input label"
+                        "count ."
+                        "hint .";
+}
+
+:host dss-label {
+  grid-area: label;
+}
+
+:host .count {
+  grid-area: count;
+}
+
+:host dss-hint {
+  grid-area: hint;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  grid-area: input;
+}
+
+:host(:not([block])) .input-wrapper {
+  width: max-content;
+}
+
+::slotted(dss-button) {
+  position: absolute;
+  right: var(--size-0-5);
+}
+
+dss-spinner {
+  position: absolute;
+  right: var(--size-1);
+}
+
+.count {
+  display: block;
+  margin-top: var(--size-0-5);
+  font-size: var(--typography-small-font-size);
+  line-height: var(--typography-small-line-height);
+  font-weight: var(--typography-small-font-weight);
+}
+
+.count--invalid {
+  color: var(--color-universal-red-100);
+}

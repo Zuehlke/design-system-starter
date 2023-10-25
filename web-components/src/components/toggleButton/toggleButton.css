@@ -1,0 +1,12 @@
+.overlap-border-left {
+  margin-left: calc(-1 * var(--size-border-width-medium));
+}
+
+.overlap-border-right {
+  margin-right: calc(-1 * var(--size-border-width-medium));
+}
+
+:is(.overlap-border-left,.overlap-border-none,.overlap-border-right)::part(button):focus-visible {
+  z-index: var(--z-index-base);
+  position: relative;
+}

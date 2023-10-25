@@ -1,0 +1,27 @@
+{
+  "name": "@design-system-starter/web-components-react",
+  "version": "0.64.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@glytch/vite-plugin-generate-lit-react-wrapper": "2.0.0",
+    "typescript": "4.9.4",
+    "vite": "4.0.2"
+  },
+  "dependencies": {
+    "@lit-labs/react": "1.1.1"
+  },
+  "peerDependencies": {
+    "@design-system-starter/web-components": "latest"
+  }
+}

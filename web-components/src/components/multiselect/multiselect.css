@@ -1,0 +1,110 @@
+.container {
+  display: grid;
+  align-items: center;
+  grid-column-gap: var(--size-1);
+}
+
+:host([labelPlacement="top"]) .container {
+  grid-template-areas: "label"
+                        "multiselect"
+                        "hint";
+}
+
+:host([labelPlacement="left"]) .container {
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "label multiselect"
+                        ". hint";
+}
+
+:host([labelPlacement="right"]) .container {
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "multiselect label"
+                        "hint .";
+}
+
+dss-label {
+  grid-area: label;
+}
+
+dss-hint {
+  grid-area: hint;
+}
+
+.label {
+  display: block;
+  margin-bottom: var(--size-0-5);
+}
+
+
+.pills-input-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  flex-grow: 1;
+  position: relative;
+  min-height: var(--size-4);
+  padding: var(--size-0-5) var(--size-1);
+  border: var(--size-px) solid var(--color-brand-interaction-75);
+  border-radius: var(--radius-4);
+  gap: var(--size-0-5);
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+  padding: var(--size-0-25) var(--size-1);
+  border-radius: 10rem;
+  background-color: var(--color-brand-interaction-100);
+  color: var(--color-brand-white-100);
+  height: var(--size-3);
+}
+
+.pill dss-button {
+  margin-left: var(--size-0-5);
+}
+
+dss-icon {
+  color: var(--color-universal-yellow-10);
+}
+
+dss-floating::part(content) {
+  padding: var(--size-0-5) 0;
+}
+
+dss-floating::part(container) {
+  --drop-shadow: var(--drop-shadow-far);
+}
+
+input {
+  flex-grow: 1;
+  flex-basis: 10rem;
+  max-width: 100%;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+input::placeholder {
+  color: var(--color-universal-blue-75);
+}
+
+input:focus {
+  outline: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: var(--size-1) var(--size-2);
+  color: var(--color-brand-text-100);
+  cursor: pointer;
+}
+
+li:hover, li:focus {
+  outline: none;
+  color: var(--color-brand-white-100);
+  background-color: var(--color-brand-interaction-25);
+}

@@ -1,0 +1,55 @@
+.basic-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: var(--size-2);
+  font-size: var(--typography-h3-font-size);
+  line-height: var(--typography-h3-line-height);
+}
+
+.visible {
+  background: var(--color-brand-white-100);
+  padding: var(--size-1) var(--size-1-5);
+  margin-right: calc(var(--size-px) * -1);
+  border-width: var(--size-border-width-small);
+  border-style: solid;
+  border-image-source: linear-gradient(
+    to bottom,
+    transparent 0 var(--size-1),
+    var(--color-universal-grey-50) var(--size-1) 100%
+  );
+  border-image-slice: 0 1 1 1;
+}
+
+.visible:focus {
+  position: relative;
+  z-index: var(--z-index-base);
+}
+
+:host(:first-of-type) .basic-tab:not(.active, .folded, :hover) {
+  border-left: none;
+  padding-left: calc(var(--size-1-5) + var(--size-px));
+}
+
+:host(:last-child) .basic-tab:not(.active, .folded, :hover) {
+  border-right: none;
+  padding-right: calc(var(--size-1-5) + var(--size-px));
+}
+
+.basic-tab:hover:not(.active,.folded) {
+  background: var(--color-brand-background-100);
+  border-radius: var(--radius-4) var(--radius-4) 0 0;
+  border: var(--size-px) solid var(--color-universal-grey-50);
+  z-index: var(--z-index-base);
+}
+
+.active {
+  background: var(--color-brand-background-100);
+  border-radius: var(--radius-4) var(--radius-4) 0 0;
+  border: var(--size-px) solid var(--color-universal-grey-50);
+  z-index: var(--z-index-base);
+
+  border-bottom-color: var(--color-brand-background-100);
+}

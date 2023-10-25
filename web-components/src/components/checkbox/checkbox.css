@@ -1,0 +1,108 @@
+:host {
+  --dss-checkbox-size-comfortable: var(--size-3);
+  --dss-checkbox-size-compact: calc(var(--size-2) + var(--size-0-5));
+  display: block;
+}
+
+input {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  height: var(--dss-checkbox-size-comfortable);
+  width: var(--dss-checkbox-size-comfortable);
+  border-radius: var(--radius-4);
+  border: var(--size-border-width-medium) solid var(--color-brand-interaction-100);
+}
+
+:host([size="compact"]) input {
+  height: var(--dss-checkbox-size-compact);
+  width: var(--dss-checkbox-size-compact);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-brand-interaction-100);
+  box-shadow: var(--effect-glow-focus);
+}
+
+.filled input {
+  background-color: var(--color-brand-interaction-100);
+}
+
+.filled dss-icon {
+  color: var(--color-brand-white-100);
+}
+
+input:disabled {
+  border-color: var(--color-universal-grey-50);
+}
+
+.filled input:disabled {
+  background-color: var(--color-universal-grey-50);
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+dss-icon {
+  position: absolute;
+  pointer-events: none;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2);
+  position: relative;
+}
+
+label, input {
+  cursor: pointer;
+}
+
+label:has(input:disabled),
+input:disabled {
+  cursor: not-allowed;
+}
+
+/* default */
+label:not(:active):hover input:not(:active,:disabled) {
+  background-color: var(--color-brand-interaction-25);
+}
+
+.filled:not(:active):hover input:not(:active,:disabled) {
+  background-color: var(--color-brand-interaction-75);
+  border-color: var(--color-brand-interaction-75);
+}
+
+/* error */
+.error input {
+  border-color: var(--color-universal-red-100);
+}
+
+.error.filled input {
+  background-color: var(--color-universal-red-100);
+}
+
+.error.filled:not(:active):hover input:not(:active,:disabled) {
+  border-color: transparent;
+  background-color: var(--color-universal-red-75);
+}
+
+/* warning */
+.warning input {
+  border-color: var(--color-universal-yellow-100);
+}
+
+.warning.filled input {
+  background-color: var(--color-universal-yellow-100);
+}
+
+.warning.filled:not(:active):hover input:not(:active,:disabled) {
+  border-color: transparent;
+  background-color: var(--color-universal-yellow-75);
+}

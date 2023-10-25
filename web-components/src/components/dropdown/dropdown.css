@@ -1,0 +1,64 @@
+:host {
+  display: grid;
+  align-items: center;
+  grid-column-gap: var(--size-1);
+  --disabled-dropdown-button-padding: calc(var(--size-0-5) - var(--size-border-width-small));
+}
+
+:host(:not([block])) dss-floating {
+  display: inline-block;
+}
+
+:host(:not([block])) dss-outside-click {
+  display: inline-flex;
+}
+
+:host([labelPlacement="top"]) {
+  grid-template-areas: "label"
+                        "input"
+                        "hint";
+}
+
+:host([labelPlacement="left"]) {
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "label input"
+                        ". hint";
+}
+
+:host([labelPlacement="right"]) {
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "input label"
+                        "hint .";
+}
+
+:host dss-label {
+  grid-area: label;
+}
+
+:host dss-outside-click {
+  grid-area: input;
+}
+
+:host dss-hint {
+  grid-area: hint;
+}
+
+dss-floating::part(container) {
+  --drop-shadow: var(--drop-shadow-far);
+}
+
+dss-floating::part(content) {
+  padding: var(--size-0-5) 0;
+}
+
+.trigger-area {
+  position: relative;
+}
+
+.trigger-area[aria-expanded="true"] {
+  z-index: var(--z-index-base-plus-1);
+}
+
+input[readonly]:not(:disabled) {
+  cursor: pointer;
+}

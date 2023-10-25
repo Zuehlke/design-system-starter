@@ -1,0 +1,42 @@
+:host {
+  --color-background: var(--color-brand-white-100);
+  --drop-shadow: var(--drop-shadow-close);
+
+  position: relative;
+}
+
+.floating {
+  min-width: 100%;
+  width: max-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-floating);
+  border-radius: var(--radius-4);
+  background-color: var(--color-background);
+  filter: drop-shadow(var(--drop-shadow));
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.floating[data-show] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.floating-content {
+  padding: var(--size-1) var(--size-3);
+  overflow: auto;
+}
+
+.arrow {
+  position: absolute;
+  z-index: var(--z-index-deep);
+  pointer-events: none;
+  width: var(--size-2);
+  height: var(--size-2);
+  background-color: var(--color-background);
+  transform: rotate(45deg);
+}

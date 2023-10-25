@@ -1,0 +1,89 @@
+:host {
+  --toggle-button-size: calc(var(--size-3) - var(--size-0-25));
+  --border-radius: 10rem;
+  --transition-duration: .15s;
+  --animation-width: var(--size-1);
+  --transition-timing-function: ease-in;
+  --toggle-button-spacing: 1px;
+
+  display: inline-flex;
+  position: relative;
+}
+
+:host(:not([checked])) {
+  --spinner-background-color: var(--color-universal-grey-10);
+}
+
+:host([loading]) {
+  pointer-events: none;
+}
+
+input {
+  appearance: none;
+  border: var(--size-px) solid transparent;
+  margin: 0;
+  padding: 0;
+  height: var(--size-3);
+  width: calc(var(--size-5) + var(--size-0-5));
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+input:not(:disabled):focus-visible {
+  outline: none;
+  border: var(--size-px) solid var(--color-brand-interaction-100);
+  box-shadow: var(--effect-glow-focus);
+}
+
+input:disabled {
+  cursor: not-allowed;
+}
+
+input:checked {
+  background-color: var(--color-universal-green-100);
+}
+
+input:checked:disabled {
+  background-color: var(--color-universal-green-50);
+}
+
+input:checked + .toggle {
+  left: calc(100% - var(--toggle-button-size) - var(--toggle-button-spacing));
+}
+
+input:not(:checked) {
+  background-color: var(--color-universal-grey-10);
+}
+
+input:not(:checked):disabled {
+  background-color: var(--color-universal-grey-25);
+}
+
+input:not(:checked) + .toggle {
+  left: var(--toggle-button-spacing);
+}
+
+.toggle {
+  position: absolute;
+  top: var(--toggle-button-spacing);
+  bottom: var(--toggle-button-spacing);
+  background-color: var(--color-brand-white-100);
+  border-radius: var(--border-radius);
+  height: var(--toggle-button-size);
+  width: var(--toggle-button-size);
+  box-shadow: var(--effect-shadow-close);
+  transition-property: left, width;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  pointer-events: none;
+}
+
+input:checked:active + .toggle {
+  left: calc(100% - var(--toggle-button-size) - var(--animation-width) - var(--toggle-button-spacing));
+  width: calc(var(--toggle-button-size) + var(--animation-width));
+}
+
+input:not(:checked):active + .toggle {
+  width: calc(var(--toggle-button-size) + var(--animation-width));
+}

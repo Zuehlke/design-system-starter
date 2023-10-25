@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: var(--size-1-5);
+  user-select: none;
+}
+
+dss-button:first-of-type {
+  margin-right: calc(var(--size-1-5) * -1);
+}
+
+dss-button:last-of-type {
+  margin-left: calc(var(--size-1-5) * -1);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: var(--size-border-width-small) solid transparent;
+  border-radius: var(--radius-4);
+  aspect-ratio: 1;
+  cursor: pointer;
+  width: var(--size-4);
+}
+
+button.active-page {
+  border-color: var(--color-brand-interaction-100);
+  cursor: auto;
+}
+
+button:is(.active-page,:hover,:focus-visible) {
+  background-color: var(--color-brand-interaction-10);
+}
+
+button:focus-visible {
+  outline: none;
+  border-color: var(--color-brand-interaction-100);
+  box-shadow: var(--effect-glow-focus);
+}

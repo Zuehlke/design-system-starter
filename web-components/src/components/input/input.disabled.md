@@ -1,0 +1,1 @@
+A disabled input element is unusable and un-clickable. Disabled elements in a form will not be submitted.

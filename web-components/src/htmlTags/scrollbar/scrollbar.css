@@ -1,0 +1,18 @@
+*::-webkit-scrollbar
+{
+  width: var(--size-1-5);
+  height: var(--size-1-5);
+  border-radius: var(--radius-4);
+}
+
+*::-webkit-scrollbar-track
+{
+  border-radius: var(--radius-4);
+  background-color: var(--color-brand-interaction-10);
+}
+
+*::-webkit-scrollbar-thumb
+{
+  border-radius: var(--radius-4);
+  background-color: var(--color-brand-interaction-75);
+}

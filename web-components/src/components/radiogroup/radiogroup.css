@@ -1,0 +1,9 @@
+fieldset {
+  border: none;
+}
+
+fieldset div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-1);
+}

@@ -1,0 +1,14 @@
+label {
+  color: var(--color-brand-interaction-100);
+  font-size: var(--typography-small-font-size);
+  font-weight: var(--typography-small-font-weight);
+  display: block;
+}
+
+[part="required"] {
+  display: none;
+}
+
+:host([required]) [part="required"] {
+  display: inline;
+}

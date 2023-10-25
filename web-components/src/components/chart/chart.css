@@ -1,0 +1,70 @@
+@import 'highcharts/css/highcharts.css';
+
+:host {
+  display: block;
+  --highcharts-color-0: var(--color-brand-interaction-100);
+  --highcharts-color-1: var(--color-brand-interaction-75);
+  --highcharts-color-2: var(--color-brand-interaction-50);
+  --highcharts-color-3: var(--color-brand-brand-100);
+  --highcharts-color-4: var(--color-brand-brand-75);
+  --highcharts-color-5: var(--color-brand-brand-50);
+  --highcharts-background-color: var(--color-brand-white-100);
+}
+
+.highcharts-background {
+  fill: none;
+}
+
+.highcharts-container {
+  font-family: var(--font-family-base);
+  font-size: var(--typography-main-font-size);
+  line-height: var(--typography-main-line-height);
+}
+
+.highcharts-data-label text {
+  fill: var(--color-brand-white-100);
+  font-size: var(--typography-main-font-size);
+  line-height: var(--typography-main-line-height);
+  font-weight: var(--typography-main-font-weight);
+}
+
+.highcharts-grid-line {
+  stroke-width: 2px;
+  stroke: var(--color-universal-grey-25);
+}
+
+.highcharts-legend-item > text {
+  fill: var(--color-brand-text-100);
+  font-size: var(--typography-main-font-size);
+  line-height: var(--typography-main-line-height);
+  font-weight: var(--typography-main-font-weight);
+}
+
+:is(.highcharts-bar-series, .highcharts-column-series) .highcharts-point-hover {
+  fill-opacity: 0.75;
+  transition: fill-opacity 50ms ease 0s;
+}
+
+.highcharts-pie-series.highcharts-legend-item span {
+  transform: translateY(-50%);
+}
+
+.highcharts-legend-point-active .highcharts-pie-series rect.highcharts-point {
+  opacity: 1;
+}
+
+.highcharts-legend .highcharts-pie-series .highcharts-point {
+  cursor: pointer;
+}
+
+.dss-bar-axis-labels {
+  text-align: right;
+}
+
+.dss-column-axis-labels {
+  text-align: center;
+}
+
+.highcharts-y-axis-labels {
+  font-size: var(--typography-main-font-size);
+}

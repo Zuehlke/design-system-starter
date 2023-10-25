@@ -1,0 +1,17 @@
+/**
+ * ::slotted styles do not get any benefit in specificity so they get overridden by normalize/reset/global css styles
+ * setting `a` styles. Therefore these styles are imported in the global.css using the lightDOM styling which has a
+ * higher specificity than ::slotted.
+ */
+
+dss-menu-item:has(> a) {
+  padding: 0;
+}
+
+dss-menu-item > a {
+  display: block;
+  width: 100%;
+  padding: var(--menu-item-padding);
+  color: var(--color-brand-text-100);
+  text-decoration: none;
+}

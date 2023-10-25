@@ -1,0 +1,44 @@
+{
+  "source": [
+    "tokens/json/**/*.json"
+  ],
+  "platforms": {
+    "css": {
+      "transformGroup": "custom/css",
+      "basePxFontSize": 10,
+      "buildPath": "src/rootStyles/",
+      "files": [
+        {
+          "destination": "design-tokens.css",
+          "format": "css/variables",
+          "filter": "validToken",
+          "options": {
+            "showFileHeader": false
+          }
+        }
+      ]
+    },
+    "json": {
+      "transformGroup": "custom/css",
+      "basePxFontSize": 10,
+      "buildPath": "src/rootStyles/",
+      "files": [
+        {
+          "destination": "design-tokens.json",
+          "format": "json"
+        }
+      ]
+    },
+    "js": {
+      "transformGroup": "custom/css",
+      "basePxFontSize": 10,
+      "buildPath": "public/",
+      "files": [
+        {
+          "destination": "design-tokens.cjs",
+          "format": "javascript/module"
+        }
+      ]
+    }
+  }
+}

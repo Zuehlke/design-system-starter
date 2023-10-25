@@ -1,0 +1,31 @@
+{
+  "z-index": {
+    "deep": {
+      "value": -1
+    },
+    "base": {
+      "value": 1
+    },
+    "base-plus-1": {
+      "value": 2
+    },
+    "sticky": {
+      "value": 10
+    },
+    "sticky-plus-1": {
+      "value": 11
+    },
+    "floating": {
+      "value": 20
+    },
+    "floating-plus-1": {
+      "value": 21
+    },
+    "overlay": {
+      "value": 30
+    },
+    "overlay-plus-1": {
+      "value": 31
+    }
+  }
+}

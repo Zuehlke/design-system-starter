@@ -1,0 +1,42 @@
+:host {
+  --vertical-padding: calc(var(--size-0-25) + var(--size-0-5) - var(--size-px));
+  display: block;
+}
+
+.tag-container {
+  border-radius: calc((var(--typography-main-line-height) + (2 * var(--vertical-padding))) / 2);
+  border-width: var(--size-px);
+  border-style: solid;
+  padding: var(--vertical-padding) var(--size-2);
+
+  min-width: 0;
+  max-width: fit-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:host(:not([state])) .tag-container {
+  background-color: var(--color-brand-background-100);
+  border-color: transparent;
+}
+
+:host([state="error"]) .tag-container {
+  color: var(--color-universal-red-100);
+  border-color: var(--color-universal-red-100);
+}
+
+:host([state="warning"]) .tag-container {
+  color: var(--color-universal-yellow-100);
+  border-color: var(--color-universal-yellow-100);
+}
+
+:host([state="success"]) .tag-container {
+  color: var(--color-universal-green-100);
+  border-color: var(--color-universal-green-100);
+}
+
+:host([state="info"]) .tag-container {
+  color: var(--color-action-info);
+  border-color: var(--color-action-info);
+}

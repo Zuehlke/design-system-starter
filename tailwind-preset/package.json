@@ -1,0 +1,18 @@
+{
+  "name": "@design-system-starter/tailwind-preset",
+  "version": "0.64.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "files": [
+    "tailwind.config.js"
+  ],
+  "peerDependencies": {
+    "@design-system-starter/web-components": "*"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.3.3"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC"
+}

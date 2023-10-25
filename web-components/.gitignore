@@ -1,0 +1,5 @@
+dist
+storybook-static
+coverage
+test-results
+public/design-tokens.cjs
