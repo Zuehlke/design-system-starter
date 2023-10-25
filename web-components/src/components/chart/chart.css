@@ -16,9 +16,7 @@
 }
 
 .highcharts-container {
-  font-family: var(--font-family-base);
-  font-size: var(--typography-main-font-size);
-  line-height: var(--typography-main-line-height);
+  font: var(--font-main);
 }
 
 .highcharts-data-label text {

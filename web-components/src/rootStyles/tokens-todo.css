@@ -1,12 +1,13 @@
 :root {
+    /* Should be in Figma and we should keep these in px and not rem */
     --size-border-width-medium: .2rem;
     --size-border-width-small: .1rem;
 
-    --font-family-base: Open Sans;
-
+    /* Specific cases for css filters like the tooltip so it has the right shadow even with before/after pseudo elements */
     --drop-shadow-far: 0px 3px 20px #00000049;
     --drop-shadow-close: 0px 1px 4px #0000001c;
 
+    /* These should also be addressed in Figma */
     --shadow-sticky-bottom: 0px -4px 2px -2px rgba(0, 0, 0, 0.2);
     --shadow-sticky-top: 0px 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
