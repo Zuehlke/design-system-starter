@@ -33,7 +33,7 @@ export default class Hint extends BaseElement {
           <dss-icon
             data-testid="error-icon"
             size="small"
-            icon="${this.state === 'warning' ? 'sign_warning' : 'sign_stop'}"
+            icon="${this.state === 'warning' ? 'warning-circle' : 'stop-circle'}"
           ></dss-icon>
         `)}
         <span>
