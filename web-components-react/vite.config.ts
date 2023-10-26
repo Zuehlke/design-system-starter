@@ -14,7 +14,7 @@ export default defineConfig({
       external: [
         /^lit/,
         'react',
-        /^@dreyfus\/web-components/,
+        /^@design-system-starter\/web-components/,
       ],
     },
   },
