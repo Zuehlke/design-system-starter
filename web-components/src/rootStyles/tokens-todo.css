@@ -3,7 +3,8 @@
     --size-border-width-medium: .2rem;
     --size-border-width-small: .1rem;
 
-    /* Specific cases for css filters like the tooltip so it has the right shadow even with before/after pseudo elements */
+    /* Specific cases for css filters like the tooltip so it has the right shadow even with arrow elements sticking out of the parent container
+    Unfortunately we cannot generate multiple types of shadows out of a single design token in StyleDictionary */
     --drop-shadow-far: 0px 3px 20px #00000049;
     --drop-shadow-close: 0px 1px 4px #0000001c;
 }
