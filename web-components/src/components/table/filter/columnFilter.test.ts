@@ -8,7 +8,7 @@ import { DateRangeFilterMask, NumericFilterBand } from './customFilters';
 import userEvent from '@testing-library/user-event';
 import { endOfDay, format, isEqual, startOfDay } from 'date-fns';
 import { RANGE_DATE_FORMAT, RANGE_DELIMITER } from '../../datepicker/datepicker.component';
-import { DssMenuItem } from '../../../index';
+import { MenuItem } from '../../../index';
 import Flyout from '../../flyout/flyout.component';
 import { waitFor } from '@testing-library/dom';
 import { numericBandsToFlyoutFormState } from './columnFilter';
@@ -251,7 +251,7 @@ describe('columnFilter', function () {
         <dss-column-filter .header=${mockHeader as any}></dss-column-filter>
       `);
 
-      const options = screen.getAllByShadowRole('option').map((option) => (option as DssMenuItem).value);
+      const options = screen.getAllByShadowRole('option').map((option) => (option as MenuItem).value);
       expect(options).toEqual([
         undefined,
         'anotherItem',
@@ -270,7 +270,7 @@ describe('columnFilter', function () {
 
       const options = screen
         .getAllByShadowRole('option', { selected: true })
-        .map((option) => (option as DssMenuItem).value);
+        .map((option) => (option as MenuItem).value);
       expect(options).toEqual([
         'all',
         'anotherItem',
