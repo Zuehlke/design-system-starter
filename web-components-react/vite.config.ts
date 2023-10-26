@@ -20,10 +20,10 @@ export default defineConfig({
   },
   plugins: [
     vitePluginCreateLitReactWrapper({
-      globToLitComponents: '../WebComponents/src/components/**/*.component.ts',
+      globToLitComponents: '../web-components/src/components/**/*.component.ts',
       prefix: 'dss-',
-      getComponentPath: (name: string) => `@dreyfus/web-components/dist/src/components/${name.replace('.component', '')}/${name}.js`,
-      watchLitDist: '../WebComponents/dist/src',
+      getComponentPath: (name: string) => `@design-system-starter/web-components/dist/src/components/${name.replace('.component', '')}/${name}.js`,
+      watchLitDist: '../web-components/dist/src',
       samePackageOutput: false,
     }),
   ],
