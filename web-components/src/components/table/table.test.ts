@@ -32,6 +32,46 @@ describe('Table', () => {
     expect(table.querySelector('tbody tr:first-child td:nth-child(1)')).toHaveTextContent(testData[0].name);
   });
 
+  test('should update visible data when column def changes', async () => {
+    const testColumns: ColumnDef<TestData>[] = [{ id: 'name', accessorKey: 'name' }];
+    const testData: TestData[] = [{ name: 'TestName', age: 20 }];
+
+    const element: HTMLElementTagNameMap['dss-table'] = await fixture(html`
+      <dsc-table .columns=${testColumns as any[]} .data=${testData}></dsc-table>
+    `);
+
+    expect(screen.getByShadowRole('cell')).toHaveTextContent(testData[0].name);
+
+    element.columns = [{ id: 'age', accessorKey: 'age' }, { id: 'name', accessorKey: 'name' }];
+    await elementUpdated(element);
+
+    expect(screen.getByShadowText(testData[0].name));
+    expect(screen.getByShadowText(testData[0].age!));
+  });
+
+  test('should update data order when column def changes', async () => {
+    const testColumns: ColumnDef<TestData>[] = [
+      { id: 'name', accessorKey: 'name' },
+      { id: 'age', accessorKey: 'age' },
+    ];
+    const testData: TestData[] = [{ name: 'TestName', age: 20 }];
+
+    const element: HTMLElementTagNameMap['dss-table'] = await fixture(html`
+      <dsc-table .columns=${testColumns as any[]} .data=${testData}></dsc-table>
+    `);
+
+    const tableCells = screen.getAllByShadowRole('cell');
+    expect(tableCells[0]).toHaveTextContent(testData[0].name);
+    expect(tableCells[1]).toHaveTextContent(testData[0].age!.toString());
+
+    element.columns = [{ id: 'age', accessorKey: 'age' }, { id: 'name', accessorKey: 'name' }];
+    await elementUpdated(element);
+
+    const updatedCells = screen.getAllByShadowRole('cell');
+    expect(updatedCells[0]).toHaveTextContent(testData[0].age!.toString());
+    expect(updatedCells[1]).toHaveTextContent(testData[0].name);
+  });
+
   test('should emit double click event when row is clicked', async () => {
     const user = userEvent.setup();
     const testColumns: ColumnDef<TestData>[] = [{ id: 'name', accessorKey: 'name' }];

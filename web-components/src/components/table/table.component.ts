@@ -320,6 +320,7 @@ export default class Table extends BaseElement<TableEventsPayloadMap> {
           columns: this.columns!,
           state: {
             ...prev.state,
+            columnOrder: this.columns!.map(col => col.id as string),
             pagination: {
               pageIndex: prev.state.pagination?.pageIndex ?? 0,
               pageSize: PAGE_SIZE,
