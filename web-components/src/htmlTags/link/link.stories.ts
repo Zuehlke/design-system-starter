@@ -20,7 +20,7 @@ const Template: StoryFn<HTMLLinkElement> = () => html`
 export const Default = Template.bind({});
 
 const ExternalTemplate: StoryFn<HTMLLinkElement> = () => html`
-  <a href="https://www.dreyfusbank.ch/">
+  <a href="https://www.google.com/">
     Link to external application or web page
     <dss-icon icon="link"></dss-icon>
   </a>
