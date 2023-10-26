@@ -44,7 +44,7 @@ module.exports = {
       ...transformLeafsToKeyValuePairs(tokens.gradient, 'gradient-'),
     },
     boxShadow: {
-      ...transformToKeyValuePairsByType(tokens.effect, 'custom-shadow', 'effect-'),
+      ...transformToKeyValuePairsByType(tokens.effect, 'custom-shadow', 'effect-shadow-'),
     },
     borderRadius: {
       ...transformLeafsToKeyValuePairs(tokens.radius, 'radius-'),
