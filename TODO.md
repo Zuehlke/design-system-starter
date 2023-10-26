@@ -6,6 +6,7 @@
 * [style.css](web-components/src/rootStyles/style.css) currently imports [global.css](web-components/src/internals/baseElement/global.css). This means global.css is duplicated. Once as a Constructed Stylesheet for all components and once by the outer application using our library.
   * Before, we had a style-component but this is trickier when trying to do server side rendering. Therefore, we switched to the stylesheet only, which means some duplication.
 * Testing: message "multiple versions of lit loaded"
+* Check if we could use StyleDictionary actions to handle images/logos in a streamlined way
 
 ## tailwind-preset
 * font settings (font-weight, font-size, line-height) are not handled yet
