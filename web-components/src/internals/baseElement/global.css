@@ -4,7 +4,7 @@
 @import "../../components/input/input.lightDOM.css";
 
 body {
-  font: var(--font-main) !important;;
+  font: var(--font-main) !important;
 }
 
 h1 {
