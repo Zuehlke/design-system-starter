@@ -2,7 +2,6 @@ export { default as Button } from './components/button/button.component';
 export { default as ButtonGroup } from './components/buttongroup/buttongroup.component';
 export { default as Checkbox } from './components/checkbox/checkbox.component';
 export { default as Chart } from './components/chart/chart.component';
-export { default as Chooser } from './components/chooser/chooser.component';
 export { default as Datepicker } from './components/datepicker/datepicker.component';
 export { default as Dropdown } from './components/dropdown/dropdown.component';
 export { default as Flyout } from './components/flyout/flyout.component';
