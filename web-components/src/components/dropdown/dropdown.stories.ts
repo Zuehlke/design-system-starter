@@ -4,7 +4,7 @@ import Dropdown from './dropdown.component';
 import '../checkbox/checkbox.component';
 import '../menu/menu.component';
 import '../menuItem/menuItem.component';
-import { makeChooserData } from '../chooser/makeData.story-utils';
+import { makeData } from './makeData.story-utils';
 import { Meta, StoryFn } from '@storybook/web-components';
 import docs from './dropdown.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -85,7 +85,7 @@ const Template: StoryFn<Dropdown & { optionsSlot: TemplateResult | TemplateResul
 
 export const Default = Template.bind({});
 Default.args = {
-  optionsSlot: makeChooserData(5)
+  optionsSlot: makeData(5)
     .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
     .map(person => html`
       <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
@@ -104,7 +104,7 @@ export const InitialSelection = InitialSelectionTemplate.bind({});
 export const WithLabel = Template.bind({});
 WithLabel.args = {
   label: 'Select option',
-  optionsSlot: makeChooserData(5)
+  optionsSlot: makeData(5)
     .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
     .map(person => html`
       <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
@@ -115,7 +115,7 @@ export const Required = Template.bind({});
 Required.args = {
   label: 'Required option',
   required: true,
-  optionsSlot: makeChooserData(5)
+  optionsSlot: makeData(5)
     .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
     .map(person => html`
       <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
@@ -127,7 +127,7 @@ Warning.args = {
   label: 'Important',
   errorState: 'warning',
   message: 'This dropdown is problematic',
-  optionsSlot: makeChooserData(5)
+  optionsSlot: makeData(5)
     .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
     .map(person => html`
       <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
@@ -139,7 +139,7 @@ Error.args = {
   label: 'Important',
   errorState: 'error',
   message: 'This dropdown is wrong',
-  optionsSlot: makeChooserData(5)
+  optionsSlot: makeData(5)
     .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
     .map(person => html`
       <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
@@ -181,7 +181,7 @@ CustomIcon.args = {
 export const MultiSelect = Template.bind({});
 MultiSelect.args = {
   multiSelect: true,
-  optionsSlot: makeChooserData(5)
+  optionsSlot: makeData(5)
     .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
     .map(person => html`
       <dss-menu-item .value=${person}>
