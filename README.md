@@ -21,3 +21,11 @@ If you want to lazy load the components where you need them, you can import the 
 ```js
 import 'design-system-showcase/src/components/button/button.component';
 ```
+
+## Development
+
+### Initial setup
+Check out the Git repository and run the following commands in the root directory to get started:
+* `npm install`
+* `npm run build --workspace web-components`
+* `npm run storybook --workspace web-components`
