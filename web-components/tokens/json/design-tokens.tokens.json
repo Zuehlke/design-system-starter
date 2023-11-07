@@ -101,7 +101,7 @@
       }
     }
   },
-  "borders": {
+  "border": {
     "small": {
       "description": null,
       "type": "custom-stroke",
