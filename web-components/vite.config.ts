@@ -59,6 +59,7 @@ export default defineConfig({
     cem({
       files: [...getComponentFiles()],
       lit: true,
+      packageJson: true,
       plugins: [
         customElementJetBrainsPlugin({
           outdir: 'dist',
