@@ -16,7 +16,7 @@ label {
   flex: none;
   appearance: none;
   border-radius: var(--radius-50percent);
-  border: var(--size-border-width-medium) solid var(--color-brand-interaction-100);
+  border: var(--border-medium) solid var(--color-brand-interaction-100);
 }
 
 label:not(.checked,.disabled,:active):hover .basic-radio {
@@ -108,5 +108,5 @@ label:not(.checked,.disabled,:active):hover .basic-radio {
 
 .focused .basic-radio {
   border-color: var(--color-brand-interaction-100);
-  box-shadow: var(--effect-glow-focus);
+  box-shadow: var(--effect-shadow-glow-focus);
 }

@@ -11,9 +11,9 @@ dss-input :is(input, textarea)::placeholder {
 dss-input :is(input, textarea) {
   margin: 0;
   outline: none;
-  border: var(--size-border-width-small) solid var(--color-brand-interaction-75);
+  border: var(--border-small) solid var(--color-brand-interaction-75);
   border-radius: var(--radius-4);
-  padding: calc(var(--size-0-5) + var(--size-border-width-small)) var(--size-1);
+  padding: calc(var(--size-0-5) + var(--border-small)) var(--size-1);
   font-size: var(--typography-main-font-size);
   line-height: var(--typography-main-line-height);
 }
@@ -38,7 +38,7 @@ dss-input[size="compact"] input {
 
 dss-input :is(input,textarea):focus-visible {
   outline: var(--color-brand-interaction-100) solid 0.1rem;
-  box-shadow: var(--effect-glow-focus);
+  box-shadow: var(--effect-shadow-glow-focus);
 }
 
 dss-input :is(input,textarea):disabled {

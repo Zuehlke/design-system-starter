@@ -33,7 +33,7 @@ input {
 input:not(:disabled):focus-visible {
   outline: none;
   border: var(--size-px) solid var(--color-brand-interaction-100);
-  box-shadow: var(--effect-glow-focus);
+  box-shadow: var(--effect-shadow-glow-focus);
 }
 
 input:disabled {

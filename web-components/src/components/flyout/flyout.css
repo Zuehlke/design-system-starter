@@ -1,5 +1,5 @@
 :host {
-  --disabled-dropdown-button-padding: calc(var(--size-0-5) - var(--size-border-width-small));
+  --disabled-dropdown-button-padding: calc(var(--size-0-5) - var(--border-small));
 }
 
 dss-floating::part(container) {

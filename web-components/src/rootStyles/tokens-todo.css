@@ -1,8 +1,4 @@
 :root {
-    /* Should be in Figma and we should keep these in px and not rem */
-    --size-border-width-medium: 2px;
-    --size-border-width-small: 1px;
-
     /* Specific cases for css filters like the tooltip so it has the right shadow even with arrow elements sticking out of the parent container
     Unfortunately we cannot generate multiple types of shadows out of a single design token in StyleDictionary */
     --drop-shadow-far: 0px 3px 20px #00000049;

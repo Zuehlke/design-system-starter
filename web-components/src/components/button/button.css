@@ -14,7 +14,7 @@ button {
   margin: 0;
   gap: var(--size-1);
   cursor: pointer;
-  border: var(--size-border-width-medium) solid;
+  border: var(--border-medium) solid;
   border-radius: var(--radius-4);
   line-height: var(--typography-main-line-height);
 }
@@ -32,7 +32,7 @@ button:disabled:focus-visible {
 
 button:not(:disabled):focus-visible {
   outline: var(--color-brand-interaction-100) solid .1rem;
-  box-shadow: var(--effect-glow-focus);
+  box-shadow: var(--effect-shadow-glow-focus);
 }
 
 .type-primary {
@@ -103,7 +103,7 @@ button:not(:disabled):focus-visible {
 }
 
 .spacing-icon {
-  padding: calc(var(--size-0-5) - var(--size-border-width-medium));
+  padding: calc(var(--size-0-5) - var(--border-medium));
 }
 
 .spacing-icon-only {
