@@ -1046,7 +1046,7 @@
         }
       }
     },
-    "glow-focus": {
+    "shadow-glow-focus": {
       "description": null,
       "type": "custom-shadow",
       "value": {
