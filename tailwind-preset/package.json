@@ -1,13 +1,13 @@
 {
-  "name": "@design-system-starter/tailwind-preset",
-  "version": "0.64.0",
+  "name": "@zuhlke/design-system-tailwind-preset",
+  "version": "0.65.0",
   "description": "",
   "main": "tailwind.config.js",
   "files": [
     "tailwind.config.js"
   ],
   "peerDependencies": {
-    "@design-system-starter/web-components": "*"
+    "@zuhlke/design-system-components": "*"
   },
   "devDependencies": {
     "tailwindcss": "3.3.3"

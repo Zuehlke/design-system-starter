@@ -1,4 +1,4 @@
-const tokens = require('@design-system-starter/web-components/design-tokens.cjs');
+const tokens = require('@zuhlke/design-system-components/design-tokens.cjs');
 
 function transformTokenToKeyValuePair(token, removeFromName) {
   const name = removeFromName

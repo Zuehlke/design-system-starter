@@ -14,7 +14,7 @@ export default defineConfig({
       external: [
         /^lit/,
         'react',
-        /^@design-system-starter\/web-components/,
+        /^@zuhlke\/design-system-components/,
       ],
     },
   },
@@ -22,7 +22,7 @@ export default defineConfig({
     vitePluginCreateLitReactWrapper({
       globToLitComponents: '../web-components/src/components/**/*.component.ts',
       prefix: 'dss-',
-      getComponentPath: (name: string) => `@design-system-starter/web-components/dist/src/components/${name.replace('.component', '')}/${name}.js`,
+      getComponentPath: (name: string) => `@zuhlke/design-system-components/dist/src/components/${name.replace('.component', '')}/${name}.js`,
       watchLitDist: '../web-components/dist/src',
       samePackageOutput: false,
     }),
