@@ -6,6 +6,9 @@ import styles from './multiselect.css?inline';
 import '../button/button.component';
 import '../icon/icon.component';
 import '../label/label.component';
+import '../outsideClick/outsideClick.component';
+import '../menu/menu.component';
+import '../menuItem/menuItem.component';
 import '../../internals/hint/hint';
 import BaseElement, { ActionKeystrokes } from '../../internals/baseElement/baseElement';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -41,7 +44,7 @@ const DEFAULT_MULTISELECT_TRANSLATIONS: MultiselectTranslations = {
  * @fires {Event} change - Fires when form state changed
  */
 @customElement('dss-multiselect')
-export default class Multiselect extends BaseElement  implements Closable {
+export default class Multiselect extends BaseElement implements Closable {
 
   // noinspection JSUnusedGlobalSymbols
   static formAssociated = true;
@@ -81,13 +84,13 @@ export default class Multiselect extends BaseElement  implements Closable {
   @property({ type: Number })
   limit?: number;
 
-  @property({ type: Function })
+  @property({ attribute: false })
   mapToPill: (element: any) => string = defaultMapToDisplay;
 
-  @property({ type: Function })
+  @property({ attribute: false })
   mapToListItem: (element: any) => string = defaultMapToDisplay;
 
-  @property({ type: Function })
+  @property({ attribute: false })
   public toNativeFormValue: (options: any[]) => FormData = (options: any[]) => {
     const formData = new FormData();
 
@@ -98,7 +101,7 @@ export default class Multiselect extends BaseElement  implements Closable {
     return formData;
   };
 
-  @property({ type: Function })
+  @property({ attribute: false })
   filter: (option: any, inputValue?: string) => boolean = defaultFilter;
 
   public placement?: Placement = 'bottom-start';
@@ -145,7 +148,7 @@ export default class Multiselect extends BaseElement  implements Closable {
 
         <dss-outside-click .onOutsideClick="${() => this.showDropdown && this.close()}">
           <dss-floating
-            placement="${this.placement}"
+            placement="${ifDefined(this.placement)}"
             .active="${this.showDropdown}"
           >
             <div
@@ -185,14 +188,14 @@ export default class Multiselect extends BaseElement  implements Closable {
                     >
                       ${this.mapToListItem(option)}
                     </dss-menu-item>
-                   
+
                   `)
                 : html`
                   <dss-menu-item>No option</dss-menu-item>
                 `
               }
             </dss-menu>
-            <dss-floating>
+          </dss-floating>
         </dss-outside-click>
         <dss-hint .state="${this.errorState}" .message="${this.message}"></dss-hint>
       </div>
@@ -208,6 +211,7 @@ export default class Multiselect extends BaseElement  implements Closable {
 
     super.requestUpdate(name, oldValue, options);
   }
+
   select(selected: any) {
 
     if (this.limit && this.value.length >= this.limit) {
@@ -273,12 +277,12 @@ export default class Multiselect extends BaseElement  implements Closable {
 
   close() {
     this.showDropdown = false;
-    this.onStateChange(this.showDropdown)
+    this.onStateChange(this.showDropdown);
   }
 
   open() {
-    this.showDropdown = true
-    this.onStateChange(this.showDropdown)
+    this.showDropdown = true;
+    this.onStateChange(this.showDropdown);
   }
 
   private onStateChange(isOpen: boolean) {

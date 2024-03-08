@@ -28,13 +28,14 @@ const meta: Meta<Radio> = {
 };
 export default meta;
 
-const Template: StoryFn<Radio> = ({ label, size, errorState, message }) => {
+const Template: StoryFn<Radio> = ({ label, size, errorState, message, hideMessage }) => {
   return html`
     <dss-radio
-      .size=${ifDefined(size)}
-      .label=${label}
-      .errorState="${ifDefined(errorState)}"
-      .message="${ifDefined(message)}"
+      size=${ifDefined(size)}
+      label=${ifDefined(label)}
+      errorState="${ifDefined(errorState)}"
+      message="${ifDefined(message)}"
+      ?hideMessage="${hideMessage}"
       style="padding: .3rem .3rem .3rem .8rem;"
     >
       <input type="radio">

@@ -63,17 +63,19 @@ const Template: StoryFn<Input & {
   inputButtonSlot,
   countToMax,
   labelPlacement,
+  hideMessage,
   loading
 }) => html`
   <dss-input
-    label=${ifDefined(label)}
-    size=${ifDefined(size)}
+    label=${label}
+    size=${size}
     errorState="${ifDefined(errorState)}"
     message="${ifDefined(message)}"
+    ?hideMessage="${hideMessage}"
     ?block=${block}
-    .labelPlacement="${ifDefined(labelPlacement)}"
-    .countToMax="${ifDefined(countToMax)}"
-    .loading="${ifDefined(loading)}"
+    labelPlacement="${ifDefined(labelPlacement)}"
+    countToMax="${ifDefined(countToMax)}"
+    ?loading="${loading}"
   >
     ${when(inputSlot,
       () => inputSlot,

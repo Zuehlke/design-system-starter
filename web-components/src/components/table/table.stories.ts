@@ -11,7 +11,6 @@ import docsFilterable from './table.filterable.md?raw';
 import docsRendering from './table.rendering.md?raw';
 import docsMenu from './table.menu.md?raw';
 import docsExport from './export/table.export.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { createRef, ref } from 'lit/directives/ref.js';
 import { withActions } from '@storybook/addon-actions/decorator';
 
@@ -58,7 +57,7 @@ const Template: StoryFn<Table> = ({
   <dss-table
     .data=${data}
     .columns=${columns as any}
-    .menuItems=${ifDefined(menuItems)}
+    .menuItems=${menuItems}
     .customStyles=${customStyles}
     .selectable=${selectable}
     .sortable="${sortable}"
@@ -67,7 +66,7 @@ const Template: StoryFn<Table> = ({
     .resizable="${resizable ?? false}"
     .draggableColumns="${draggableColumns}"
     .translations="${translations}"
-    .useRowGrouping="${ifDefined(useRowGrouping)}"
+    ?useRowGrouping="${useRowGrouping}"
     .loading="${loading}"
   ></dss-table>
 `;
@@ -519,7 +518,7 @@ export const Export: StoryFn<Table> = ({
       ${ref(tableRef)}
       .data=${data}
       .columns=${columns as any}
-      .menuItems=${ifDefined(menuItems)}
+      .menuItems=${menuItems}
       .customStyles=${customStyles}
       .selectable=${selectable}
       .sortable="${sortable}"

@@ -156,11 +156,11 @@ export default class ColumnFilter extends BaseElement {
     `;
   }
 
-  private getTextRepresentation(value: string | number): string | number {
+  private getTextRepresentation(value: string | number): string {
     if (typeof value === 'string') {
       return value.trim() || this.translations.multiSelectTranslations!.empty;
     }
-    return value;
+    return value.toString();
   }
 
   private handleMultiSelectDropdownChange(column: Column<any>, allKeys: string[], event: Event): void {
@@ -265,7 +265,7 @@ export default class ColumnFilter extends BaseElement {
           <dss-dropdown
             label="${this.translations.numericTranslations!.condition}"
             name="condition"
-            required="true"
+            ?required="${true}"
             value="${ifDefined(this.dropdownState)}"
             @change="${(event: Event) => this.dropdownState = (event.target as Dropdown).value as OperatorKey}"
           >
@@ -328,8 +328,8 @@ export default class ColumnFilter extends BaseElement {
         size="compact"
         .errorState="${this.isError ? 'error' : undefined}"
         .range="${true}"
-        .translations="${this.translations.datepickerTranslations}"
-        .disabled="${this.disabled}"
+        .translations="${this.translations.datepickerTranslations ?? {}}"
+        ?disabled="${this.disabled}"
         @change="${(event: Event) => {
           const datepickerComponent = event.target as Datepicker;
           const dateRange = datepickerComponent.value;

@@ -37,7 +37,7 @@ const Template: StoryFn<Overlay & { slots?: TemplateResult }> = ({
   return html`
     <dss-overlay
       header="${ifDefined(header)}"
-      .show="${ifDefined(show)}"
+      ?show="${show}"
       @dss-overlay-closed=${handleClose}
       @dss-overlay-opened=${handleOpen}
     >

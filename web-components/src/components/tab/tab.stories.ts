@@ -3,7 +3,6 @@ import Tab from './tab.component';
 import { html } from 'lit-html';
 import { Meta, StoryFn } from '@storybook/web-components';
 import docs from './tab.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { useArgs } from '@storybook/addons';
 import { withActions } from '@storybook/addon-actions/decorator';
 
@@ -38,9 +37,9 @@ const Template: StoryFn<Tab> = ({ title, isVisible }) => {
 
   return html`
     <dss-tab
-      .title=${ifDefined(title)}
-      .isActive=${ifDefined(isActive)}
-      .isVisible=${ifDefined(isVisible)}
+      title=${title}
+      ?isActive=${isActive}
+      ?isVisible=${isVisible}
       @click=${handleTabClick}
     >
     </dss-tab>

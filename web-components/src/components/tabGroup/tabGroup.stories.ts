@@ -39,7 +39,6 @@ const Template: StoryFn<TabGroup> = ({ tabs, activeTabTitle, translations }) => 
       <dss-tab-group
         .tabs=${tabsState}
         .activeTabTitle=${activeTab}
-        .onTabActivated=${setActiveTab}
         .translations="${translations}"
         @dss-tab-group-tab-select=${({ detail }: DssTabGroupTabSelectEvent) => setActiveTab(detail.title)}
         @dss-tab-group-tab-close=${({ detail }: DssTabGroupTabCloseEvent) => {

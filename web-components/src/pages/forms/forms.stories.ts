@@ -13,9 +13,9 @@ import '../../components/menuItem/menuItem.component';
 import '../../components/multiselect/multiselect.component';
 import { useState } from '@storybook/addons';
 import * as yup from 'yup';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { when } from 'lit-html/directives/when.js';
 import { StoryFn } from '@storybook/web-components';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 export default {
   title: 'Pages/Forms',
@@ -57,7 +57,7 @@ const BrowserFormValidationTemplate: StoryFn = () => {
       }}
     >
       <div style="margin-bottom: var(--size-1)">
-        <dss-dropdown label="Currency" name="currency" required="true">
+        <dss-dropdown label="Currency" name="currency" ?required="${true}">
           <dss-menu>
             <dss-menu-item value="chf">
               CHF
@@ -82,7 +82,7 @@ const BrowserFormValidationTemplate: StoryFn = () => {
         <dss-input label="Age">
           <input name="age" type="number" min="16">
         </dss-input>
-        <dss-button-group name="length" label="Length" required="true">
+        <dss-button-group name="length" label="Length" ?required="${true}">
           <dss-toggle-button value="<15">&lt; 15min</dss-toggle-button>
           <dss-toggle-button value="15">15min</dss-toggle-button>
           <dss-toggle-button value="30">30min</dss-toggle-button>
@@ -170,7 +170,7 @@ const LibraryFormValidationTemplate: StoryFn = () => {
           label="Currency"
           name="currency"
           .errorState="${errors['currency'] && 'error'}"
-          .message="${ifDefined(errors['currency'])}"
+          message="${ifDefined(errors['currency'])}"
           required
         >
           <dss-menu>
@@ -178,10 +178,10 @@ const LibraryFormValidationTemplate: StoryFn = () => {
             <dss-menu-item value="eur">€</dss-menu-item>
           </dss-menu>
         </dss-dropdown>
-        <dss-input label="Name" .errorState="${errors['name'] && 'error'}" .message="${ifDefined(errors['name'])}">
+        <dss-input label="Name" .errorState="${errors['name'] && 'error'}" message="${ifDefined(errors['name'])}">
           <input name="name" required>
         </dss-input>
-        <dss-input label="Age" .errorState="${errors['age'] && 'error'}" .message="${ifDefined(errors['age'])}">
+        <dss-input label="Age" .errorState="${errors['age'] && 'error'}" message="${ifDefined(errors['age'])}">
           <input name="age" type="number" required>
         </dss-input>
         <dss-datepicker label="Created At" name="createdAt" value=""></dss-datepicker>
@@ -195,13 +195,13 @@ const LibraryFormValidationTemplate: StoryFn = () => {
           <dss-input
             label="Email"
             .errorState="${errors['email'] && 'error'}"
-            .message="${ifDefined(errors['email'])}"
+            message="${ifDefined(errors['email'])}"
           >
             <input name="email" type="email" required>
           </dss-input>
         `)}
       </div>
-      <dss-button style="margin-top: var(--size-2)" type="secondary" submit="true">
+      <dss-button style="margin-top: var(--size-2)" type="secondary" ?submit="${true}">
         Submit
       </dss-button>
     </form>

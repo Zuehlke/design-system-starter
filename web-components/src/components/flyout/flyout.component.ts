@@ -45,10 +45,10 @@ export default class Flyout extends BaseElement<FlyoutEventsPayloadMap> implemen
     return html`
       <dss-outside-click .onOutsideClick="${() => this.open && this.close()}">
         <dss-floating
-          placement="${this.placement}"
+          placement="${ifDefined(this.placement)}"
           .active="${this.open}"
           .arrow="${this.arrow}"
-          .updateOnAnimate="${ifDefined(this.updateOnAnimate)}"
+          ?updateOnAnimate="${this.updateOnAnimate}"
         >
           <span
             slot="anchor"

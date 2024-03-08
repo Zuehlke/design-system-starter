@@ -20,7 +20,7 @@ describe('Buttongroup', () => {
 
   test('when setting required, shows asterisk', async () => {
     await fixture(html`
-      <dss-button-group label="Required" required="true">
+      <dss-button-group label="Required" ?required="${true}">
         <dss-toggle-button>One</dss-toggle-button>
       </dss-button-group>
     `);
@@ -61,7 +61,7 @@ describe('Buttongroup', () => {
   test('when required, sets validity to false when no button pressed', async () => {
     const formElement: HTMLFormElement = await fixture(html`
       <form name="test-form">
-        <dss-button-group name="selection" required="true">
+        <dss-button-group name="selection" ?required="${true}">
           <dss-toggle-button value="one">One</dss-toggle-button>
         </dss-button-group>
       </form>
@@ -73,7 +73,7 @@ describe('Buttongroup', () => {
   test('when required, sets validity to true when button pressed', async () => {
     const formElement: HTMLFormElement = await fixture(html`
       <form name="test-form">
-        <dss-button-group name="selection" required="true" value="one">
+        <dss-button-group name="selection" ?required="${true}" value="one">
           <dss-toggle-button value="one">One</dss-toggle-button>
         </dss-button-group>
       </form>

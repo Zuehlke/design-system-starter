@@ -5,6 +5,7 @@ import '../icon/icon.component';
 import '../button/button.component';
 import '../input/input.component';
 import '../label/label.component';
+import '../outsideClick/outsideClick.component';
 import '../../internals/hint/hint';
 import '../../internals/floatingElement/floatingElement';
 import Menu, { DssMenuSelectionEvent } from '../menu/menu.component';
@@ -18,6 +19,7 @@ import { when } from 'lit-html/directives/when.js';
 import { LabelPlacement } from '../label/label.component';
 import { Closable } from '../../internals/escController/closable';
 import { deregisterOpenComponent, registerOpenComponent } from '../../internals/escController/escController';
+import { Icons } from '../icon/icons';
 
 export interface DropdownTranslations {
   valueMissing?: string;
@@ -67,10 +69,10 @@ export default class Dropdown extends BaseElement implements Closable {
   public editable = false;
 
   @property()
-  public value?: string;
+  public value?: any;
 
   @property()
-  public icon?: string;
+  public icon?: Icons;
 
   @property({ reflect: true, type: Boolean })
   public disabled = false;
@@ -102,7 +104,7 @@ export default class Dropdown extends BaseElement implements Closable {
   @property({ type: Boolean })
   public hideMessage = false;
 
-  @property()
+  @property({ type: Object })
   public translations: DropdownTranslations = {
     valueMissing: 'You have to select an option',
   };
@@ -141,9 +143,9 @@ export default class Dropdown extends BaseElement implements Closable {
       <dss-label label="${ifDefined(this.label)}" ?required="${this.required}"></dss-label>
       <dss-outside-click .onOutsideClick="${this.close}">
         <dss-floating
-          placement="${this.placement}"
+          placement="${ifDefined(this.placement)}"
           ?active="${this.open}"
-          .updateOnAnimate="${ifDefined(this.updateOnAnimate)}"
+          ?updateOnAnimate="${this.updateOnAnimate}"
           @focusout="${this.handleFocusOut}"
         >
           <dss-input
@@ -151,7 +153,7 @@ export default class Dropdown extends BaseElement implements Closable {
             class="trigger-area"
             role="listbox"
             aria-label="${ifDefined(this.label)}"
-            ?aria-expanded=${this.open}
+            aria-expanded=${this.open}
             @keydown="${this.handleKeyPress}"
             @click="${this.toggle}"
             tabindex="-1"

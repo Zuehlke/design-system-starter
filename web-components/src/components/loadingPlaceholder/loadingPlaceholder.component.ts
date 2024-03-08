@@ -10,3 +10,9 @@ export default class LoadingPlaceholder extends BaseElement {
     unsafeCSS(styles),
   ];
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'dss-loading-placeholder': LoadingPlaceholder;
+  }
+}
