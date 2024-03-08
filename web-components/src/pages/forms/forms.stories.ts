@@ -15,6 +15,7 @@ import { useState } from '@storybook/addons';
 import * as yup from 'yup';
 import { when } from 'lit-html/directives/when.js';
 import { StoryFn } from '@storybook/web-components';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 export default {
   title: 'Pages/Forms',
@@ -169,7 +170,7 @@ const LibraryFormValidationTemplate: StoryFn = () => {
           label="Currency"
           name="currency"
           .errorState="${errors['currency'] && 'error'}"
-          message="${errors['currency']}"
+          message="${ifDefined(errors['currency'])}"
           required
         >
           <dss-menu>
@@ -177,10 +178,10 @@ const LibraryFormValidationTemplate: StoryFn = () => {
             <dss-menu-item value="eur">€</dss-menu-item>
           </dss-menu>
         </dss-dropdown>
-        <dss-input label="Name" .errorState="${errors['name'] && 'error'}" message="${errors['name']}">
+        <dss-input label="Name" .errorState="${errors['name'] && 'error'}" message="${ifDefined(errors['name'])}">
           <input name="name" required>
         </dss-input>
-        <dss-input label="Age" .errorState="${errors['age'] && 'error'}" message="${errors['age']}">
+        <dss-input label="Age" .errorState="${errors['age'] && 'error'}" message="${ifDefined(errors['age'])}">
           <input name="age" type="number" required>
         </dss-input>
         <dss-datepicker label="Created At" name="createdAt" value=""></dss-datepicker>
@@ -194,7 +195,7 @@ const LibraryFormValidationTemplate: StoryFn = () => {
           <dss-input
             label="Email"
             .errorState="${errors['email'] && 'error'}"
-            message="${errors['email']}"
+            message="${ifDefined(errors['email'])}"
           >
             <input name="email" type="email" required>
           </dss-input>

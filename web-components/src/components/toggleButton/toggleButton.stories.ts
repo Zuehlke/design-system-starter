@@ -36,7 +36,7 @@ const Template: StoryFn<ToggleButton> = ({ slot, pressed, spacing, disabled, typ
     type="${ifDefined(type)}"
     tooltip="${ifDefined(tooltip)}"
     ?disabled=${disabled}
-    ?selected=${pressed}
+    ?pressed=${pressed}
   >
     ${unsafeHTML(slot)}
   </dss-toggle-button>

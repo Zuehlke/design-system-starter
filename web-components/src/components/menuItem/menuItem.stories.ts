@@ -37,7 +37,7 @@ const Template: StoryFn<MenuItem & { itemSlot: TemplateResult }> = (
 
     <dss-menu-item
       .value="${value}"
-      ?selected="${selected}"
+      .selected="${selected}"
     >
       ${itemSlot}
     </dss-menu-item>

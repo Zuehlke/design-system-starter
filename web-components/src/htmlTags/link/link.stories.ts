@@ -1,6 +1,7 @@
 import { html } from 'lit-html';
 import { Meta, StoryFn } from '@storybook/web-components';
 import docs from './link.md?raw';
+import '../../components/icon/icon.component';
 
 export default {
   title: 'HTML Tags/Link <a>',

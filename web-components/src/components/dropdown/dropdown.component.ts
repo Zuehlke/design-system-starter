@@ -5,6 +5,7 @@ import '../icon/icon.component';
 import '../button/button.component';
 import '../input/input.component';
 import '../label/label.component';
+import '../outsideClick/outsideClick.component';
 import '../../internals/hint/hint';
 import '../../internals/floatingElement/floatingElement';
 import Menu, { DssMenuSelectionEvent } from '../menu/menu.component';
@@ -103,7 +104,7 @@ export default class Dropdown extends BaseElement implements Closable {
   @property({ type: Boolean })
   public hideMessage = false;
 
-  @property({type: Object})
+  @property({ type: Object })
   public translations: DropdownTranslations = {
     valueMissing: 'You have to select an option',
   };

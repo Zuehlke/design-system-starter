@@ -5,7 +5,7 @@ import './floatingElement';
 describe('FloatingElement', () => {
   const fixtureWithDivAnchor = async () => {
     return await fixture(html`
-      <dss-floating content="Test Tooltip" placement="right">
+      <dss-floating placement="right">
         <div slot="anchor">Test Hover</div>
       </dss-floating>
     `) as HTMLElementTagNameMap['dss-floating'];

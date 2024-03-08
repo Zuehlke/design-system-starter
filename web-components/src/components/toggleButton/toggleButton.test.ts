@@ -1,4 +1,5 @@
 import './toggleButton.component';
+import '../icon/icon.component';
 import { elementUpdated, fixture, html } from '@open-wc/testing-helpers';
 import { describe, expect, test } from 'vitest';
 import userEvent from '@testing-library/user-event';

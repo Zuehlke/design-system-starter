@@ -45,7 +45,7 @@ const Template: StoryFn<ButtonGroup> = ({
   <dss-button-group
     value="${ifDefined(value)}"
     label="${label}"
-    labelPlacement="${labelPlacement}"
+    labelPlacement="${ifDefined(labelPlacement)}"
     ?required="${required}"
     errorState="${ifDefined(errorState)}"
     message="${ifDefined(message)}"

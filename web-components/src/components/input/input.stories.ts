@@ -63,6 +63,7 @@ const Template: StoryFn<Input & {
   inputButtonSlot,
   countToMax,
   labelPlacement,
+  hideMessage,
   loading
 }) => html`
   <dss-input
@@ -70,8 +71,9 @@ const Template: StoryFn<Input & {
     size=${size}
     errorState="${ifDefined(errorState)}"
     message="${ifDefined(message)}"
+    ?hideMessage="${hideMessage}"
     ?block=${block}
-    labelPlacement="${labelPlacement}"
+    labelPlacement="${ifDefined(labelPlacement)}"
     countToMax="${ifDefined(countToMax)}"
     ?loading="${loading}"
   >

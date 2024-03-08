@@ -44,7 +44,7 @@ const Template: StoryFn<Flyout & { contentSlot: TemplateResult, triggerSlot: Tem
     <div style="margin-left: var(--size-1); margin-top: var(--size-1);">
       <dss-flyout
         ?arrow="${arrow}"
-        ?open="${open}"
+        .open="${open}"
         placement="${ifDefined(placement)}"
       >
         ${when(triggerSlot !== undefined, () => html`
