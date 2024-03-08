@@ -36,3 +36,9 @@ export default class Label extends BaseElement {
     `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'dss-label': Label;
+  }
+}

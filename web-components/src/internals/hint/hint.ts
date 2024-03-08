@@ -6,6 +6,7 @@ import styles from './hint.css?inline';
 import { unsafeCSS } from 'lit';
 import '../../components/icon/icon.component';
 import { when } from 'lit-html/directives/when.js';
+import Button from '../../components/button/button.component';
 
 const NON_BREAKING_SPACE = html`&nbsp;`;
 
@@ -41,5 +42,10 @@ export default class Hint extends BaseElement {
         </span>
       </div>
     `;
+  }
+}
+declare global {
+  interface HTMLElementTagNameMap {
+    'dss-hint': Hint;
   }
 }

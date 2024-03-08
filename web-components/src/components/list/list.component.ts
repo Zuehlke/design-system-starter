@@ -2,6 +2,7 @@ import { html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import styles from './list.css?inline';
 import BaseElement from '../../internals/baseElement/baseElement';
+import Button from '../button/button.component';
 
 export const replaceMode = [
   'swap',
@@ -62,5 +63,11 @@ export default class List extends BaseElement {
 
   getElementIndex(element: HTMLElement, parent: HTMLElement) {
     return Array.from(parent.children).indexOf(element);
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'dss-list': List;
   }
 }
