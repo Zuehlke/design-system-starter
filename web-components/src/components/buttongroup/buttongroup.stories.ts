@@ -44,12 +44,12 @@ const Template: StoryFn<ButtonGroup> = ({
 }) => html`
   <dss-button-group
     value="${ifDefined(value)}"
-    label="${ifDefined(label)}"
-    .labelPlacement="${ifDefined(labelPlacement)}"
-    required="${ifDefined(required)}"
+    label="${label}"
+    labelPlacement="${labelPlacement}"
+    ?required="${required}"
     errorState="${ifDefined(errorState)}"
     message="${ifDefined(message)}"
-    .hideMessage="${ifDefined(hideMessage)}"
+    ?hideMessage="${hideMessage}"
   >
     ${unsafeHTML(slot)}
   </dss-button-group>

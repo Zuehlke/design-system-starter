@@ -5,7 +5,6 @@ import { html, TemplateResult } from 'lit-html';
 import { Meta, StoryFn } from '@storybook/web-components';
 import docs from './menuItem.md?raw';
 import MenuItem from './menuItem.component';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 const meta: Meta<MenuItem> = {
   title: 'Components/MenuItem',
@@ -37,8 +36,8 @@ const Template: StoryFn<MenuItem & { itemSlot: TemplateResult }> = (
     </style>
 
     <dss-menu-item
-      value="${ifDefined(value)}"
-      .selected="${ifDefined(selected)}"
+      .value="${value}"
+      ?selected="${selected}"
     >
       ${itemSlot}
     </dss-menu-item>

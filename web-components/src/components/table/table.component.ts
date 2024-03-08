@@ -407,7 +407,7 @@ export default class Table extends BaseElement<TableEventsPayloadMap> {
           <td class=${classMap({ 'text-right': header.column.columnDef.meta?.alignRight ?? false })}>
             <dss-column-filter
               .header=${header as any}
-              .translations="${ifDefined(this.translations.columnFilterTranslations)}"
+              .translations="${this.translations.columnFilterTranslations ?? {}}"
               .disabled="${this.loading}"
             ></dss-column-filter>
           </td>

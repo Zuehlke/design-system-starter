@@ -31,10 +31,10 @@ export default meta;
 const Template: StoryFn<Radio> = ({ label, size, errorState, message }) => {
   return html`
     <dss-radio
-      .size=${ifDefined(size)}
-      .label=${label}
-      .errorState="${ifDefined(errorState)}"
-      .message="${ifDefined(message)}"
+      size=${size}
+      label=${label}
+      errorState="${ifDefined(errorState)}"
+      message="${ifDefined(message)}"
       style="padding: .3rem .3rem .3rem .8rem;"
     >
       <input type="radio">

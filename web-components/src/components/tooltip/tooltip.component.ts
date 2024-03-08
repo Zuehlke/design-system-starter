@@ -47,7 +47,7 @@ export default class Tooltip extends BaseElement {
         arrow
         ?active="${this.active}"
         placement="${ifDefined(this.placement)}"
-        .updateOnAnimate="${ifDefined(this.updateOnAnimate)}"
+        ?updateOnAnimate="${this.updateOnAnimate}"
       >
         <slot name="trigger" slot="anchor" @slotchange=${this.handleSlotChange}></slot>
         <div role="tooltip">

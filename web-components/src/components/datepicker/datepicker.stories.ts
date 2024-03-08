@@ -45,13 +45,13 @@ const DatePickerTemplate: StoryFn<Datepicker> = ({
     value="${value}"
     label="${ifDefined(label)}"
     locale="${ifDefined(locale)}"
-    required="${ifDefined(required)}"
+    ?required="${required}"
     errorState="${ifDefined(errorState)}"
     message="${ifDefined(message)}"
-    .range="${ifDefined(range)}"
-    size="${ifDefined(size)}"
+    ?range="${range}"
+    size="${size}"
     style="margin-bottom: 30rem"
-    .disabled="${ifDefined(disabled)}"
+    ?disabled="${disabled}"
     ?block="${block}"
   ></dss-datepicker>
 `;

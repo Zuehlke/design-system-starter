@@ -48,7 +48,7 @@ export default class Flyout extends BaseElement<FlyoutEventsPayloadMap> implemen
           placement="${ifDefined(this.placement)}"
           .active="${this.open}"
           .arrow="${this.arrow}"
-          .updateOnAnimate="${ifDefined(this.updateOnAnimate)}"
+          ?updateOnAnimate="${this.updateOnAnimate}"
         >
           <span
             slot="anchor"

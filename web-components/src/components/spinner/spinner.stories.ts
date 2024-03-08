@@ -35,9 +35,9 @@ const Template: StoryFn<Spinner & { backgroundColor: string }> = ({
   <div style="height: 4rem; width: 4rem">
     <dss-spinner
       style="${when(backgroundColor, () => `--spinner-background-color: ${backgroundColor}`)}"
-      type=${ifDefined(type)}
-      size=${ifDefined(size)}
-      thickness=${ifDefined(thickness)}
+      type=${type}
+      size=${size}
+      thickness=${thickness}
     ></dss-spinner>
   </div>
 `;

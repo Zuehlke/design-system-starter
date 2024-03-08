@@ -40,14 +40,14 @@ const Template: StoryFn<Checkbox> = ({
 }) => {
   return html`
     <dss-checkbox
-      .label=${ifDefined(label)}
-      .size=${ifDefined(size)}
-      .checked=${ifDefined(checked)}
-      .indeterminate=${ifDefined(indeterminate)}
-      .errorState="${ifDefined(errorState)}"
-      .message="${ifDefined(message)}"
-      .disabled="${ifDefined(disabled)}"
-      .required="${ifDefined(required)}"
+      label=${label}
+      size=${size}
+      ?checked=${checked}
+      ?indeterminate=${indeterminate}
+      errorState="${ifDefined(errorState)}"
+      message="${ifDefined(message)}"
+      ?disabled="${disabled}"
+      ?required="${required}"
     ></dss-checkbox>
   `;
 };
@@ -80,13 +80,13 @@ Error.args = {
 const DisabledTemplate: StoryFn<Checkbox> = ({ label, size }) => {
   return html`
     <div style="display: flex; flex-direction: column; gap: var(--size-0-5)">
-      <dss-checkbox .label=${label} .size=${size} .disabled=${true}></dss-checkbox>
-      <dss-checkbox .label=${`${label} — checked`} .size=${size} .disabled=${true} checked=${true}></dss-checkbox>
+      <dss-checkbox label=${label} size=${size} ?disabled=${true}></dss-checkbox>
+      <dss-checkbox label=${`${label} — checked`} size=${size} ?disabled=${true} ?checked=${true}></dss-checkbox>
       <dss-checkbox
-        .label=${`${label} — indeterminate`}
-        .size=${size}
-        .disabled=${true}
-        .indeterminate=${true}
+        label=${`${label} — indeterminate`}
+        size=${size}
+        ?disabled=${true}
+        ?indeterminate=${true}
       ></dss-checkbox>
     </div>
   `;
@@ -100,7 +100,7 @@ Disabled.args = {
 
 const IndeterminateTemplate: StoryFn<Checkbox> = ({ label, size }) => {
   return html`
-    <dss-checkbox .label=${label} .size=${size} .indeterminate=${true}></dss-checkbox>
+    <dss-checkbox label=${label} size=${size} ?indeterminate=${true}></dss-checkbox>
   `;
 };
 

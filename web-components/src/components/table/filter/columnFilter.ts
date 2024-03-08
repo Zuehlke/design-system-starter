@@ -328,8 +328,8 @@ export default class ColumnFilter extends BaseElement {
         size="compact"
         .errorState="${this.isError ? 'error' : undefined}"
         .range="${true}"
-        .translations="${ifDefined(this.translations.datepickerTranslations)}"
-        .disabled="${this.disabled}"
+        .translations="${this.translations.datepickerTranslations ?? {}}"
+        ?disabled="${this.disabled}"
         @change="${(event: Event) => {
           const datepickerComponent = event.target as Datepicker;
           const dateRange = datepickerComponent.value;

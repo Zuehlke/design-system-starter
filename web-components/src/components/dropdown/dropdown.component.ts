@@ -18,6 +18,7 @@ import { when } from 'lit-html/directives/when.js';
 import { LabelPlacement } from '../label/label.component';
 import { Closable } from '../../internals/escController/closable';
 import { deregisterOpenComponent, registerOpenComponent } from '../../internals/escController/escController';
+import { Icons } from '../icon/icons';
 
 export interface DropdownTranslations {
   valueMissing?: string;
@@ -70,7 +71,7 @@ export default class Dropdown extends BaseElement implements Closable {
   public value?: any;
 
   @property()
-  public icon?: string;
+  public icon?: Icons;
 
   @property({ reflect: true, type: Boolean })
   public disabled = false;
@@ -143,7 +144,7 @@ export default class Dropdown extends BaseElement implements Closable {
         <dss-floating
           placement="${ifDefined(this.placement)}"
           ?active="${this.open}"
-          .updateOnAnimate="${ifDefined(this.updateOnAnimate)}"
+          ?updateOnAnimate="${this.updateOnAnimate}"
           @focusout="${this.handleFocusOut}"
         >
           <dss-input

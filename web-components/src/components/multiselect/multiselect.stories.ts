@@ -35,11 +35,11 @@ const Template: StoryFn<Multiselect> = ({
 }) => html`
   <dss-multiselect
     label=${label}
-    .labelPlacement="${ifDefined(labelPlacement)}"
+    labelPlacement="${labelPlacement}"
     placeholder=${placeholder}
     .options=${options}
     .value=${value}
-    .limit="${ifDefined(limit)}"
+    limit="${ifDefined(limit)}"
   >
   </dss-multiselect>
 `;

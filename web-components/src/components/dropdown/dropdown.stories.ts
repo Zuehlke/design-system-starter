@@ -67,13 +67,13 @@ const Template: StoryFn<Dropdown & { optionsSlot: TemplateResult | TemplateResul
       ?disabled="${disabled}"
       ?block="${block}"
       label="${ifDefined(label)}"
-      .labelPlacement="${ifDefined(labelPlacement)}"
-      .required="${ifDefined(required)}"
-      .errorState="${ifDefined(errorState)}"
-      .message="${ifDefined(message)}"
-      size="${ifDefined(size)}"
-      .multiSelect="${ifDefined(multiSelect)}"
-      .hideMessage="${ifDefined(hideMessage)}"
+      labelPlacement="${labelPlacement}"
+      ?required="${required}"
+      errorState="${ifDefined(errorState)}"
+      message="${ifDefined(message)}"
+      size="${size}"
+      ?multiSelect="${multiSelect}"
+      ?hideMessage="${hideMessage}"
     >
       <dss-menu>
         ${optionsSlot}
