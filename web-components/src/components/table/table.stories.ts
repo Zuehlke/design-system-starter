@@ -136,7 +136,7 @@ CustomRender.args = {
       header: 'Last Name',
       meta: {
         styles: (person) => ({
-          fontWeight: person.age < 18 ? 'var(--typography-h4-font-weight)' : undefined,
+          fontWeight: person.age !== null && person.age < 18 ? 'var(--typography-h4-font-weight)' : undefined,
         }),
       },
     },
@@ -145,7 +145,7 @@ CustomRender.args = {
       accessorKey: 'age',
       header: 'Age',
       meta: {
-        classes: (person) => ({ underage: person.age < 18 }),
+        classes: (person) => ({ underage: person.age !== null && person.age < 18 }),
         alignRight: true,
       },
     },
