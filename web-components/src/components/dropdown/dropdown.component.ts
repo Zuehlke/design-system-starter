@@ -102,7 +102,7 @@ export default class Dropdown extends BaseElement implements Closable {
   @property({ type: Boolean })
   public hideMessage = false;
 
-  @property()
+  @property({type: Object})
   public translations: DropdownTranslations = {
     valueMissing: 'You have to select an option',
   };

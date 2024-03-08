@@ -41,7 +41,7 @@ const DEFAULT_MULTISELECT_TRANSLATIONS: MultiselectTranslations = {
  * @fires {Event} change - Fires when form state changed
  */
 @customElement('dss-multiselect')
-export default class Multiselect extends BaseElement  implements Closable {
+export default class Multiselect extends BaseElement implements Closable {
 
   // noinspection JSUnusedGlobalSymbols
   static formAssociated = true;
@@ -81,13 +81,13 @@ export default class Multiselect extends BaseElement  implements Closable {
   @property({ type: Number })
   limit?: number;
 
-  @property({ type: Function })
+  @property({ attribute: false })
   mapToPill: (element: any) => string = defaultMapToDisplay;
 
-  @property({ type: Function })
+  @property({ attribute: false })
   mapToListItem: (element: any) => string = defaultMapToDisplay;
 
-  @property({ type: Function })
+  @property({ attribute: false })
   public toNativeFormValue: (options: any[]) => FormData = (options: any[]) => {
     const formData = new FormData();
 
@@ -98,7 +98,7 @@ export default class Multiselect extends BaseElement  implements Closable {
     return formData;
   };
 
-  @property({ type: Function })
+  @property({ attribute: false })
   filter: (option: any, inputValue?: string) => boolean = defaultFilter;
 
   public placement?: Placement = 'bottom-start';
@@ -185,7 +185,7 @@ export default class Multiselect extends BaseElement  implements Closable {
                     >
                       ${this.mapToListItem(option)}
                     </dss-menu-item>
-                   
+
                   `)
                 : html`
                   <dss-menu-item>No option</dss-menu-item>
@@ -208,6 +208,7 @@ export default class Multiselect extends BaseElement  implements Closable {
 
     super.requestUpdate(name, oldValue, options);
   }
+
   select(selected: any) {
 
     if (this.limit && this.value.length >= this.limit) {
@@ -273,12 +274,12 @@ export default class Multiselect extends BaseElement  implements Closable {
 
   close() {
     this.showDropdown = false;
-    this.onStateChange(this.showDropdown)
+    this.onStateChange(this.showDropdown);
   }
 
   open() {
-    this.showDropdown = true
-    this.onStateChange(this.showDropdown)
+    this.showDropdown = true;
+    this.onStateChange(this.showDropdown);
   }
 
   private onStateChange(isOpen: boolean) {

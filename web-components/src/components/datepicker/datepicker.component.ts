@@ -65,7 +65,7 @@ export default class Datepicker extends BaseElement {
   @property()
   public placeholder?: string;
 
-  @property()
+  @property({type: Boolean})
   public required = false;
 
   @property({ reflect: true, type: Boolean })
@@ -80,7 +80,7 @@ export default class Datepicker extends BaseElement {
   @property()
   public locale? = DEFAULT_LOCALE;
 
-  @property()
+  @property({type: Boolean})
   public range = false;
 
   @property()
