@@ -26,7 +26,15 @@
     "resolveJsonModule": true,
     "plugins": [
       {
-        "name": "ts-lit-plugin"
+        "name": "ts-lit-plugin",
+        "strict": true,
+        "rules": {
+          "no-missing-imports": "error",
+          "no-missing-element-type-definition": "warning",
+          "no-unknown-tag-name": "off",
+          "no-unknown-slot": "off", // false positives for unnamed slots which have to be documented with a name for Storybook
+          "no-noncallable-event-binding": "off" // false positives for spy functions in tests (vi.fn())
+        }
       }
     ]
   },
