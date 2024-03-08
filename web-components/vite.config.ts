@@ -5,6 +5,7 @@ import dts from 'vite-plugin-dts';
 import svg from 'vite-plugin-svgo';
 import cem from 'vite-plugin-cem';
 import { customElementJetBrainsPlugin } from 'custom-element-jet-brains-integration';
+import { getTsProgram, expandTypesPlugin } from 'cem-plugin-expanded-types';
 
 function getComponentFiles(): string[] {
   return globbySync('./src/components/**/*.component.ts');
@@ -60,7 +61,16 @@ export default defineConfig({
       files: [...getComponentFiles()],
       lit: true,
       packageJson: true,
+      overrideModuleCreation: ({ ts, globs }) => {
+        const program = getTsProgram(ts, globs, 'tsconfig.json');
+        return program
+          .getSourceFiles()
+          .filter((sourceFile) => globs.find((glob) => sourceFile.fileName.includes(glob)));
+      },
       plugins: [
+        expandTypesPlugin({
+          propertyName: 'type',
+        }),
         customElementJetBrainsPlugin({
           outdir: 'dist',
         }) as any,
