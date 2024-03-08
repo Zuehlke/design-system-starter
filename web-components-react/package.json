@@ -1,5 +1,5 @@
 {
-  "name": "@design-system-starter/web-components-react",
+  "name": "@zuhlke/design-system-components-react",
   "version": "0.64.0",
   "type": "module",
   "main": "dist/index.js",
@@ -10,8 +10,7 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
-    "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@glytch/vite-plugin-generate-lit-react-wrapper": "2.0.0",
@@ -22,6 +21,6 @@
     "@lit-labs/react": "1.1.1"
   },
   "peerDependencies": {
-    "@design-system-starter/web-components": "latest"
+    "@zuhlke/design-system-components": "*"
   }
 }

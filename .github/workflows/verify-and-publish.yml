@@ -1,0 +1,72 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: ${{ github.event_name != 'pull_request' }}
+
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: 'package-lock.json'
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@zuhlke'
+
+      - name: Install Root
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Analyze
+        run: npm run analyze
+
+      - name: Check
+        run: npm run check
+
+      - name: Test
+        run: npm run test
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+          exitOnceUploaded: true
+          onlyChanged: true
+          workingDir: web-components
+          autoAcceptChanges: main
+          zip: true
+
+      - name: Publish
+        if: github.event_name != 'pull_request'
+        run: |
+          local_version=$(cat web-components/package.json | jq .version -r)
+          remote_version=$(npm view @zuhlke/design-system-components version)
+          
+          if [ $local_version != $remote_version ]
+          then
+            npm publish --workspaces --access public
+          fi
