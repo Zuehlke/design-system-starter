@@ -57,7 +57,7 @@ const Template: StoryFn<Table> = ({
   <dss-table
     .data=${data}
     .columns=${columns as any}
-    .menuItems=${menuItems}
+    .menuItems=${menuItems ?? []}
     .customStyles=${customStyles}
     .selectable=${selectable}
     .sortable="${sortable}"
