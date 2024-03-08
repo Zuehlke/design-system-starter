@@ -62,6 +62,8 @@ jobs:
 
       - name: Publish
         if: github.event_name != 'pull_request'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_DEPLOY_TOKEN }}
         run: |
           local_version=$(cat web-components/package.json | jq .version -r)
           remote_version=$(npm view @zuhlke/design-system-components version)
