@@ -1,6 +1,6 @@
 @import "../../components/menuItem/menuItem.links.lightDOM.css";
 
-.dss-link {
+a {
   text-decoration: none;
   color: var(--color-brand-interaction-100);
   font-weight: var(--typography-h4-font-weight);
@@ -10,6 +10,6 @@
   border-radius: var(--radius-4);
 }
 
-.dss-link:hover {
+a:hover {
   background-color: var(--color-brand-interaction-25);
 }
