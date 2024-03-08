@@ -1,6 +1,6 @@
 {
   "name": "@zuhlke/design-system-components",
-  "version": "0.64.0",
+  "version": "0.65.0",
   "type": "module",
   "main": "dist/index.js",
   "web-types": "dist/web-types.json",

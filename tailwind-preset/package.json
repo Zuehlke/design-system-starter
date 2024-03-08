@@ -1,6 +1,6 @@
 {
   "name": "@zuhlke/design-system-tailwind-preset",
-  "version": "0.64.0",
+  "version": "0.65.0",
   "description": "",
   "main": "tailwind.config.js",
   "files": [
