@@ -22,7 +22,7 @@
     "analyze": "lit-analyzer",
     "prebuild": "npm run design-tokens:generate && npm run icons:generate",
     "build": "vite build",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open",
     "prebuild-storybook": "npm run build",
     "build-storybook": "storybook build",
     "test": "vitest run --reporter=verbose --reporter=junit --coverage",
