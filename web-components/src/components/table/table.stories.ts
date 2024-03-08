@@ -1,7 +1,6 @@
 import './table.component';
 import { html } from 'lit-html';
 import { format } from 'date-fns';
-import { makeData, Person, valuationData, ValuationHeader, ValuationRow } from './makeData.story-utils';
 import { classMap } from 'lit-html/directives/class-map.js';
 import DssTable from './table.component';
 import Table, { ColumnDef } from './table.component';
@@ -13,6 +12,7 @@ import docsMenu from './table.menu.md?raw';
 import docsExport from './export/table.export.md?raw';
 import { createRef, ref } from 'lit/directives/ref.js';
 import { withActions } from '@storybook/addon-actions/decorator';
+import { expandablePersonData, Person, simplePersonData } from '../../mockdata.story-utils';
 
 const numberTypes: Intl.NumberFormatPartTypes[] = [
   'minusSign',
@@ -73,7 +73,7 @@ const Template: StoryFn<Table> = ({
 
 export const Default = Template.bind({});
 Default.args = {
-  data: makeData(20),
+  data: simplePersonData.slice(0, 20),
   columns: [
     {
       id: 'firstName',
@@ -102,7 +102,7 @@ CustomRender.parameters = {
   },
 };
 CustomRender.args = {
-  data: makeData(20),
+  data: simplePersonData.slice(0, 20),
   // language=CSS
   customStyles: `
     .wealth {
@@ -204,7 +204,7 @@ Resizable.parameters = {
 };
 Resizable.args = {
   resizable: true,
-  data: makeData(20),
+  data: simplePersonData.slice(0, 20),
   columns: [
     {
       id: 'firstName',
@@ -223,7 +223,7 @@ Resizable.args = {
 export const Selectable = Template.bind({});
 Selectable.args = {
   selectable: true,
-  data: makeData(20),
+  data: simplePersonData.slice(0, 20),
   columns: [
     {
       id: 'firstName',
@@ -241,7 +241,7 @@ Selectable.args = {
 export const Sortable = Template.bind({});
 Sortable.args = {
   sortable: true,
-  data: makeData(20),
+  data: simplePersonData.slice(0, 20),
   columns: [
     {
       id: 'firstName',
@@ -258,7 +258,7 @@ Sortable.args = {
 
 export const DraggableColumns = Template.bind({});
 DraggableColumns.args = {
-  data: makeData(20),
+  data: simplePersonData.slice(0, 20),
   draggableColumns: true,
   columns: [
     {
@@ -283,7 +283,7 @@ DraggableColumns.args = {
 export const Expandable = Template.bind({});
 Expandable.args = {
   sortable: true,
-  data: makeData(20, 3, 2),
+  data: simplePersonData.slice(0, 20),
   columns: [
     {
       id: 'firstName',
@@ -303,40 +303,38 @@ RowGrouping.args = {
   sortable: true,
   filterable: true,
   useRowGrouping: true,
-  data: valuationData,
+  data: expandablePersonData.slice(0, 3),
   columns: [
     {
-      id: 'amount',
-      accessorKey: 'amount',
-      header: 'Amount',
+      id: 'name',
+      accessorFn: (originalRow) =>
+        originalRow.subRows
+          ? originalRow.company
+          : originalRow.firstName + ' ' + originalRow.lastName,
+      header: 'Name',
+      filterFn: 'auto',
+    },
+    {
+      id: 'status',
+      accessorFn: originalRow => originalRow.subRows ? '' : originalRow.status,
+      header: 'Status',
+    },
+    {
+      id: 'age',
+      accessorKey: 'age',
+      header: 'Age',
       filterFn: 'numeric',
       meta: {
         alignRight: true,
       },
     },
-    {
-      id: 'description',
-      accessorFn: (originalRow) => {
-        return 'description' in originalRow ? originalRow.description : '';
-      },
-      header: 'Description',
-    },
-    {
-      id: 'value',
-      accessorKey: 'value',
-      header: 'Value (CHF)',
-      filterFn: 'numeric',
-      meta: {
-        alignRight: true,
-      },
-    },
-  ] as ColumnDef<ValuationHeader | ValuationRow>[],
+  ] as ColumnDef<Person>[],
 };
 
 export const Pagination = Template.bind({});
 Pagination.args = {
   paginate: true,
-  data: makeData(200),
+  data: simplePersonData.slice(0, 200),
   columns: [
     {
       id: 'firstName',
@@ -361,7 +359,7 @@ Filterable.parameters = {
 };
 Filterable.args = {
   filterable: true,
-  data: makeData(100),
+  data: simplePersonData.slice(0, 100),
   columns: [
     {
       id: 'firstName',
@@ -436,7 +434,7 @@ WithMenuItems.parameters = {
 };
 WithMenuItems.args = {
   filterable: true,
-  data: makeData(100),
+  data: simplePersonData.slice(0, 100),
   menuItems: [
     {
       text: 'Edit (action menu option)',
