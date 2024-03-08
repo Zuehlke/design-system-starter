@@ -4,6 +4,7 @@ import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
 import svg from 'vite-plugin-svgo';
 import cem from 'vite-plugin-cem';
+import { customElementJetBrainsPlugin } from 'custom-element-jet-brains-integration';
 
 function getComponentFiles(): string[] {
   return globbySync('./src/components/**/*.component.ts');
@@ -16,7 +17,6 @@ function getComponents(): Record<string, string> {
   }, {});
 }
 
-// TODO: prevent font inlining when this issue is resolved: https://github.com/vitejs/vite/issues/4454
 export default defineConfig({
   build: {
     outDir: 'dist',
@@ -59,6 +59,12 @@ export default defineConfig({
     cem({
       files: [...getComponentFiles()],
       lit: true,
+      packageJson: true,
+      plugins: [
+        customElementJetBrainsPlugin({
+          outdir: 'dist',
+        }) as any,
+      ],
     }),
     dts({
       copyDtsFiles: true,

@@ -11,7 +11,7 @@ input {
   height: var(--dss-checkbox-size-comfortable);
   width: var(--dss-checkbox-size-comfortable);
   border-radius: var(--radius-4);
-  border: var(--size-border-width-medium) solid var(--color-brand-interaction-100);
+  border: var(--border-medium) solid var(--color-brand-interaction-100);
 }
 
 :host([size="compact"]) input {
@@ -22,7 +22,7 @@ input {
 input:focus {
   outline: none;
   border-color: var(--color-brand-interaction-100);
-  box-shadow: var(--effect-glow-focus);
+  box-shadow: var(--effect-shadow-glow-focus);
 }
 
 .filled input {

@@ -49,6 +49,9 @@ module.exports = {
     borderRadius: {
       ...transformLeafsToKeyValuePairs(tokens.radius, 'radius-'),
     },
+    borderWidth: {
+      ...transformLeafsToKeyValuePairs(tokens.border, 'border-'),
+    },
     zIndex: {
       ...transformLeafsToKeyValuePairs(tokens['z-index'], 'z-index-'),
     },

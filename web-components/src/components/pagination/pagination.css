@@ -18,7 +18,7 @@ button {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: var(--size-border-width-small) solid transparent;
+  border: var(--border-small) solid transparent;
   border-radius: var(--radius-4);
   aspect-ratio: 1;
   cursor: pointer;
@@ -37,5 +37,5 @@ button:is(.active-page,:hover,:focus-visible) {
 button:focus-visible {
   outline: none;
   border-color: var(--color-brand-interaction-100);
-  box-shadow: var(--effect-glow-focus);
+  box-shadow: var(--effect-shadow-glow-focus);
 }

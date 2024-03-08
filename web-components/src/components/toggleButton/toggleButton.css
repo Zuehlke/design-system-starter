@@ -1,9 +1,9 @@
 .overlap-border-left {
-  margin-left: calc(-1 * var(--size-border-width-medium));
+  margin-left: calc(-1 * var(--border-medium));
 }
 
 .overlap-border-right {
-  margin-right: calc(-1 * var(--size-border-width-medium));
+  margin-right: calc(-1 * var(--border-medium));
 }
 
 :is(.overlap-border-left,.overlap-border-none,.overlap-border-right)::part(button):focus-visible {

@@ -43,6 +43,11 @@ StyleDictionary.registerTransform({
 });
 
 StyleDictionary.registerTransform({
+  name: `custom/border`,
+  ...require('./transformers/webBorder.cjs'),
+});
+
+StyleDictionary.registerTransform({
   name: 'size/percent',
   type: 'value',
   matcher: token => {
@@ -63,6 +68,7 @@ StyleDictionary.registerTransformGroup({
     'custom/font',
     'custom/gradient',
     'custom/padding',
+    'custom/border',
   ]),
 });
 
