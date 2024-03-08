@@ -1,7 +1,0 @@
-.chooser-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-width: 30rem;
-  gap: var(--size-1-5);
-}
