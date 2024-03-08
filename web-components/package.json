@@ -25,7 +25,7 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "prebuild-storybook": "npm run build",
     "build-storybook": "storybook build",
-    "test": "vitest run --reporter=verbose --reporter=junit --coverage || exit 0",
+    "test": "vitest run --reporter=verbose --reporter=junit --coverage",
     "test:watch": "vitest",
     "design-tokens:generate": "node ./tokens/style-dictionary.cjs",
     "icons:generate": "node src/components/icon/generate-icon-types.js"
