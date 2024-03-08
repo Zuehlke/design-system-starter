@@ -12,6 +12,7 @@ import { InputErrorState, InputSize } from '../input/input.component';
 import { KbdPlugin } from '@easepick/kbd-plugin';
 import { RangePlugin } from '@easepick/range-plugin';
 import { IPickerConfig } from '@easepick/core/dist/types';
+import "../button/button.component";
 
 const DEFAULT_LOCALE = 'de-CH';
 

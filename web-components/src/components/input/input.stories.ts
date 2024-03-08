@@ -10,6 +10,7 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { when } from 'lit-html/directives/when.js';
 import { withActions } from '@storybook/addon-actions/decorator';
 import { labelPlacementOptions } from '../label/label.component';
+import '../button/button.component';
 
 const meta: Meta<Input> = {
   title: 'Components/Input',
@@ -64,7 +65,7 @@ const Template: StoryFn<Input & {
   countToMax,
   labelPlacement,
   hideMessage,
-  loading
+  loading,
 }) => html`
   <dss-input
     label=${label}
