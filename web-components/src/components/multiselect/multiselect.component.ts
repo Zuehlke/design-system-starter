@@ -192,7 +192,7 @@ export default class Multiselect extends BaseElement implements Closable {
                 `
               }
             </dss-menu>
-            <dss-floating>
+          </dss-floating>
         </dss-outside-click>
         <dss-hint .state="${this.errorState}" .message="${this.message}"></dss-hint>
       </div>
