@@ -37,7 +37,7 @@ describe('Table', () => {
     const testData: TestData[] = [{ name: 'TestName', age: 20 }];
 
     const element: HTMLElementTagNameMap['dss-table'] = await fixture(html`
-      <dsc-table .columns=${testColumns as any[]} .data=${testData}></dsc-table>
+      <dss-table .columns=${testColumns as any[]} .data=${testData}></dss-table>
     `);
 
     expect(screen.getByShadowRole('cell')).toHaveTextContent(testData[0].name);
@@ -57,7 +57,7 @@ describe('Table', () => {
     const testData: TestData[] = [{ name: 'TestName', age: 20 }];
 
     const element: HTMLElementTagNameMap['dss-table'] = await fixture(html`
-      <dsc-table .columns=${testColumns as any[]} .data=${testData}></dsc-table>
+      <dss-table .columns=${testColumns as any[]} .data=${testData}></dss-table>
     `);
 
     const tableCells = screen.getAllByShadowRole('cell');
