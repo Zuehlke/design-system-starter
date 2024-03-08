@@ -5,7 +5,7 @@ import { Meta, StoryFn } from '@storybook/web-components';
 import '@lit-labs/virtualizer';
 import { grid } from '@lit-labs/virtualizer/layouts/grid.js';
 import docs from './icon.md?raw';
-import { ICONS } from './icons';
+import { Icons, ICONS } from './icons';
 
 const meta: Meta<Icon> = {
   title: 'Components/Icons',
@@ -66,7 +66,7 @@ const Template: StoryFn<Icon & { color: string }> = ({ color }) => html`
       },
     }) as any}
     .items=${ICONS}
-    .renderItem=${((icon: string) => html`
+    .renderItem=${((icon: Icons) => html`
       <div class="icon-wrapper">
         <div>
           <dss-icon icon=${icon}></dss-icon>

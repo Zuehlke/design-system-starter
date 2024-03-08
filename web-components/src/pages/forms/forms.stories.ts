@@ -57,7 +57,7 @@ const BrowserFormValidationTemplate: StoryFn = () => {
       }}
     >
       <div style="margin-bottom: var(--size-1)">
-        <dss-dropdown label="Currency" name="currency" required="true">
+        <dss-dropdown label="Currency" name="currency" ?required="${true}">
           <dss-menu>
             <dss-menu-item value="chf">
               CHF
@@ -82,7 +82,7 @@ const BrowserFormValidationTemplate: StoryFn = () => {
         <dss-input label="Age">
           <input name="age" type="number" min="16">
         </dss-input>
-        <dss-button-group name="length" label="Length" required="true">
+        <dss-button-group name="length" label="Length" ?required="${true}">
           <dss-toggle-button value="<15">&lt; 15min</dss-toggle-button>
           <dss-toggle-button value="15">15min</dss-toggle-button>
           <dss-toggle-button value="30">30min</dss-toggle-button>
@@ -201,7 +201,7 @@ const LibraryFormValidationTemplate: StoryFn = () => {
           </dss-input>
         `)}
       </div>
-      <dss-button style="margin-top: var(--size-2)" type="secondary" submit="true">
+      <dss-button style="margin-top: var(--size-2)" type="secondary" ?submit="${true}">
         Submit
       </dss-button>
     </form>

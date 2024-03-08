@@ -145,7 +145,7 @@ export default class Multiselect extends BaseElement  implements Closable {
 
         <dss-outside-click .onOutsideClick="${() => this.showDropdown && this.close()}">
           <dss-floating
-            placement="${this.placement}"
+            placement="${ifDefined(this.placement)}"
             .active="${this.showDropdown}"
           >
             <div

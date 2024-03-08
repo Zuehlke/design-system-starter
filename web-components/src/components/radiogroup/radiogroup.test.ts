@@ -17,7 +17,7 @@ describe('RadioGroup', async () => {
     const errorState: InputErrorState = 'error';
     const message = 'Something is wrong';
     await fixture(html`
-      <dss-radiogroup label="Please choose an option" required="true" message="${message}" errorState="${errorState}">
+      <dss-radiogroup label="Please choose an option" ?required="${true}" message="${message}" errorState="${errorState}">
         <dss-radio message="${message}" errorState="${errorState}">
           <input type="radio">
         </dss-radio>
@@ -77,7 +77,7 @@ describe('RadioGroup', async () => {
 
   async function renderWithThreeRequiredRadios() {
     return await fixture(html`
-      <dss-radiogroup label="Please choose an option" required="true">
+      <dss-radiogroup label="Please choose an option" ?required="${true}">
         <dss-radio label='Label 1'>
           <input type="radio" name="option" value="option1">
         </dss-radio>

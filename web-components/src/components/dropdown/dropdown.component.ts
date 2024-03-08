@@ -67,7 +67,7 @@ export default class Dropdown extends BaseElement implements Closable {
   public editable = false;
 
   @property()
-  public value?: string;
+  public value?: any;
 
   @property()
   public icon?: string;
@@ -141,7 +141,7 @@ export default class Dropdown extends BaseElement implements Closable {
       <dss-label label="${ifDefined(this.label)}" ?required="${this.required}"></dss-label>
       <dss-outside-click .onOutsideClick="${this.close}">
         <dss-floating
-          placement="${this.placement}"
+          placement="${ifDefined(this.placement)}"
           ?active="${this.open}"
           .updateOnAnimate="${ifDefined(this.updateOnAnimate)}"
           @focusout="${this.handleFocusOut}"
@@ -151,7 +151,7 @@ export default class Dropdown extends BaseElement implements Closable {
             class="trigger-area"
             role="listbox"
             aria-label="${ifDefined(this.label)}"
-            ?aria-expanded=${this.open}
+            aria-expanded=${this.open}
             @keydown="${this.handleKeyPress}"
             @click="${this.toggle}"
             tabindex="-1"

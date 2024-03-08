@@ -39,6 +39,7 @@ import { ClassInfo, classMap } from 'lit-html/directives/class-map.js';
 import { flexRender, flexRenderWithLoadingState } from './flexRender';
 import { createRef, ref, Ref } from 'lit/directives/ref.js';
 import { DssMenuSelectionEvent } from '../menu/menu.component';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 export type { StyleInfo } from 'lit-html/directives/style-map.js';
 export type { ClassInfo } from 'lit-html/directives/class-map.js';
@@ -356,7 +357,7 @@ export default class Table extends BaseElement<TableEventsPayloadMap> {
           ${headerGroup.headers.map((header) => html`
             <th
               colSpan=${header.colSpan}
-              ?draggable=${this.draggableColumns}
+              draggable=${this.draggableColumns}
               @dragstart=${({ dataTransfer }: DragEvent) => this.handleDragStart(header, dataTransfer)}
               @dragover=${(event: DragEvent) => this.handleDragOver(event)}
               @drop=${({ dataTransfer }: DragEvent) => this.handleDrop(header, dataTransfer)}
@@ -406,7 +407,7 @@ export default class Table extends BaseElement<TableEventsPayloadMap> {
           <td class=${classMap({ 'text-right': header.column.columnDef.meta?.alignRight ?? false })}>
             <dss-column-filter
               .header=${header as any}
-              .translations="${this.translations.columnFilterTranslations}"
+              .translations="${ifDefined(this.translations.columnFilterTranslations)}"
               .disabled="${this.loading}"
             ></dss-column-filter>
           </td>
@@ -601,14 +602,14 @@ export default class Table extends BaseElement<TableEventsPayloadMap> {
         return html`
           <td>
             <dss-button
-              aria-label="${this.translations.clearAllFilters}"
+              aria-label="${ifDefined(this.translations.clearAllFilters)}"
               class="${classMap({
                 'clear-all-button': true,
                 'clear-all-button-hidden': !this.hasActiveFilters(),
               })}"
               @click="${() => this.resetFilters()}"
               type="icon-only"
-              tooltip=${this.translations.clearAllFilters}
+              tooltip=${ifDefined(this.translations.clearAllFilters)}
               .disabled="${this.loading}"
             >
               <dss-icon icon="close-sm" size="small"></dss-icon>

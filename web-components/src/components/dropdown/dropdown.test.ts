@@ -14,7 +14,7 @@ import userEvent from '@testing-library/user-event';
 describe('Dropdown', () => {
   test('when setting required, passes required flag to native input', async () => {
     await fixture(html`
-      <dss-dropdown required="${true}"></dss-dropdown>`);
+      <dss-dropdown ?required="${true}"></dss-dropdown>`);
 
     expect(screen.getByShadowRole('textbox')).toHaveAttribute('required');
   });
@@ -295,7 +295,7 @@ describe('Dropdown', () => {
           <dss-dropdown
             name="dropdown"
             .value="${complexValue}"
-            .toFormValue="${(value: typeof complexValue) => value.id}"
+            .toFormValue="${(value: typeof complexValue) => value.id.toString()}"
           ></dss-dropdown>
         </form>
       `);
