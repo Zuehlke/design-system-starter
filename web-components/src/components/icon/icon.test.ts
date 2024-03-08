@@ -30,11 +30,11 @@ describe('Icon', () => {
       <dss-icon></dss-icon>
     `);
 
-    element.icon = 'star';
+    element.icon = 'stars';
     element.size = 'large';
     await elementUpdated(element);
 
-    expect(element.getAttribute('icon')).toBe('star');
+    expect(element.getAttribute('icon')).toBe('stars');
     expect(element.getAttribute('size')).toBe('large');
   });
 });
