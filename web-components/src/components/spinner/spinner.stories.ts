@@ -5,6 +5,7 @@ import Spinner, { spinnerSizes, spinnerThickness, spinnerTypes } from './spinner
 import { html } from 'lit-html';
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import docs from './spinner.md?raw';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 const meta: Meta<Spinner> = {
   title: 'Components/Spinner',
@@ -34,9 +35,9 @@ const Template: StoryFn<SpinnerStory> = ({
   <div style="height: 4rem; width: 4rem">
     <dss-spinner
       style="${backgroundColor ? `--spinner-background-color: ${backgroundColor}` : ''}"
-      type=${type}
-      size=${size}
-      thickness=${thickness}
+      type=${ifDefined(type)}
+      size=${ifDefined(size)}
+      thickness=${ifDefined(thickness)}
     ></dss-spinner>
   </div>
 `;
