@@ -4,6 +4,7 @@ import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import Draggable, { draggableBounds } from './draggable.component';
 import { html } from 'lit-html';
 import docs from './draggable.md?raw';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 const meta: Meta<Draggable> = {
   title: 'Components/Draggable',
@@ -40,17 +41,14 @@ export const Default: StoryObj<Draggable> = {
     return html`
       ${styles}
       <dss-draggable
-        axis="${axis}"
-        bounds="${bounds}"
-        snap="${snap}"
+        axis="${ifDefined(axis)}"
+        bounds="${ifDefined(bounds)}"
+        snap="${ifDefined(snap)}"
         .position="${position}"
       >
         <div class="draggable">Mooove me</div>
       </dss-draggable>
     `;
-  },
-  args: {
-    axis: 'x',
   },
 };
 
@@ -58,9 +56,9 @@ const HandleTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) =>
   return html`
     ${styles}
     <dss-draggable
-      axis="${axis}"
-      bounds="${bounds}"
-      snap="${snap}"
+      axis="${ifDefined(axis)}"
+      bounds="${ifDefined(bounds)}"
+      snap="${ifDefined(snap)}"
       .position="${position}"
     >
       <div class="draggable">
@@ -91,9 +89,9 @@ const BoundaryTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) 
     </style>
     <div class="bounds">
       <dss-draggable
-        axis="${axis}"
-        bounds="${bounds}"
-        snap="${snap}"
+        axis="${ifDefined(axis)}"
+        bounds="${ifDefined(bounds)}"
+        snap="${ifDefined(snap)}"
         .position="${position}"
       >
         <div class="draggable">Mooove me inside the box</div>
