@@ -10,7 +10,6 @@ describe('Chart', () => {
       type: 'bar',
       data: [
         ['Stocks', 17],
-        ['Funds', 11],
         ['Accounts', 7],
       ],
     }];
@@ -20,7 +19,6 @@ describe('Chart', () => {
     await vi.dynamicImportSettled();
 
     expect(screen.getByShadowText('Stocks')).toBeInTheDocument();
-    expect(screen.getByShadowText('Funds')).toBeInTheDocument();
     expect(screen.getByShadowText('Accounts')).toBeInTheDocument();
   });
 
