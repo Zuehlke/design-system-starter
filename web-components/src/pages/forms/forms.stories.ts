@@ -194,7 +194,7 @@ const LibraryFormValidationTemplate: StoryFn = () => {
         ${when(addEmail, () => html`
           <dss-input
             label="Email"
-            .errorState="${errors['email'] && 'error'}"
+            errorState="${errors['email'] && 'error'}"
             message="${ifDefined(errors['email'])}"
           >
             <input name="email" type="email" required>

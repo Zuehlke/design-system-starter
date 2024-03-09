@@ -182,12 +182,12 @@ export default class Table extends BaseElement<TableEventsPayloadMap> {
     (entries) => {
       entries.forEach((entry) => {
         const relevantElement = entry.target === this.interceptTop.value
-          ? this.headerRef.value!
-          : this.footerRef.value!;
+          ? this.headerRef.value
+          : this.footerRef.value;
         if (entry.isIntersecting) {
-          relevantElement.classList.remove('sticky');
+          relevantElement?.classList.remove('sticky');
         } else {
-          relevantElement.classList.add('sticky');
+          relevantElement?.classList.add('sticky');
         }
       });
     },

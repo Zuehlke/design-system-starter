@@ -518,7 +518,7 @@ export const Export: StoryFn<Table> = ({
       ${ref(tableRef)}
       .data=${data}
       .columns=${columns as any}
-      .menuItems=${menuItems}
+      .menuItems=${menuItems ?? []}
       .customStyles=${customStyles}
       .selectable=${selectable}
       .sortable="${sortable}"
