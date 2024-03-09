@@ -10,7 +10,7 @@ import '../icon/icon.component';
 import '../button/button.component';
 import '../input/input.component';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { placementOptions } from '../../internals/floatingElement/floatingElement';
+import { placements } from '@floating-ui/utils';
 
 const meta: Meta<Flyout> = {
   title: 'Components/Flyout',
@@ -18,7 +18,7 @@ const meta: Meta<Flyout> = {
   argTypes: {
     placement: {
       control: 'select',
-      options: placementOptions,
+      options: placements,
     },
   },
   parameters: {

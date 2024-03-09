@@ -7,11 +7,11 @@ import '../menuItem/menuItem.component';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './dropdown.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { placementOptions } from '../../internals/floatingElement/floatingElement';
 import { inputSizes } from '../input/input.component';
 import { withActions } from '@storybook/addon-actions/decorator';
 import { labelPlacementOptions } from '../label/label.component';
 import { simplePersonData } from '../../mockdata.story-utils';
+import { placements } from '@floating-ui/utils';
 
 const meta: Meta<Dropdown> = {
   title: 'Components/Dropdown',
@@ -19,7 +19,7 @@ const meta: Meta<Dropdown> = {
   argTypes: {
     placement: {
       control: 'select',
-      options: placementOptions,
+      options: placements,
     },
     labelPlacement: {
       options: labelPlacementOptions,
@@ -60,6 +60,7 @@ const Template: StoryFn<DropdownStory> = (
     size,
     multiSelect,
     hideMessage,
+    placement,
   }) => {
   return html`
     <dss-dropdown
@@ -75,6 +76,7 @@ const Template: StoryFn<DropdownStory> = (
       size="${size}"
       ?multiSelect="${multiSelect}"
       ?hideMessage="${hideMessage}"
+      placement="${ifDefined(placement)}"
     >
       <dss-menu>
         ${optionsSlot}
