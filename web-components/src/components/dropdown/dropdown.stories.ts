@@ -4,7 +4,7 @@ import Dropdown from './dropdown.component';
 import '../checkbox/checkbox.component';
 import '../menu/menu.component';
 import '../menuItem/menuItem.component';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './dropdown.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { placementOptions } from '../../internals/floatingElement/floatingElement';
@@ -44,7 +44,8 @@ const meta: Meta<Dropdown> = {
 };
 export default meta;
 
-const Template: StoryFn<Dropdown & { optionsSlot: TemplateResult | TemplateResult[] }> = (
+export type DropdownStory = Dropdown & { optionsSlot: TemplateResult | TemplateResult[] };
+const Template: StoryFn<DropdownStory> = (
   {
     optionsSlot,
     editable,
@@ -83,72 +84,85 @@ const Template: StoryFn<Dropdown & { optionsSlot: TemplateResult | TemplateResul
 };
 
 
-export const Default = Template.bind({});
-Default.args = {
-  optionsSlot: simplePersonData.slice(0, 5)
-    .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
-    .map(person => html`
-      <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
-    `),
+export const Default: StoryObj<DropdownStory> = {
+  render: Template,
+  args: {
+    optionsSlot: simplePersonData.slice(0, 5)
+      .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
+      .map(person => html`
+        <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
+      `),
+  },
 };
 
-const InitialSelectionTemplate: StoryFn<Dropdown> = () => html`
-  <dss-dropdown value="1">
-    <dss-menu>
-      <dss-menu-item value="0">Not selected</dss-menu-item>
-      <dss-menu-item value="1">Initially selected</dss-menu-item>
-    </dss-menu>
-  </dss-dropdown>`;
-export const InitialSelection = InitialSelectionTemplate.bind({});
-
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  label: 'Select option',
-  optionsSlot: simplePersonData.slice(0, 5)
-    .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
-    .map(person => html`
-      <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
-    `),
+export const InitialSelection: StoryObj<DropdownStory> = {
+  render: () => html`
+    <dss-dropdown value="1">
+      <dss-menu>
+        <dss-menu-item value="0">Not selected</dss-menu-item>
+        <dss-menu-item value="1">Initially selected</dss-menu-item>
+      </dss-menu>
+    </dss-dropdown>`,
 };
 
-export const Required = Template.bind({});
-Required.args = {
-  label: 'Required option',
-  required: true,
-  optionsSlot: simplePersonData.slice(0, 5)
-    .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
-    .map(person => html`
-      <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
-    `),
+export const WithLabel: StoryObj<DropdownStory> = {
+  render: Template,
+  args: {
+    label: 'Select option',
+    optionsSlot: simplePersonData.slice(0, 5)
+      .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
+      .map(person => html`
+        <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
+      `),
+  },
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  label: 'Important',
-  errorState: 'warning',
-  message: 'This dropdown is problematic',
-  optionsSlot: simplePersonData.slice(0, 5)
-    .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
-    .map(person => html`
-      <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
-    `),
+export const Required: StoryObj<DropdownStory> = {
+  render: Template,
+  args: {
+    label: 'Required option',
+    required: true,
+    optionsSlot: simplePersonData.slice(0, 5)
+      .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
+      .map(person => html`
+        <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
+      `),
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  label: 'Important',
-  errorState: 'error',
-  message: 'This dropdown is wrong',
-  optionsSlot: simplePersonData.slice(0, 5)
-    .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
-    .map(person => html`
-      <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
-    `),
+export const Warning: StoryObj<DropdownStory> = {
+  render: Template,
+  args: {
+    label: 'Important',
+    errorState: 'warning',
+    message: 'This dropdown is problematic',
+    optionsSlot: simplePersonData.slice(0, 5)
+      .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
+      .map(person => html`
+        <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
+      `),
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
+export const Error: StoryObj<DropdownStory> = {
+  render: Template,
+  args: {
+    label: 'Important',
+    errorState: 'error',
+    message: 'This dropdown is wrong',
+    optionsSlot: simplePersonData.slice(0, 5)
+      .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
+      .map(person => html`
+        <dss-menu-item .value=${person}>${person.lastName}, ${person.firstName}</dss-menu-item>
+      `),
+  },
+};
+
+export const Disabled: StoryObj<DropdownStory> = {
+  render: Template,
+  args: {
+    disabled: true,
+  },
 };
 
 const options = html`
@@ -167,25 +181,31 @@ const options = html`
   </dss-menu-item>
 `;
 
-export const WithIconsAndSeparator = Template.bind({});
-WithIconsAndSeparator.args = {
-  optionsSlot: options,
+export const WithIconsAndSeparator: StoryObj<DropdownStory> = {
+  render: Template,
+  args: {
+    optionsSlot: options,
+  },
 };
 
-export const CustomIcon = Template.bind({});
-CustomIcon.args = {
-  icon: 'settings-ui',
-  optionsSlot: options,
+export const CustomIcon: StoryObj<DropdownStory> = {
+  render: Template,
+  args: {
+    icon: 'settings-ui',
+    optionsSlot: options,
+  },
 };
 
-export const MultiSelect = Template.bind({});
-MultiSelect.args = {
-  multiSelect: true,
-  optionsSlot: simplePersonData.slice(0, 5)
-    .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
-    .map(person => html`
-      <dss-menu-item .value=${person}>
-        <dss-checkbox size="compact" label="${person.firstName} ${person.lastName}"></dss-checkbox>
-      </dss-menu-item>
-    `),
+export const MultiSelect: StoryObj<DropdownStory> = {
+  render: Template,
+  args: {
+    multiSelect: true,
+    optionsSlot: simplePersonData.slice(0, 5)
+      .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }))
+      .map(person => html`
+        <dss-menu-item .value=${person}>
+          <dss-checkbox size="compact" label="${person.firstName} ${person.lastName}"></dss-checkbox>
+        </dss-menu-item>
+      `),
+  },
 };

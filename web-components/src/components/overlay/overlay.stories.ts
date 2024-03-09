@@ -1,4 +1,4 @@
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './overlay.md?raw';
 import { html, TemplateResult } from 'lit-html';
 import Overlay from './overlay.component';
@@ -26,7 +26,8 @@ const meta: Meta<Overlay> = {
 };
 export default meta;
 
-const Template: StoryFn<Overlay & { slots?: TemplateResult }> = ({
+export type OverlayStory = Overlay & { slots?: TemplateResult };
+const Template: StoryFn<OverlayStory> = ({
   header,
   slots,
 }) => {
@@ -46,11 +47,12 @@ const Template: StoryFn<Overlay & { slots?: TemplateResult }> = ({
   `;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  header: 'Header',
-  show: true,
-  slots: html`
+export const Default: StoryObj<OverlayStory> = {
+  render: Template,
+  args: {
+    header: 'Header',
+    show: true,
+    slots: html`
     <p slot="content">
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
       dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
@@ -58,13 +60,15 @@ Default.args = {
     <dss-button slot="footer">Test action 1</dss-button>
     <dss-button slot="footer" type="secondary">Test action 2</dss-button>
   `,
-};
+  }
+}
 
-export const ScrollBehaviour = Template.bind({});
-ScrollBehaviour.args = {
-  header: 'Header',
-  show: true,
-  slots: html`
+export const ScrollBehaviour: StoryObj<OverlayStory> = {
+  render: Template,
+  args: {
+    header: 'Header',
+    show: true,
+    slots: html`
     <p slot="content" style="overflow-y: auto">
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
       dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
@@ -196,13 +200,15 @@ ScrollBehaviour.args = {
     <dss-button slot="footer">Test action 1</dss-button>
     <dss-button slot="footer" type="secondary">Test action 2</dss-button>
   `,
-};
+  }
+}
 
 
-export const Headerless = Template.bind({});
-Headerless.args = {
-  show: true,
-  slots: html`
+export const Headerless: StoryObj<OverlayStory> = {
+  render: Template,
+  args: {
+    show: true,
+    slots: html`
     <p slot="content">
       Begin content.
       <br>
@@ -216,4 +222,5 @@ Headerless.args = {
     <dss-button slot="footer">Test action 1</dss-button>
     <dss-button slot="footer" type="secondary">Test action 2</dss-button>
   `,
-};
+  }
+}

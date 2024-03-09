@@ -1,7 +1,7 @@
 import './tab.component';
 import Tab from './tab.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './tab.md?raw';
 import { useArgs } from '@storybook/addons';
 import { withActions } from '@storybook/addon-actions/decorator';
@@ -46,11 +46,13 @@ const Template: StoryFn<Tab> = ({ title, isVisible }) => {
   `;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  title: 'Tab Title',
-  isActive: false,
-  isVisible: true,
-};
+export const Default: StoryObj<Tab> = {
+  render: Template,
+  args: {
+    title: 'Tab Title',
+    isActive: false,
+    isVisible: true,
+  }
+}
 
 

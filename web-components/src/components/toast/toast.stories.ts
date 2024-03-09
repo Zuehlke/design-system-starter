@@ -1,4 +1,4 @@
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './toast.md?raw';
 import Toast, { toastTypes } from './toast.component';
 import { html } from 'lit';
@@ -42,38 +42,48 @@ const Template: StoryFn<Toast> = ({
   ></dss-toast>
 `;
 
-export const Error = Template.bind({});
-Error.args = {
-  type: 'error',
-  heading: 'Error',
-  message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-};
+export const Error: StoryObj<Toast> = {
+  render: Template,
+  args: {
+    type: 'error',
+    heading: 'Error',
+    message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+  }
+}
 
-export const Warning = Template.bind({});
-Warning.args = {
-  type: 'warning',
-  heading: 'Warning',
-  message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-};
+export const Warning: StoryObj<Toast> = {
+  render: Template,
+  args: {
+    type: 'warning',
+    heading: 'Warning',
+    message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+  }
+}
 
-export const Info = Template.bind({});
-Info.args = {
-  type: 'info',
-  heading: 'Information',
-  message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-};
+export const Info: StoryObj<Toast> = {
+  render: Template,
+  args: {
+    type: 'info',
+    heading: 'Information',
+    message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+  }
+}
 
-export const Closable = Template.bind({});
-Closable.args = {
-  heading: 'Information',
-  message: 'This toast can be closed. This story will not remove the toast on the thrown event.',
-  closable: true,
-};
+export const Closable: StoryObj<Toast> = {
+  render: Template,
+  args: {
+    heading: 'Information',
+    message: 'This toast can be closed. This story will not remove the toast on the thrown event.',
+    closable: true,
+  }
+}
 
-export const IconHidden = Template.bind({});
-IconHidden.args = {
-  type: 'error',
-  heading: 'Error with no icon',
-  message: 'This toast is a regular error toast with the icon hidden.',
-  hideIcon: true,
-};
+export const IconHidden: StoryObj<Toast> = {
+  render: Template,
+  args: {
+    type: 'error',
+    heading: 'Error with no icon',
+    message: 'This toast is a regular error toast with the icon hidden.',
+    hideIcon: true,
+  }
+}

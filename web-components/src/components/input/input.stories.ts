@@ -1,5 +1,5 @@
 import './input.component';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import { html, TemplateResult } from 'lit-html';
 import Input, { inputErrorStates, inputSizes } from './input.component';
 import docs from './input.md?raw';
@@ -43,14 +43,15 @@ const meta: Meta<Input> = {
 };
 export default meta;
 
-const Template: StoryFn<Input & {
+type InputStory = Input & {
   placeholder?: string,
   required?: boolean,
   disabled?: boolean,
   readonly?: boolean,
   inputSlot?: TemplateResult,
   inputButtonSlot?: TemplateResult
-}> = ({
+};
+const Template: StoryFn<InputStory> = ({
   label,
   size,
   placeholder,
@@ -92,50 +93,66 @@ const Template: StoryFn<Input & {
     ${when(inputButtonSlot, () => inputButtonSlot)}
   </dss-input>
 `;
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Label',
-  placeholder: 'Placeholder',
+export const Default: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    label: 'Label',
+    placeholder: 'Placeholder',
+  },
 };
 
-export const Compact = Template.bind({});
-Compact.args = {
-  size: 'compact',
+export const Compact: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    size: 'compact',
+  },
 };
 
-export const Label = Template.bind({});
-Label.args = {
-  label: 'Label',
+export const Label: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    label: 'Label',
+  },
 };
 
-export const Required = Template.bind({});
-Required.args = {
-  label: 'Required Input',
-  required: true,
+export const Required: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    label: 'Required Input',
+    required: true,
+  },
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  label: 'Input with warning',
-  errorState: 'warning',
-  message: 'This input is problematic',
+export const Warning: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    label: 'Input with warning',
+    errorState: 'warning',
+    message: 'This input is problematic',
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  label: 'Input with error',
-  errorState: 'error',
-  message: 'This input is wrong',
+export const Error: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    label: 'Input with error',
+    errorState: 'error',
+    message: 'This input is wrong',
+  },
 };
 
-export const Placeholder = Template.bind({});
-Placeholder.args = {
-  placeholder: 'Placeholder',
+export const Placeholder: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    placeholder: 'Placeholder',
+  },
 };
 
-export const Readonly = Template.bind({});
-Readonly.args = {
-  readonly: true,
+export const Readonly: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    readonly: true,
+  },
 };
 Readonly.parameters = {
   docs: {
@@ -145,9 +162,11 @@ Readonly.parameters = {
   },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
+export const Disabled: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    disabled: true,
+  },
 };
 Disabled.parameters = {
   docs: {
@@ -157,27 +176,33 @@ Disabled.parameters = {
   },
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  loading: true,
+export const Loading: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    loading: true,
+  },
 };
 
-export const InputWithButton = Template.bind({});
-InputWithButton.args = {
-  inputButtonSlot: html`
-    <dss-button slot="input-button" type="icon-only">
-      <dss-icon icon="date"></dss-icon>
-    </dss-button>
-  `,
+export const InputWithButton: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    inputButtonSlot: html`
+      <dss-button slot="input-button" type="icon-only">
+        <dss-icon icon="date"></dss-icon>
+      </dss-button>
+    `,
+  },
 };
 
-export const Textarea = Template.bind({});
-Textarea.args = {
-  label: 'Textarea',
-  countToMax: 255,
-  inputSlot: html`
-    <textarea placeholder="Write some text" ?required="${true}" rows="5" cols="30"></textarea>
-  `,
+export const Textarea: StoryObj<InputStory> = {
+  render: Template,
+  args: {
+    label: 'Textarea',
+    countToMax: 255,
+    inputSlot: html`
+      <textarea placeholder="Write some text" ?required="${true}" rows="5" cols="30"></textarea>
+    `,
+  },
 };
 Textarea.parameters = {
   docs: {

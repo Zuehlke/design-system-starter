@@ -1,6 +1,6 @@
 import './draggable.component';
 import '../icon/icon.component';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import Draggable, { draggableBounds } from './draggable.component';
 import { html } from 'lit-html';
 import docs from './draggable.md?raw';
@@ -28,28 +28,31 @@ const styles = html`
     .draggable {
       display: inline-flex;
       padding: var(--size-1);
-      background-color: var(--color-action-tertiary);
+      background-color: var(--color-brand-interaction-50);
       border: 1px solid var(--color-brand-white-100);
       box-shadow: var(--effect-shadow-close);
     }
   </style>
 `;
 
-const DefaultTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) => {
-  return html`
-    ${styles}
-    <dss-draggable
-      axis="${axis}"
-      bounds="${bounds}"
-      snap="${snap}"
-      .position="${position}"
-    >
-      <div class="draggable">Mooove me</div>
-    </dss-draggable>
-  `;
+export const Default: StoryObj<Draggable> = {
+  render: ({ axis, bounds, snap, position }) => {
+    return html`
+      ${styles}
+      <dss-draggable
+        axis="${axis}"
+        bounds="${bounds}"
+        snap="${snap}"
+        .position="${position}"
+      >
+        <div class="draggable">Mooove me</div>
+      </dss-draggable>
+    `;
+  },
+  args: {
+    axis: 'x',
+  },
 };
-
-export const Default = DefaultTemplate.bind({});
 
 const HandleTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) => {
   return html`
@@ -69,9 +72,11 @@ const HandleTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) =>
   `;
 };
 
-export const HorizontalWithHandle = HandleTemplate.bind({});
-HorizontalWithHandle.args = {
-  axis: 'x',
+export const HorizontalWithHandle: StoryObj<Draggable> = {
+  render: HandleTemplate,
+  args: {
+    axis: 'x',
+  },
 };
 
 const BoundaryTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) => {
@@ -97,8 +102,10 @@ const BoundaryTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) 
   `;
 };
 
-export const WithParentBounds = BoundaryTemplate.bind({});
-WithParentBounds.args = {
-  bounds: 'parent',
+export const WithParentBounds: StoryObj<Draggable> = {
+  render: BoundaryTemplate,
+  args: {
+    bounds: 'parent',
+  },
 };
 

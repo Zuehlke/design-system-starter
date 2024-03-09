@@ -1,7 +1,7 @@
 import './menu.component';
 import '../menuItem/menuItem.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import Menu from './menu.component';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import docs from './menu.md?raw';
@@ -31,9 +31,10 @@ const Template: StoryFn<Menu> = ({ slot }) => html`
   </dss-menu>
 `;
 
-export const Default = Template.bind({});
-Default.args = {
-  slot: `
+export const Default: StoryObj<Menu> = {
+  render: Template,
+  args: {
+    slot: `
     <dss-menu-item>
       <dss-icon icon="pencil" size="medium"></dss-icon>
       Bearbeiten
@@ -43,11 +44,13 @@ Default.args = {
       Kopieren
     </dss-menu-item>
   `,
-};
+  }
+}
 
-export const WithSeparator = Template.bind({});
-WithSeparator.args = {
-  slot: `
+export const WithSeparator: StoryObj<Menu> = {
+  render: Template,
+  args: {
+    slot: `
     <dss-menu-item>
       <dss-icon icon="pencil" size="medium"></dss-icon>
       Bearbeiten
@@ -62,11 +65,13 @@ WithSeparator.args = {
       Einfügen
     </dss-menu-item>
   `,
-};
+  }
+}
 
-export const WithCheckboxes = Template.bind({});
-WithCheckboxes.args = {
-  slot: `
+export const WithCheckboxes: StoryObj<Menu> = {
+  render: Template,
+  args: {
+    slot: `
   <dss-menu-item value="pencil">
     <dss-checkbox size="compact" label="Bearbeiten" tabindex="-1"></dss-checkbox>
   </dss-menu-item>
@@ -78,11 +83,13 @@ WithCheckboxes.args = {
     <dss-checkbox size="compact" label="Einfügen" tabindex="-1"></dss-checkbox>
   </dss-menu-item>
   `,
-};
+  }
+}
 
-export const WithLinks = Template.bind({});
-WithLinks.args = {
-  slot: `
+export const WithLinks: StoryObj<Menu> = {
+  render: Template,
+  args: {
+    slot: `
   <dss-menu-item>
     <a href="#">Notizen im Kundendialog öffnen</a>
   </dss-menu-item>
@@ -93,4 +100,5 @@ WithLinks.args = {
     <a href="#">Notizen löschen</a>
   </dss-menu-item>
   `,
-};
+  }
+}

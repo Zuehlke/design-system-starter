@@ -1,6 +1,6 @@
 import './tabGroup.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './tabGroup.md?raw';
 import TabGroup, { DssTabGroupTabCloseEvent, DssTabGroupTabSelectEvent } from './tabGroup.component';
 import { useState } from '@storybook/addons';
@@ -53,45 +53,47 @@ const Template: StoryFn<TabGroup> = ({ tabs, activeTabTitle, translations }) => 
   `;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  tabs: [
-    {
-      title: '0978944.010',
-    },
-    {
-      title: '7248957.000',
-    },
-  ],
-
-  activeTabTitle: '0978944.010',
+export const Default: StoryObj<TabGroup> = {
+  render: Template,
+  args: {
+    tabs: [
+      {
+        title: '0978944.010',
+      },
+      {
+        title: '7248957.000',
+      },
+    ],
+    activeTabTitle: '0978944.010',
+  },
 };
 
-export const Folded = Template.bind({});
-Folded.args = {
-  tabs: [
-    {
-      title: '0978944.010',
-    },
-    {
-      title: '7248957.000',
-    },
-    {
-      title: '0147852.000',
-    },
-    {
-      title: '0233478.015',
-    },
-    {
-      title: '0233479.015',
-    },
-    {
-      title: '0233480.010',
-    },
-    {
-      title: '0233445.017',
-    },
-  ],
-
-  activeTabTitle: '7248957.000',
+export const Folded: StoryObj<TabGroup> = {
+  render: Template,
+  args: {
+    tabs: [
+      {
+        title: '0978944.010',
+      },
+      {
+        title: '7248957.000',
+      },
+      {
+        title: '0147852.000',
+      },
+      {
+        title: '0233478.015',
+      },
+      {
+        title: '0233479.015',
+      },
+      {
+        title: '0233480.010',
+      },
+      {
+        title: '0233445.017',
+      },
+    ],
+    activeTabTitle: '7248957.000',
+  },
 };

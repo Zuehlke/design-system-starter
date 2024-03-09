@@ -3,7 +3,7 @@ import '../icon/icon.component';
 import '../button/button.component';
 import Spinner, { spinnerSizes, spinnerThickness, spinnerTypes } from './spinner.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import docs from './spinner.md?raw';
 
 const meta: Meta<Spinner> = {
@@ -24,7 +24,8 @@ const meta: Meta<Spinner> = {
 };
 export default meta;
 
-const Template: StoryFn<Spinner & { backgroundColor: string }> = ({
+export type SpinnerStory = Spinner & { backgroundColor: string };
+const Template: StoryFn<SpinnerStory> = ({
   type,
   size,
   thickness,
@@ -40,39 +41,52 @@ const Template: StoryFn<Spinner & { backgroundColor: string }> = ({
   </div>
 `;
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Primary = Template.bind({});
-Primary.args = {
-  type: 'primary',
+export const Default: StoryObj<SpinnerStory> = {
+  render: Template,
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  type: 'secondary',
+export const Primary: StoryObj<SpinnerStory> = {
+  render: Template,
+  args: {
+    type: 'primary',
+  },
 };
 
-export const OverwriteBackground = Template.bind({});
-OverwriteBackground.args = {
-  type: 'secondary',
-  backgroundColor: 'papayawhip',
+export const Secondary: StoryObj<SpinnerStory> = {
+  render: Template,
+  args: {
+    type: 'secondary',
+  },
 };
 
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  type: 'primary',
-  size: 'small',
+export const OverwriteBackground: StoryObj<SpinnerStory> = {
+  render: Template,
+  args: {
+    type: 'secondary',
+    backgroundColor: 'papayawhip',
+  },
 };
 
-export const SizeStretch = Template.bind({});
-SizeStretch.args = {
-  type: 'primary',
-  size: 'stretch',
+export const SizeSmall: StoryObj<SpinnerStory> = {
+  render: Template,
+  args: {
+    type: 'primary',
+    size: 'small',
+  },
 };
 
-export const Thick = Template.bind({});
-Thick.args = {
-  type: 'secondary',
-  thickness: 'thick',
+export const SizeStretch: StoryObj<SpinnerStory> = {
+  render: Template,
+  args: {
+    type: 'primary',
+    size: 'stretch',
+  },
+};
+
+export const Thick: StoryObj<SpinnerStory> = {
+  render: Template,
+  args: {
+    type: 'secondary',
+    thickness: 'thick',
+  },
 };

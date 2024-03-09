@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components';
 import './radiogroup.component';
 import '../radio/radio.component';
 import '../label/label.component';
@@ -31,31 +31,31 @@ const meta: Meta<RadioGroup> = {
 
 export default meta;
 
-const Template: StoryFn<RadioGroup> = ({
-    errorState,
-    message,
-    required,
-    label,
+export const Default: StoryObj<RadioGroup> = {
+  render: ({
+      errorState,
+      message,
+      required,
+      label,
+    },
+  ) => {
+    return html`
+      <dss-radiogroup
+        .errorState="${errorState}"
+        .message="${message}"
+        .label="${label}"
+        ?required="${required}"
+      >
+        <dss-radio class="radio" label="Option 1">
+          <input type="radio" name="option" ?required="${required}">
+        </dss-radio>
+        <dss-radio class="radio" label="Option 2">
+          <input type="radio" name="option" ?required="${required}">
+        </dss-radio>
+        <dss-radio class="radio" label="Option 3">
+          <input type="radio" name="option" ?required="${required}">
+        </dss-radio>
+      </dss-radiogroup>
+    `;
   },
-) => {
-  return html`
-    <dss-radiogroup
-      .errorState="${errorState}"
-      .message="${message}"
-      .label="${label}"
-      ?required="${required}"
-    >
-      <dss-radio class="radio" label="Option 1">
-        <input type="radio" name="option" ?required="${required}">
-      </dss-radio>
-      <dss-radio class="radio" label="Option 2">
-        <input type="radio" name="option" ?required="${required}">
-      </dss-radio>
-      <dss-radio class="radio" label="Option 3">
-        <input type="radio" name="option" ?required="${required}">
-      </dss-radio>
-    </dss-radiogroup>
-  `;
 };
-export const Default = Template.bind({});
-Default.args = {};

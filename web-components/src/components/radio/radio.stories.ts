@@ -1,6 +1,6 @@
 import './radio.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import Radio from './radio.component';
 import docs from './radio.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -43,23 +43,29 @@ const Template: StoryFn<Radio> = ({ label, size, errorState, message, hideMessag
   `;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Radio mit Text',
+export const Default: StoryObj<Radio> = {
+  render: Template,
+  args: {
+    label: 'Radio mit Text',
+  },
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  label: 'Option 1',
-  errorState: 'warning',
-  message: 'This radio is problematic',
+export const Warning: StoryObj<Radio> = {
+  render: Template,
+  args: {
+    label: 'Option 1',
+    errorState: 'warning',
+    message: 'This radio is problematic',
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  label: 'Option 7',
-  errorState: 'error',
-  message: 'This radio is wrong',
+export const Error: StoryObj<Radio> = {
+  render: Template,
+  args: {
+    label: 'Option 7',
+    errorState: 'error',
+    message: 'This radio is wrong',
+  },
 };
 
 const DisabledTemplate: StoryFn<Radio> = ({ label }) => {
@@ -74,9 +80,11 @@ const DisabledTemplate: StoryFn<Radio> = ({ label }) => {
   `;
 };
 
-export const Disabled = DisabledTemplate.bind({});
-Disabled.args = {
-  label: 'Disabled Radio',
+export const Disabled: StoryObj<Radio> = {
+  render: DisabledTemplate,
+  args: {
+    label: 'Disabled Radio',
+  },
 };
 
 const MultipleRadios: StoryFn<Radio> = () => {
@@ -119,7 +127,9 @@ const MultipleRadios: StoryFn<Radio> = () => {
   `;
 };
 
-export const Multiple = MultipleRadios.bind({});
-Multiple.args = {
-  label: 'Multiple Radio Buttons',
+export const Multiple: StoryObj<Radio> = {
+  render: MultipleRadios,
+  args: {
+    label: 'Multiple Radio Buttons',
+  },
 };

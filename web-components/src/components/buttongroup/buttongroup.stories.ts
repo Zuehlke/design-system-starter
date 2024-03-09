@@ -2,7 +2,7 @@ import '../toggleButton/toggleButton.component';
 import './buttongroup.component';
 import ButtonGroup from './buttongroup.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import docs from './buttongroup.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -55,73 +55,88 @@ const Template: StoryFn<ButtonGroup> = ({
   </dss-button-group>
 `;
 
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  label: 'Select this',
-  slot: `
+export const WithLabel: StoryObj<ButtonGroup> = {
+  render: Template,
+  args: {
+    label: 'Select this',
+    slot: `
     <dss-toggle-button value="1">One</dss-toggle-button>
   `,
-};
+  }
+}
 
-export const Required = Template.bind({});
-Required.args = {
-  label: 'Select this',
-  required: true,
-  slot: `
+export const Required: StoryObj<ButtonGroup> = {
+  render: Template,
+  args: {
+    label: 'Select this',
+    required: true,
+    slot: `
     <dss-toggle-button value="1">One</dss-toggle-button>
   `,
-};
+  }
+}
 
-export const Warning = Template.bind({});
-Warning.args = {
-  label: 'Warning',
-  errorState: 'warning',
-  message: 'This button group is problematic',
-  slot: `
+export const Warning: StoryObj<ButtonGroup> = {
+  render: Template,
+  args: {
+    label: 'Warning',
+    errorState: 'warning',
+    message: 'This button group is problematic',
+    slot: `
     <dss-toggle-button value="1">One</dss-toggle-button>
   `,
-};
+  }
+}
 
-export const Error = Template.bind({});
-Error.args = {
-  label: 'Error',
-  errorState: 'error',
-  message: 'This button group is wrong',
-  slot: `
+export const Error: StoryObj<ButtonGroup> = {
+  render: Template,
+  args: {
+    label: 'Error',
+    errorState: 'error',
+    message: 'This button group is wrong',
+    slot: `
     <dss-toggle-button value="1">One</dss-toggle-button>
   `,
-};
+  }
+}
 
-export const TwoButtons = Template.bind({});
-TwoButtons.args = {
-  slot: `
+export const TwoButtons: StoryObj<ButtonGroup> = {
+  render: Template,
+  args: {
+    slot: `
     <dss-toggle-button value="1">One</dss-toggle-button>
     <dss-toggle-button value="2">Two</dss-toggle-button>
   `,
-};
+  }
+}
 
-export const ThreeButtons = Template.bind({});
-ThreeButtons.args = {
-  slot: `
+export const ThreeButtons: StoryObj<ButtonGroup> = {
+  render: Template,
+  args: {
+    slot: `
     <dss-toggle-button value="1">One</dss-toggle-button>
     <dss-toggle-button value="2">Two</dss-toggle-button>
     <dss-toggle-button value="3">Three</dss-toggle-button>
   `,
-};
+  }
+}
 
-export const InitialSelection = Template.bind({});
-InitialSelection.args = {
-  slot: `
+export const InitialSelection: StoryObj<ButtonGroup> = {
+  render: Template,
+  args: {
+    slot: `
     <dss-toggle-button value="1">One</dss-toggle-button>
     <dss-toggle-button value="2">Two</dss-toggle-button>
     <dss-toggle-button value="3">Three</dss-toggle-button>
   `,
-  value: '2',
-};
+    value: '2',
+  }
+}
 
-export const WithIcons = Template.bind({});
-WithIcons.args = {
-  slot: `
+export const WithIcons: StoryObj<ButtonGroup> = {
+  render: Template,
+  args: {
+    slot: `
     <dss-toggle-button value="1">
       <dss-icon icon="add-sm" ></dss-icon>
       One
@@ -131,4 +146,5 @@ WithIcons.args = {
       Two
     </dss-toggle-button>
   `,
-};
+  }
+}
