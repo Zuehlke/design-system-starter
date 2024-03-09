@@ -1,6 +1,6 @@
 import './datepicker.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import Datepicker from './datepicker.component';
 import docs from './datepicker.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -25,7 +25,7 @@ const meta: Meta<Datepicker> = {
       },
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 

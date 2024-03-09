@@ -1,6 +1,6 @@
 import './pagination.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './pagination.md?raw';
 import Pagination from './pagination.component';
 import { withActions } from '@storybook/addon-actions/decorator';
@@ -18,7 +18,7 @@ const meta: Meta<Pagination> = {
       },
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 

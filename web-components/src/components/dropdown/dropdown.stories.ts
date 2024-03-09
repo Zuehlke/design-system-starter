@@ -4,7 +4,7 @@ import Dropdown from './dropdown.component';
 import '../checkbox/checkbox.component';
 import '../menu/menu.component';
 import '../menuItem/menuItem.component';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './dropdown.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { placementOptions } from '../../internals/floatingElement/floatingElement';
@@ -40,7 +40,7 @@ const meta: Meta<Dropdown> = {
       },
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 

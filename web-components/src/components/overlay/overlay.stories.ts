@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './overlay.md?raw';
 import { html, TemplateResult } from 'lit-html';
 import Overlay from './overlay.component';
@@ -22,7 +22,7 @@ const meta: Meta<Overlay> = {
       },
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 

@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import { html } from 'lit-html';
 import Switch from './switch.component';
 import docs from './switch.md?raw';
@@ -18,7 +18,7 @@ const meta: Meta<Switch> = {
       handles: ['change'],
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 
