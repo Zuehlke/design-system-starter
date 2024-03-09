@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import { classMap } from 'lit-html/directives/class-map.js';
 import DssTable from './table.component';
 import Table, { ColumnDef } from './table.component';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './table.md?raw';
 import docsFilterable from './table.filterable.md?raw';
 import docsRendering from './table.rendering.md?raw';
@@ -35,7 +35,7 @@ const meta: Meta<Table> = {
       },
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 

@@ -1,5 +1,5 @@
 import './checkbox.component';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import { html } from 'lit-html';
 import Checkbox from './checkbox.component';
 import docs from './checkbox.md?raw';
@@ -24,7 +24,7 @@ const meta: Meta<Checkbox> = {
       },
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 

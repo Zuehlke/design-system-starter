@@ -1,7 +1,7 @@
 import './tab.component';
 import Tab from './tab.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './tab.md?raw';
 import { useArgs } from '@storybook/addons';
 import { withActions } from '@storybook/addon-actions/decorator';
@@ -24,7 +24,7 @@ const meta: Meta<Tab> = {
       handles: ['click'],
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 

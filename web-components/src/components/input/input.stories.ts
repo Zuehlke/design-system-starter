@@ -1,5 +1,5 @@
 import './input.component';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import { html, TemplateResult } from 'lit-html';
 import Input, { inputErrorStates, inputSizes } from './input.component';
 import docs from './input.md?raw';
@@ -25,7 +25,7 @@ const meta: Meta<Input> = {
       },
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
   argTypes: {
     labelPlacement: {
       options: labelPlacementOptions,

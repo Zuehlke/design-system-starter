@@ -1,6 +1,6 @@
 import './tabGroup.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './tabGroup.md?raw';
 import TabGroup, { DssTabGroupTabCloseEvent, DssTabGroupTabSelectEvent } from './tabGroup.component';
 import { useState } from '@storybook/addons';
@@ -20,7 +20,7 @@ const meta: Meta<TabGroup> = {
       handles: ['dss-tab-group-tab-close', 'dss-tab-group-tab-select'],
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 

@@ -10,7 +10,7 @@
     "@zuhlke/design-system-components": "*"
   },
   "devDependencies": {
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "3.4.1"
   },
   "scripts": {},
   "author": "",

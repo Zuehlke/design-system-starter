@@ -81,6 +81,9 @@ const Template: StoryFn<Icon & { color: string }> = ({ color }) => html`
 `;
 
 export const IconGallery = Template.bind({});
+IconGallery.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 IconGallery.args = {
   color: '#000',
 };

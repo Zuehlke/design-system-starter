@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './toast.md?raw';
 import Toast, { toastTypes } from './toast.component';
 import { html } from 'lit';
@@ -22,7 +22,7 @@ const meta: Meta<Toast> = {
       },
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 

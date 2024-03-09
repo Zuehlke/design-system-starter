@@ -1,6 +1,6 @@
 import './radio.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
 import Radio from './radio.component';
 import docs from './radio.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -24,7 +24,7 @@ const meta: Meta<Radio> = {
       },
     },
   },
-  decorators: [withActions],
+  decorators: [withActions<WebComponentsRenderer>],
 };
 export default meta;
 
