@@ -319,6 +319,31 @@ export const RowGrouping: StoryObj<Table> = {
     filterable: true,
     useRowGrouping: true,
     data: expandablePersonData.slice(0, 3),
+    columns: [
+      {
+        id: 'name',
+        accessorFn: (originalRow) =>
+          originalRow.subRows
+            ? originalRow.company
+            : originalRow.firstName + ' ' + originalRow.lastName,
+        header: 'Name',
+        filterFn: 'auto',
+      },
+      {
+        id: 'status',
+        accessorFn: originalRow => originalRow.subRows ? '' : originalRow.status,
+        header: 'Status',
+      },
+      {
+        id: 'age',
+        accessorKey: 'age',
+        header: 'Age',
+        filterFn: 'numeric',
+        meta: {
+          alignRight: true,
+        },
+      },
+    ] as ColumnDef<Person>[],
   },
 };
 
