@@ -4,7 +4,7 @@
   "type": "module",
   "main": "dist/index.js",
   "web-types": "dist/web-types.json",
-  "customElements": "storybook-static/custom-elements.json",
+  "customElements": "dist/custom-elements.json",
   "exports": {
     ".": "./dist/index.js",
     "./*": "./dist/*"
