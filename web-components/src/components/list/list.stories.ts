@@ -1,7 +1,7 @@
 import './list.component';
 import '../checkbox/checkbox.component';
 import '../icon/icon.component';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
 import docs from './list.md?raw';
 import List from './list.component';
@@ -12,7 +12,7 @@ const meta: Meta<List> = {
   parameters: {
     docs: {
       description: {
-        component: docs
+        component: docs,
       },
     },
   },
@@ -26,6 +26,7 @@ const styles = html`
       border-radius: 0.5rem;
       box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
     }
+
     .entry {
       display: flex;
       padding: var(--size-1) var(--size-2);
@@ -34,14 +35,17 @@ const styles = html`
       align-items: center;
       cursor: pointer;
     }
+
     .entry span {
       width: 100%;
     }
+
     dss-checkbox {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
+
     dss-icon {
       display: flex;
       flex-direction: row;
@@ -51,8 +55,8 @@ const styles = html`
   </style>
 `;
 
-const DefaultTemplate: StoryFn<List> = () => {
-  return html`
+export const Default: StoryObj<List> = {
+  render: () => html`
     ${styles}
     <dss-list class="list">
       <div class="entry" draggable="true">
@@ -68,13 +72,11 @@ const DefaultTemplate: StoryFn<List> = () => {
         <span>Ausgang</span>
       </div>
     </dss-list>
-  `;
+  `,
 };
 
-export const Default = DefaultTemplate.bind({});
-
-const ComplexTemplate: StoryFn<List> = () => {
-  return html`
+export const Complex: StoryObj<List> = {
+  render: () => html`
     ${styles}
     <dss-list class="list">
       <div class="entry" draggable="true">
@@ -98,8 +100,5 @@ const ComplexTemplate: StoryFn<List> = () => {
         <dss-checkbox></dss-checkbox>
       </div>
     </dss-list>
-  `;
+  `,
 };
-
-export const Complex = ComplexTemplate.bind({});
-

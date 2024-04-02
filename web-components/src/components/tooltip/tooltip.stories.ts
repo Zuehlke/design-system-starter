@@ -1,12 +1,12 @@
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
 import './tooltip.component';
 import '../button/button.component';
 import Tooltip from './tooltip.component';
-import { placementOptions } from '../../internals/floatingElement/floatingElement';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import docs from './tooltip.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { placements } from '@floating-ui/utils';
 
 const meta: Meta<Tooltip> = {
   title: 'Components/Tooltip',
@@ -14,7 +14,7 @@ const meta: Meta<Tooltip> = {
   argTypes: {
     placement: {
       control: 'select',
-      options: placementOptions,
+      options: placements,
     },
   },
   parameters: {
@@ -38,17 +38,21 @@ const Template: StoryFn<Tooltip> = ({ slot, placement }) => html`
   </div>
 `;
 
-export const Default = Template.bind({});
-Default.args = {
-  slot: 'My Tooltip',
-};
+export const Default: StoryObj<Tooltip> = {
+  render: Template,
+  args: {
+    slot: 'My Tooltip',
+  }
+}
 
-export const Complex = Template.bind({});
-Complex.args = {
-  slot: `
+export const Complex: StoryObj<Tooltip> = {
+  render: Template,
+  args: {
+    slot: `
     <p style="display: flex; gap: 1rem;">
       <dss-icon icon="pencil"></dss-icon>
       Test 1
     </p>
   `,
-};
+  }
+}

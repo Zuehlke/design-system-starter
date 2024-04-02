@@ -2,7 +2,7 @@ import './menuItem.component';
 import '../menuItem/menuItem.component';
 import '../checkbox/checkbox.component';
 import { html, TemplateResult } from 'lit-html';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import docs from './menuItem.md?raw';
 import MenuItem from './menuItem.component';
 
@@ -20,12 +20,12 @@ const meta: Meta<MenuItem> = {
 };
 export default meta;
 
-const Template: StoryFn<MenuItem & { itemSlot: TemplateResult }> = (
-  {
-    value,
-    selected,
-    itemSlot,
-  }) => {
+export type MenuItemStory = MenuItem & { itemSlot: TemplateResult };
+const Template: StoryFn<MenuItemStory> = ({
+  value,
+  selected,
+  itemSlot,
+}) => {
   return html`
     <style>
       dss-menu-item {
@@ -44,31 +44,41 @@ const Template: StoryFn<MenuItem & { itemSlot: TemplateResult }> = (
   `;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  itemSlot: html`Menu Item`,
+export const Default: StoryObj<MenuItemStory> = {
+  render: Template,
+  args: {
+    itemSlot: html`Menu Item`,
+  },
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  itemSlot: html`
-    <dss-icon icon="pencil" size="medium"></dss-icon>Edit`,
+export const Icon: StoryObj<MenuItemStory> = {
+  render: Template,
+  args: {
+    itemSlot: html`
+      <dss-icon icon="pencil" size="medium"></dss-icon>Edit`,
+  },
 };
 
-export const Checkbox = Template.bind({});
-Checkbox.args = {
-  itemSlot: html`
-    <dss-checkbox size="compact" label="Check"></dss-checkbox>`,
+export const Checkbox: StoryObj<MenuItemStory> = {
+  render: Template,
+  args: {
+    itemSlot: html`
+      <dss-checkbox size="compact" label="Check"></dss-checkbox>`,
+  },
 };
 
-export const PrimitiveValue = Template.bind({});
-PrimitiveValue.args = {
-  value: 'Primitive Value',
-  itemSlot: html`Primitive Value`,
+export const PrimitiveValue: StoryObj<MenuItemStory> = {
+  render: Template,
+  args: {
+    value: 'Primitive Value',
+    itemSlot: html`Primitive Value`,
+  },
 };
 
-export const ObjectValue = Template.bind({});
-ObjectValue.args = {
-  value: { id: 42, text: 'Object Value' },
-  itemSlot: html`Object Value`,
+export const ObjectValue: StoryObj<MenuItemStory> = {
+  render: Template,
+  args: {
+    value: { id: 42, text: 'Object Value' },
+    itemSlot: html`Object Value`,
+  },
 };

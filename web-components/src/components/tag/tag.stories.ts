@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
 import './tag.component';
 import Tag, { tagStates } from './tag.component';
@@ -29,31 +29,41 @@ const Template: StoryFn<Tag> = ({ slot, state }) => html`
 `;
 
 
-export const Default = Template.bind({});
-Default.args = {
-  slot: 'Inaktiv: 12.02.2021',
+export const Default: StoryObj<Tag> = {
+  render: Template,
+  args: {
+    slot: 'Inaktiv: 12.02.2021',
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  slot: 'Error',
-  state: 'error',
+export const Error: StoryObj<Tag> = {
+  render: Template,
+  args: {
+    slot: 'Error',
+    state: 'error',
+  },
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  slot: 'Warning',
-  state: 'warning',
+export const Warning: StoryObj<Tag> = {
+  render: Template,
+  args: {
+    slot: 'Warning',
+    state: 'warning',
+  },
 };
 
-export const Success = Template.bind({});
-Success.args = {
-  slot: 'Success',
-  state: 'success',
+export const Success: StoryObj<Tag> = {
+  render: Template,
+  args: {
+    slot: 'Success',
+    state: 'success',
+  },
 };
 
-export const Info = Template.bind({});
-Info.args = {
-  slot: 'Info',
-  state: 'info',
+export const Info: StoryObj<Tag> = {
+  render: Template,
+  args: {
+    slot: 'Info',
+    state: 'info',
+  },
 };

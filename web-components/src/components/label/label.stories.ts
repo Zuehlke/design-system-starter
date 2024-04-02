@@ -1,5 +1,5 @@
 import docs from './label.md?raw';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import Label from './label.component';
 import { html } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -19,18 +19,22 @@ const meta: Meta<Label> = {
 export default meta;
 
 const Template: StoryFn<Label> = ({ label, required }) => html`
-  <dss-label label="${ifDefined(label)}" required="${ifDefined(required)}"></dss-label>
+  <dss-label label="${ifDefined(label)}" ?required="${required}"></dss-label>
 `;
 
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Standard Label',
+export const Default: StoryObj<Label> = {
+  render: Template,
+  args: {
+    label: 'Standard Label',
+  },
 };
 
-export const RequiredProperty = Template.bind({});
-RequiredProperty.args = {
-  label: 'Required Label',
-  required: true,
+export const RequiredProperty: StoryObj<Label> = {
+  render: Template,
+  args: {
+    label: 'Required Label',
+    required: true,
+  },
 };
 
 const RequiredStyleTemplate: StoryFn<Label> = ({ label }) => html`
@@ -42,7 +46,9 @@ const RequiredStyleTemplate: StoryFn<Label> = ({ label }) => html`
   <dss-label class="required-style" label="${ifDefined(label)}"></dss-label>
 `;
 
-export const RequiredStyle = RequiredStyleTemplate.bind({});
-RequiredStyle.args = {
-  label: 'Required Label',
+export const RequiredStyle: StoryObj<Label> = {
+  render: RequiredStyleTemplate,
+  args: {
+    label: 'Required Label',
+  },
 };

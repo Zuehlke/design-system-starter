@@ -14,7 +14,7 @@ import '../../components/multiselect/multiselect.component';
 import { useState } from '@storybook/addons';
 import * as yup from 'yup';
 import { when } from 'lit-html/directives/when.js';
-import { StoryFn } from '@storybook/web-components';
+import { StoryFn, StoryObj } from '@storybook/web-components';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 export default {
@@ -105,11 +105,13 @@ const BrowserFormValidationTemplate: StoryFn = () => {
   `;
 };
 
-export const BrowserFormValidation = BrowserFormValidationTemplate.bind({});
-BrowserFormValidation.parameters = {
-  docs: {
-    description: {
-      component: browserValidationDocs,
+export const BrowserFormValidation: StoryObj = {
+  render: BrowserFormValidationTemplate,
+  parameters: {
+    docs: {
+      description: {
+        component: browserValidationDocs,
+      },
     },
   },
 };
@@ -211,11 +213,13 @@ const LibraryFormValidationTemplate: StoryFn = () => {
   `;
 };
 
-export const LibraryFormValidation = LibraryFormValidationTemplate.bind({});
-LibraryFormValidation.parameters = {
-  docs: {
-    description: {
-      component: libraryValidationDocs,
+export const LibraryFormValidation: StoryObj = {
+  render: LibraryFormValidationTemplate,
+  parameters: {
+    docs: {
+      description: {
+        component: libraryValidationDocs,
+      },
     },
   },
 };

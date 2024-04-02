@@ -1,4 +1,4 @@
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import { html } from 'lit-html';
 import Switch from './switch.component';
 import docs from './switch.md?raw';
@@ -27,21 +27,28 @@ const Template: StoryFn<Switch> = ({ checked, disabled, loading }) => html`
 `;
 
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
+export const Default: StoryObj<Switch> = {
+  render: Template,
 };
 
-export const LoadingUnchecked = Template.bind({});
-LoadingUnchecked.args = {
-  loading: true,
+export const Disabled: StoryObj<Switch> = {
+  render: Template,
+  args: {
+    disabled: true,
+  },
 };
 
-export const LoadingChecked = Template.bind({});
-LoadingChecked.args = {
-  checked: true,
-  loading: true,
+export const LoadingUnchecked: StoryObj<Switch> = {
+  render: Template,
+  args: {
+    loading: true,
+  },
+};
+
+export const LoadingChecked: StoryObj<Switch> = {
+  render: Template,
+  args: {
+    checked: true,
+    loading: true,
+  },
 };

@@ -1,5 +1,5 @@
 import { html } from 'lit-html';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components';
 import docs from './link.md?raw';
 import '../../components/icon/icon.component';
 
@@ -14,24 +14,23 @@ export default {
   },
 } as Meta<HTMLLinkElement>;
 
-const Template: StoryFn<HTMLLinkElement> = () => html`
-  <a href="/">Link/action within app</a>
-`;
+export const Default: StoryObj<HTMLLinkElement> = {
+  render: () => html`
+    <a href="/">Link/action within app</a>
+  `,
+};
 
-export const Default = Template.bind({});
+export const External: StoryObj<HTMLLinkElement> = {
+  render: () => html`
+    <a href="https://www.google.com/">
+      Link to external application or web page
+      <dss-icon icon="link"></dss-icon>
+    </a>
+  `,
+};
 
-const ExternalTemplate: StoryFn<HTMLLinkElement> = () => html`
-  <a href="https://www.google.com/">
-    Link to external application or web page
-    <dss-icon icon="link"></dss-icon>
-  </a>
-`;
-
-export const External = ExternalTemplate.bind({});
-
-const InternalTemplate: StoryFn<HTMLLinkElement> = () => html`
-  <a href="/">Link/action within app</a>
-`;
-
-export const Internal = InternalTemplate.bind({});
-
+export const Internal: StoryObj<HTMLLinkElement> = {
+  render: () => html`
+    <a href="/">Link/action within app</a>
+  `,
+};

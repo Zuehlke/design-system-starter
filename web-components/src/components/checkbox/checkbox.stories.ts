@@ -1,5 +1,5 @@
 import './checkbox.component';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import { html } from 'lit-html';
 import Checkbox from './checkbox.component';
 import docs from './checkbox.md?raw';
@@ -52,30 +52,38 @@ const Template: StoryFn<Checkbox> = ({
   `;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Checkbox mit Text',
-};
+export const Default: StoryObj<Checkbox> = {
+  render: Template,
+  args: {
+    label: 'Checkbox mit Text',
+  }
+}
 
-export const Required = Template.bind({});
-Required.args = {
-  label: 'Required checkbox',
-  required: true,
-};
+export const Required: StoryObj<Checkbox> = {
+  render: Template,
+  args: {
+    label: 'Required checkbox',
+    required: true,
+  }
+}
 
-export const Warning = Template.bind({});
-Warning.args = {
-  label: 'Warning Checkbox',
-  errorState: 'warning',
-  message: 'This checkbox is problematic',
-};
+export const Warning: StoryObj<Checkbox> = {
+  render: Template,
+  args: {
+    label: 'Warning Checkbox',
+    errorState: 'warning',
+    message: 'This checkbox is problematic',
+  }
+}
 
-export const Error = Template.bind({});
-Error.args = {
-  label: 'Error Checkbox',
-  errorState: 'error',
-  message: 'This checkbox is wrong',
-};
+export const Error: StoryObj<Checkbox> = {
+  render: Template,
+  args: {
+    label: 'Error Checkbox',
+    errorState: 'error',
+    message: 'This checkbox is wrong',
+  }
+}
 
 const DisabledTemplate: StoryFn<Checkbox> = ({ label, size }) => {
   return html`
@@ -92,11 +100,13 @@ const DisabledTemplate: StoryFn<Checkbox> = ({ label, size }) => {
   `;
 };
 
-export const Disabled = DisabledTemplate.bind({});
-Disabled.args = {
-  label: 'Disabled Checkbox',
-  size: 'comfortable',
-};
+export const Disabled: StoryObj<Checkbox> = {
+  render: DisabledTemplate,
+  args: {
+    label: 'Disabled Checkbox',
+    size: 'comfortable',
+  }
+}
 
 const IndeterminateTemplate: StoryFn<Checkbox> = ({ label, size }) => {
   return html`
@@ -104,7 +114,9 @@ const IndeterminateTemplate: StoryFn<Checkbox> = ({ label, size }) => {
   `;
 };
 
-export const Indeterminate = IndeterminateTemplate.bind({});
-Indeterminate.args = {
-  label: 'Indeterminate Checkbox',
-};
+export const Indeterminate: StoryObj<Checkbox> = {
+  render: IndeterminateTemplate,
+  args: {
+    label: 'Indeterminate Checkbox',
+  }
+}

@@ -1,9 +1,10 @@
 import './draggable.component';
 import '../icon/icon.component';
-import { Meta, StoryFn } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import Draggable, { draggableBounds } from './draggable.component';
 import { html } from 'lit-html';
 import docs from './draggable.md?raw';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 const meta: Meta<Draggable> = {
   title: 'Components/Draggable',
@@ -28,36 +29,36 @@ const styles = html`
     .draggable {
       display: inline-flex;
       padding: var(--size-1);
-      background-color: var(--color-action-tertiary);
+      background-color: var(--color-brand-interaction-50);
       border: 1px solid var(--color-brand-white-100);
       box-shadow: var(--effect-shadow-close);
     }
   </style>
 `;
 
-const DefaultTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) => {
-  return html`
-    ${styles}
-    <dss-draggable
-      axis="${axis}"
-      bounds="${bounds}"
-      snap="${snap}"
-      .position="${position}"
-    >
-      <div class="draggable">Mooove me</div>
-    </dss-draggable>
-  `;
+export const Default: StoryObj<Draggable> = {
+  render: ({ axis, bounds, snap, position }) => {
+    return html`
+      ${styles}
+      <dss-draggable
+        axis="${ifDefined(axis)}"
+        bounds="${ifDefined(bounds)}"
+        snap="${ifDefined(snap)}"
+        .position="${position}"
+      >
+        <div class="draggable">Mooove me</div>
+      </dss-draggable>
+    `;
+  },
 };
-
-export const Default = DefaultTemplate.bind({});
 
 const HandleTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) => {
   return html`
     ${styles}
     <dss-draggable
-      axis="${axis}"
-      bounds="${bounds}"
-      snap="${snap}"
+      axis="${ifDefined(axis)}"
+      bounds="${ifDefined(bounds)}"
+      snap="${ifDefined(snap)}"
       .position="${position}"
     >
       <div class="draggable">
@@ -69,9 +70,11 @@ const HandleTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) =>
   `;
 };
 
-export const HorizontalWithHandle = HandleTemplate.bind({});
-HorizontalWithHandle.args = {
-  axis: 'x',
+export const HorizontalWithHandle: StoryObj<Draggable> = {
+  render: HandleTemplate,
+  args: {
+    axis: 'x',
+  },
 };
 
 const BoundaryTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) => {
@@ -86,9 +89,9 @@ const BoundaryTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) 
     </style>
     <div class="bounds">
       <dss-draggable
-        axis="${axis}"
-        bounds="${bounds}"
-        snap="${snap}"
+        axis="${ifDefined(axis)}"
+        bounds="${ifDefined(bounds)}"
+        snap="${ifDefined(snap)}"
         .position="${position}"
       >
         <div class="draggable">Mooove me inside the box</div>
@@ -97,8 +100,10 @@ const BoundaryTemplate: StoryFn<Draggable> = ({ axis, bounds, snap, position }) 
   `;
 };
 
-export const WithParentBounds = BoundaryTemplate.bind({});
-WithParentBounds.args = {
-  bounds: 'parent',
+export const WithParentBounds: StoryObj<Draggable> = {
+  render: BoundaryTemplate,
+  args: {
+    bounds: 'parent',
+  },
 };
 

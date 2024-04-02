@@ -2,7 +2,7 @@ import './button.component';
 import '../icon/icon.component';
 import Button, { buttonSides, buttonSpacings, buttonTypes } from './button.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import docs from './button.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -54,73 +54,95 @@ const Template: StoryFn<Button> = ({
   </dss-button>
 `;
 
-export const Default = Template.bind({});
-Default.args = {
-  slot: 'Primary Button',
+export const Default: StoryObj<Button> = {
+  render: Template,
+  args: {
+    slot: 'Primary Button',
+  },
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  type: 'primary',
-  slot: 'Primary Button',
+export const Primary: StoryObj<Button> = {
+  render: Template,
+  args: {
+    type: 'primary',
+    slot: 'Primary Button',
+  },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  type: 'secondary',
-  slot: '<dss-icon icon="pencil" size="small"></dss-icon> Secondary Button',
+export const Secondary: StoryObj<Button> = {
+  render: Template,
+  args: {
+    type: 'secondary',
+    slot: '<dss-icon icon="pencil" size="small"></dss-icon> Secondary Button',
+  },
 };
 
-export const Ghost = Template.bind({});
-Ghost.args = {
-  type: 'ghost',
-  slot: 'Ghost Button',
+export const Ghost: StoryObj<Button> = {
+  render: Template,
+  args: {
+    type: 'ghost',
+    slot: 'Ghost Button',
+  },
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  spacing: 'icon',
-  type: 'secondary',
-  slot: '<dss-icon icon="chevron-down" size="large"></dss-icon>',
+export const Icon: StoryObj<Button> = {
+  render: Template,
+  args: {
+    spacing: 'icon',
+    type: 'secondary',
+    slot: '<dss-icon icon="chevron-down" size="large"></dss-icon>',
+  },
 };
 
-export const DisabledPrimary = Template.bind({});
-DisabledPrimary.args = {
-  disabled: true,
-  type: 'primary',
-  slot: 'Disabled Button',
+export const DisabledPrimary: StoryObj<Button> = {
+  render: Template,
+  args: {
+    disabled: true,
+    type: 'primary',
+    slot: 'Disabled Button',
+  },
 };
 
-export const DisabledPrimaryWithIcon = Template.bind({});
-DisabledPrimaryWithIcon.args = {
-  disabled: true,
-  type: 'primary',
-  slot: `<dss-icon icon="settings-ui" size="large"></dss-icon> Disabled`,
+export const DisabledPrimaryWithIcon: StoryObj<Button> = {
+  render: Template,
+  args: {
+    disabled: true,
+    type: 'primary',
+    slot: `<dss-icon icon="settings-ui" size="large"></dss-icon> Disabled`,
+  },
 };
 
-export const DisabledSecondary = Template.bind({});
-DisabledSecondary.args = {
-  disabled: true,
-  type: 'secondary',
-  slot: 'Disabled Button',
+export const DisabledSecondary: StoryObj<Button> = {
+  render: Template,
+  args: {
+    disabled: true,
+    type: 'secondary',
+    slot: 'Disabled Button',
+  },
 };
 
-export const DisabledGhost = Template.bind({});
-DisabledGhost.args = {
-  disabled: true,
-  type: 'ghost',
-  slot: 'Disabled Ghost',
+export const DisabledGhost: StoryObj<Button> = {
+  render: Template,
+  args: {
+    disabled: true,
+    type: 'ghost',
+    slot: 'Disabled Ghost',
+  },
 };
 
-export const IconOnlyButton = Template.bind({});
-IconOnlyButton.args = {
-  type: 'icon-only',
-  tooltip: 'Go to start',
-  slot: '<dss-icon icon="close-lg" size="large"></dss-icon>',
+export const IconOnlyButton: StoryObj<Button> = {
+  render: Template,
+  args: {
+    type: 'icon-only',
+    tooltip: 'Go to start',
+    slot: '<dss-icon icon="close-lg" size="large"></dss-icon>',
+  },
 };
 
-export const LoadingButton = Template.bind({});
-LoadingButton.args = {
-  loading: true,
-  slot: 'Loading',
+export const LoadingButton: StoryObj<Button> = {
+  render: Template,
+  args: {
+    loading: true,
+    slot: 'Loading',
+  },
 };

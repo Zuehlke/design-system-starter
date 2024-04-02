@@ -6,6 +6,7 @@ const {
   mergeConfig,
 } = require('vite');
 const svg = require('vite-plugin-svgo');
+const turbosnap = require('vite-plugin-turbosnap');
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -14,23 +15,26 @@ module.exports = {
     name: getAbsolutePath('@storybook/web-components-vite'),
     options: {},
   },
-  async viteFinal(config) {
+  async viteFinal(config, {configType}) {
     return mergeConfig(config, {
-      plugins: [svg({
-        plugins: [{
-          name: 'preset-default',
-          params: {
-            overrides: {
-              convertColors: {
-                currentColor: true,
+      plugins: [
+        ...(configType === 'PRODUCTION' ? [turbosnap({rootDir: config.root ?? process.cwd()})] : []),
+        svg({
+          plugins: [{
+            name: 'preset-default',
+            params: {
+              overrides: {
+                convertColors: {
+                  currentColor: true,
+                },
+                removeViewBox: false,
               },
-              removeViewBox: false,
             },
-          },
-        }, {
-          name: 'removeDimensions',
-        }],
-      })],
+          }, {
+            name: 'removeDimensions',
+          }],
+        }),
+      ],
     });
   },
   docs: {

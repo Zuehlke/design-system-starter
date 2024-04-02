@@ -1,6 +1,6 @@
 import './datepicker.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import Datepicker from './datepicker.component';
 import docs from './datepicker.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -56,48 +56,64 @@ const DatePickerTemplate: StoryFn<Datepicker> = ({
   ></dss-datepicker>
 `;
 
-export const Default = DatePickerTemplate.bind({});
-
-export const WithDefaultValue = DatePickerTemplate.bind({});
-WithDefaultValue.args = {
-  value: '2022-07-06',
+export const Default: StoryObj<Datepicker> = {
+  render: DatePickerTemplate,
 };
 
-export const WithLabel = DatePickerTemplate.bind({});
-WithLabel.args = {
-  label: 'Select Date',
+export const WithDefaultValue: StoryObj<Datepicker> = {
+  render: DatePickerTemplate,
+  args: {
+    value: '2022-07-06',
+  },
 };
 
-export const Range = DatePickerTemplate.bind({});
-Range.args = {
-  label: 'Select Range',
-  range: true,
-  value: '01.04.2023 - 10.04.2023',
+export const WithLabel: StoryObj<Datepicker> = {
+  render: DatePickerTemplate,
+  args: {
+    label: 'Select Date',
+  },
 };
 
-export const Required = DatePickerTemplate.bind({});
-Required.args = {
-  label: 'Required Date',
-  required: true,
+export const Range: StoryObj<Datepicker> = {
+  render: DatePickerTemplate,
+  args: {
+    label: 'Select Range',
+    range: true,
+    value: '01.04.2023 - 10.04.2023',
+  },
 };
 
-export const Warning = DatePickerTemplate.bind({});
-Warning.args = {
-  label: 'Warning',
-  errorState: 'warning',
-  message: 'This date is problematic',
+export const Required: StoryObj<Datepicker> = {
+  render: DatePickerTemplate,
+  args: {
+    label: 'Required Date',
+    required: true,
+  },
 };
 
-export const Error = DatePickerTemplate.bind({});
-Error.args = {
-  label: 'Error',
-  errorState: 'error',
-  message: 'This date is not acceptable',
+export const Warning: StoryObj<Datepicker> = {
+  render: DatePickerTemplate,
+  args: {
+    label: 'Warning',
+    errorState: 'warning',
+    message: 'This date is problematic',
+  },
 };
 
-export const Disabled = DatePickerTemplate.bind({});
-Disabled.args = {
-  label: 'Disabled',
-  value: '2022-07-06',
-  disabled: true,
+export const Error: StoryObj<Datepicker> = {
+  render: DatePickerTemplate,
+  args: {
+    label: 'Error',
+    errorState: 'error',
+    message: 'This date is not acceptable',
+  },
+};
+
+export const Disabled: StoryObj<Datepicker> = {
+  render: DatePickerTemplate,
+  args: {
+    label: 'Disabled',
+    value: '2022-07-06',
+    disabled: true,
+  },
 };

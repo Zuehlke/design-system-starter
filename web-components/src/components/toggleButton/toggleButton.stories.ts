@@ -2,7 +2,7 @@ import './toggleButton.component';
 import '../icon/icon.component';
 import ToggleButton, { toggleButtonTypes } from './toggleButton.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import docs from './toggleButton.md?raw';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -42,13 +42,17 @@ const Template: StoryFn<ToggleButton> = ({ slot, pressed, spacing, disabled, typ
   </dss-toggle-button>
 `;
 
-export const Default = Template.bind({});
-Default.args = {
-  slot: 'Toggle me!',
-};
+export const Default: StoryObj<ToggleButton> = {
+  render: Template,
+  args: {
+    slot: 'Toggle me!',
+  }
+}
 
-export const IconToggle = Template.bind({});
-IconToggle.args = {
-  spacing: 'icon',
-  slot: '<dss-icon icon="home" size="large"></dss-icon>',
-};
+export const IconToggle: StoryObj<ToggleButton> = {
+  render: Template,
+  args: {
+    spacing: 'icon',
+    slot: '<dss-icon icon="home" size="large"></dss-icon>',
+  }
+}

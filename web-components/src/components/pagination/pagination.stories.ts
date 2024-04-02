@@ -1,6 +1,6 @@
 import './pagination.component';
 import { html } from 'lit-html';
-import { Meta, StoryFn, WebComponentsRenderer } from '@storybook/web-components';
+import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './pagination.md?raw';
 import Pagination from './pagination.component';
 import { withActions } from '@storybook/addon-actions/decorator';
@@ -26,8 +26,10 @@ const Template: StoryFn<Pagination> = ({ pageCount, activePageIndex }) => html`
   <dss-pagination .pageCount=${pageCount} .activePageIndex=${activePageIndex}></dss-pagination>
 `;
 
-export const Default = Template.bind({});
-Default.args = {
-  activePageIndex: 0,
-  pageCount: 10,
+export const Default: StoryObj<Pagination> = {
+  render: Template,
+  args: {
+    activePageIndex: 0,
+    pageCount: 10,
+  },
 };
