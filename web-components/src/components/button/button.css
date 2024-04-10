@@ -37,8 +37,8 @@ button:not(:disabled):focus-visible {
 
 .type-primary {
   border-color: var(--color-brand-brand-100);
-  background: var(--color-brand-brand-100);
-  color: var(--color-brand-white-100);
+  background: var(--color-tokens-components-buttons-primary-background);
+  color: var(--color-tokens-components-buttons-default-text);
   --spinner-background-color: var(--color-brand-white-100);
 }
 
@@ -49,8 +49,8 @@ button:not(:disabled):focus-visible {
 
 .type-secondary {
   border-color: var(--color-brand-interaction-100);
-  background: var(--color-brand-interaction-100);
-  color: var(--color-brand-white-100);
+  background: var(--color-tokens-components-buttons-secondary-background);
+  color: var(--color-tokens-components-buttons-default-text);
   --spinner-background-color: var(--color-brand-white-100);
 }
 

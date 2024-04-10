@@ -58,6 +58,48 @@ StyleDictionary.registerTransform({
   },
 });
 
+StyleDictionary.registerFormat({
+  name: 'css/variables',
+  formatter: function(dictionary, config) {
+    const rootTokens = [];
+    const themeTokens = [];
+
+    /* build structure of theme array */
+    this.theme.themes.forEach(element => {themeTokens[element] = [];});
+
+    /* import all not theming variables */
+    dictionary.allProperties
+      .filter((element) => !this.theme.themes.includes(element.attributes.type))
+      .forEach((element) => {
+        rootTokens.push(`--${element.name}: ${element.value};`);
+    });
+    /* import all basic theme variables */
+    dictionary.allProperties
+      .filter((element) => this.theme.basic == element.attributes.type)
+      .forEach((element) => {
+        rootTokens.push(`--${element.name.replace(this.theme.basic+"-","")}: ${element.value};`);  
+    });
+    /* import all themes and not basic theme variables */
+    dictionary.allProperties
+      .filter((element) => this.theme.themes.includes(element.attributes.type)
+      ).forEach((element) => {        
+        this.theme.themes
+          .filter(theme => element.name.includes(theme))
+          .forEach(theme => {
+            themeTokens[element.attributes.type].push(`--${element.name.replace(theme+"-","")}: ${element.value};`);  
+        });
+    });
+
+    return `
+:root { 
+  ${rootTokens.join('\n')}
+}
+${this.theme.themes.map(element => `.${element}{
+  ${themeTokens[element].map(prop => prop).join('\n')}
+}`).join('\n')}`;
+  }
+});
+
 StyleDictionary.registerTransformGroup({
   name: 'custom/css',
   transforms: StyleDictionary.transformGroup['css'].concat([
