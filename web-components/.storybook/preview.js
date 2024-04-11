@@ -30,4 +30,12 @@ export const parameters = {
       order: ['Intro', 'Design Guidelines', 'Design Tokens', '*'],
     },
   },
+  themes: {
+    default: 'light',
+    list: [
+      { name: 'light', class: 'light-theme', color: '#ffffff' },
+      { name: 'dark', class: 'dark-theme', color: '#000000' },
+      { name: 'blub', class: 'blub-theme', color: '#999999' }
+    ],
+  },
 };

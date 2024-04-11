@@ -2147,6 +2147,24 @@
             }
           }
         }
+      },
+      "body": {
+        "background": {
+          "type": "color",
+          "value": "#fafafaff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "mode": "light-theme",
+              "collection": "color-tokens",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "variableId": "VariableID:1130:664",
+              "exportKey": "variables"
+            }
+          }
+        }
       }
     },
     "dark-theme": {
@@ -2280,6 +2298,24 @@
                   "exportKey": "variables"
                 }
               }
+            }
+          }
+        }
+      },
+      "body": {
+        "background": {
+          "type": "color",
+          "value": "#333333ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "mode": "dark-theme",
+              "collection": "color-tokens",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "variableId": "VariableID:1130:664",
+              "exportKey": "variables"
             }
           }
         }
@@ -2419,6 +2455,24 @@
                   "exportKey": "variables"
                 }
               }
+            }
+          }
+        }
+      },
+      "body": {
+        "background": {
+          "type": "color",
+          "value": "#8d8d8dff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "mode": "Blub-Theme",
+              "collection": "color-tokens",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "variableId": "VariableID:1130:664",
+              "exportKey": "variables"
             }
           }
         }
