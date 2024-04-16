@@ -12,8 +12,9 @@
           "destination": "design-tokens.css",
           "format": "css/variables",
           "theme": {
-            "basic": "light-theme",
-            "themes": ["light-theme", "dark-theme", "blub-theme"]
+            "basic": "light",
+            "themes": ["light", "dark"],
+            "replaceNames": ["semantic-tokens"]
           },
           "filter": "validToken",
           "options": {

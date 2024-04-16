@@ -33,9 +33,9 @@ export const parameters = {
   themes: {
     default: 'light',
     list: [
-      { name: 'light', class: 'light-theme', color: '#ffffff' },
-      { name: 'dark', class: 'dark-theme', color: '#000000' },
-      { name: 'blub', class: 'blub-theme', color: '#999999' }
+      { name: 'light', class: 'light', color: '#ffffff' },
+      { name: 'dark', class: 'dark', color: '#000000' },
+      //{ name: 'blub', class: 'blub-theme', color: '#999999' }
     ],
   },
 };

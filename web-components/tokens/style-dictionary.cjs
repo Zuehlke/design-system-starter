@@ -63,6 +63,7 @@ StyleDictionary.registerFormat({
   formatter: function(dictionary, config) {
     const rootTokens = [];
     const themeTokens = [];
+    const replaceRegExp = new RegExp(this.theme.replaceNames.map(prop => prop+"-").join("|"),"gi"); //replace namespaces that come from Figma
 
     /* build structure of theme array */
     this.theme.themes.forEach(element => {themeTokens[element] = [];});
@@ -71,13 +72,13 @@ StyleDictionary.registerFormat({
     dictionary.allProperties
       .filter((element) => !this.theme.themes.includes(element.attributes.type))
       .forEach((element) => {
-        rootTokens.push(`--${element.name}: ${element.value};`);
+        rootTokens.push(`--${element.name.replace(replaceRegExp,"")}: ${element.value};`);
     });
     /* import all basic theme variables */
     dictionary.allProperties
       .filter((element) => this.theme.basic == element.attributes.type)
       .forEach((element) => {
-        rootTokens.push(`--${element.name.replace(this.theme.basic+"-","")}: ${element.value};`);  
+        rootTokens.push(`--${element.name.replace(this.theme.basic+"-","").replace(replaceRegExp,"")}: ${element.value};`);  
     });
     /* import all themes and not basic theme variables */
     dictionary.allProperties
@@ -86,7 +87,7 @@ StyleDictionary.registerFormat({
         this.theme.themes
           .filter(theme => element.name.includes(theme))
           .forEach(theme => {
-            themeTokens[element.attributes.type].push(`--${element.name.replace(theme+"-","")}: ${element.value};`);  
+            themeTokens[element.attributes.type].push(`--${element.name.replace(theme+"-","").replace(replaceRegExp,"")}: ${element.value};`);  
         });
     });
 

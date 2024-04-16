@@ -35,7 +35,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background-color: var(--color-tokens-body-background);
+  background-color: var(--surface-bg-surface-base);
 }
 
 /* A elements that don't have a class get default styles */
