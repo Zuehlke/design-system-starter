@@ -14,7 +14,7 @@
           "theme": {
             "basic": "light",
             "themes": ["light", "dark"],
-            "replaceNames": ["semantic-tokens"]
+            "replaceNames": ["semantic-tokens", "constraints"]
           },
           "filter": "validToken",
           "options": {

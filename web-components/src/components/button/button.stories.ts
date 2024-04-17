@@ -65,7 +65,7 @@ export const Default: StoryObj<Button> = {
   },
 };
 
-export const Primary: StoryObj<Button> = {
+export const Highlight: StoryObj<Button> = {
   render: Template,
   args: {
     type: 'primary',
@@ -73,7 +73,7 @@ export const Primary: StoryObj<Button> = {
   },
 };
 
-export const Secondary: StoryObj<Button> = {
+export const Main: StoryObj<Button> = {
   render: Template,
   args: {
     type: 'secondary',

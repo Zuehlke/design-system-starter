@@ -6,36 +6,36 @@ svg {
   animation: spin 2s cubic-bezier(0.17, 0.73, 0.39, 1.25) infinite;
 }
 
-:host([type="primary"]) circle {
-  stroke: var(--spinner-background-color, var(--color-brand-brand-50));
-}
-
-:host([type="primary"]) path {
-  stroke: var(--color-brand-brand-100);
-}
-
 :host([type="secondary"]) circle {
-  stroke: var(--spinner-background-color, var(--color-brand-interaction-25));
+  stroke: var(--border-default);
 }
 
 :host([type="secondary"]) path {
-  stroke: var(--color-brand-interaction-100);
+  stroke: var(--surface-fg-main);
+}
+
+:host([type="primary"]) circle {
+  stroke: var(--primitive-tokens-colors-brand-primary-1-300);
+}
+
+:host([type="primary"]) path {
+  stroke: var(--surface-fg-highlight);
 }
 
 :host([type="ghost"]) circle {
-  stroke: var(--spinner-background-color, var(--color-universal-grey-10));
+  stroke: transparent;
 }
 
 :host([type="ghost"]) path {
-  stroke: var(--color-universal-grey-75);
+  stroke: var(--border-default);
 }
 
 :host([type="success"]) circle {
-  stroke: var(--spinner-background-color, var(--color-universal-green-25));
+  stroke: var(--primitive-tokens-colors-universal-green-1-200);
 }
 
 :host([type="success"]) path {
-  stroke: var(--color-universal-green-100);
+  stroke: var(--border-success);
 }
 
 :host([size="small"]) {
