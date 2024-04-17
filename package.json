@@ -25,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/addon-designs": "^7.0.0",
     "storybook-addon-themes": "^6.1.0"
   }
 }

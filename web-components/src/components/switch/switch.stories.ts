@@ -17,6 +17,10 @@ const meta: Meta<Switch> = {
     actions: {
       handles: ['change'],
     },
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/erelKF4Udm8mOGjNf6DvhH/Design-System-Showcase?type=design&node-id=5288-2422&mode=design&t=pKlU723mdRHYS6RD-4",
+    },
   },
   decorators: [withActions<WebComponentsRenderer>],
 };

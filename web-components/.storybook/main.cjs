@@ -13,6 +13,7 @@ module.exports = {
   addons: [
     getAbsolutePath('@storybook/addon-links'), 
     getAbsolutePath('@storybook/addon-essentials'), 
+    getAbsolutePath('@storybook/addon-designs'),
     getAbsolutePath('storybook-addon-themes')
   ],
   framework: {

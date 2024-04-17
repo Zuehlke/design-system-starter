@@ -24,6 +24,10 @@ const meta: Meta<Input> = {
         component: docs,
       },
     },
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/erelKF4Udm8mOGjNf6DvhH/Design-System-Showcase?type=design&node-id=5288-3191&mode=design&t=pKlU723mdRHYS6RD-4",
+    },
   },
   decorators: [withActions<WebComponentsRenderer>],
   argTypes: {
