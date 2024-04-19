@@ -1,9 +1,9 @@
 :host {
-  --menu-item-padding: var(--size-1) var(--size-2);
+  --menu-item-padding: var(--constraints-size-1) var(--constraints-size-2);
 
   display: flex;
   padding: var(--menu-item-padding);
-  gap: var(--size-1);
+  gap: var(--constraints-size-1);
 
   align-items: center;
   cursor: pointer;

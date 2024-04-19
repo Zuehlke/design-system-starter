@@ -1,7 +1,7 @@
 .container {
   display: grid;
   align-items: center;
-  grid-column-gap: var(--size-1);
+  grid-column-gap: var(--constraints-size-1);
 }
 
 :host([labelPlacement="top"]) .container {
@@ -32,7 +32,7 @@ dss-hint {
 
 .label {
   display: block;
-  margin-bottom: var(--size-0-5);
+  margin-bottom: var(--constraints-size-0-5);
 }
 
 
@@ -43,26 +43,26 @@ dss-hint {
   align-self: center;
   flex-grow: 1;
   position: relative;
-  min-height: var(--size-4);
-  padding: var(--size-0-5) var(--size-1);
-  border: var(--size-px) solid var(--color-brand-interaction-75);
+  min-height: var(--constraints-size-4);
+  padding: var(--constraints-size-0-5) var(--constraints-size-1);
+  border: var(--constraints-size-px) solid var(--color-brand-interaction-75);
   border-radius: var(--radius-4);
-  gap: var(--size-0-5);
+  gap: var(--constraints-size-0-5);
 }
 
 .pill {
   display: flex;
   align-items: center;
   min-width: max-content;
-  padding: var(--size-0-25) var(--size-1);
+  padding: var(--constraints-size-0-25) var(--constraints-size-1);
   border-radius: 10rem;
   background-color: var(--color-brand-interaction-100);
   color: var(--color-brand-white-100);
-  height: var(--size-3);
+  height: var(--constraints-size-3);
 }
 
 .pill dss-button {
-  margin-left: var(--size-0-5);
+  margin-left: var(--constraints-size-0-5);
 }
 
 dss-icon {
@@ -70,7 +70,7 @@ dss-icon {
 }
 
 dss-floating::part(content) {
-  padding: var(--size-0-5) 0;
+  padding: var(--constraints-size-0-5) 0;
 }
 
 dss-floating::part(container) {
@@ -98,7 +98,7 @@ input:focus {
 li {
   display: flex;
   align-items: center;
-  padding: var(--size-1) var(--size-2);
+  padding: var(--constraints-size-1) var(--constraints-size-2);
   color: var(--color-brand-text-100);
   cursor: pointer;
 }

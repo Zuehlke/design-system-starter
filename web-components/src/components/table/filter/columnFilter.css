@@ -1,5 +1,5 @@
 form {
-  padding: var(--size-1);
+  padding: var(--constraints-size-1);
   display: flex;
   flex-direction: column
 }

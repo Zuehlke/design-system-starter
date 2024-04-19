@@ -1,8 +1,8 @@
 :host {
   display: grid;
   align-items: center;
-  grid-column-gap: var(--size-1);
-  --disabled-dropdown-button-padding: calc(var(--size-0-5) - var(--border-small));
+  grid-column-gap: var(--constraints-size-1);
+  --disabled-dropdown-button-padding: calc(var(--constraints-size-0-5) - var(--border-small));
 }
 
 :host(:not([block])) dss-floating {
@@ -48,7 +48,7 @@ dss-floating::part(container) {
 }
 
 dss-floating::part(content) {
-  padding: var(--size-0-5) 0;
+  padding: var(--constraints-size-0-5) 0;
 }
 
 .trigger-area {

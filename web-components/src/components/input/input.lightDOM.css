@@ -13,7 +13,7 @@ dss-input :is(input, textarea) {
   outline: none;
   border: var(--border-small) solid var(--color-brand-interaction-75);
   border-radius: var(--radius-4);
-  padding: calc(var(--size-0-5) + var(--border-small)) var(--size-1);
+  padding: calc(var(--constraints-size-0-5) + var(--border-small)) var(--constraints-size-1);
   font-size: var(--typography-main-font-size);
   line-height: var(--typography-main-line-height);
 }
@@ -28,7 +28,7 @@ dss-input:has(dss-button:hover) :is(input,textarea):not(:disabled) {
 }
 
 :is(dss-input:has(dss-button), dss-input[loading]) input {
-  padding-right: calc(var(--size-3) + var(--size-1));
+  padding-right: calc(var(--constraints-size-3) + var(--constraints-size-1));
 }
 
 dss-input[size="compact"] input {

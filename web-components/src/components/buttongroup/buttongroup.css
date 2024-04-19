@@ -1,7 +1,7 @@
 :host {
   display: grid;
   align-items: center;
-  grid-column-gap: var(--size-1);
+  grid-column-gap: var(--constraints-size-1);
 }
 
 :host([labelPlacement="top"]) {
@@ -41,6 +41,6 @@ label {
   line-height: var(--typography-small-line-height);
   font-weight: var(--typography-small-font-weight);
   display: block;
-  padding-left: var(--size-1);
-  margin-bottom: var(--size-0-5);
+  padding-left: var(--constraints-size-1);
+  margin-bottom: var(--constraints-size-0-5);
 }

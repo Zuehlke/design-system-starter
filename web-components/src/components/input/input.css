@@ -1,7 +1,7 @@
 :host {
   display: grid;
   align-items: center;
-  grid-column-gap: var(--size-1);
+  grid-column-gap: var(--constraints-size-1);
 }
 
 :host([block]) ::slotted(:is(input,textarea)) {
@@ -54,17 +54,17 @@
 
 ::slotted(dss-button) {
   position: absolute;
-  right: var(--size-0-5);
+  right: var(--constraints-size-0-5);
 }
 
 dss-spinner {
   position: absolute;
-  right: var(--size-1);
+  right: var(--constraints-size-1);
 }
 
 .count {
   display: block;
-  margin-top: var(--size-0-5);
+  margin-top: var(--constraints-size-0-5);
   font-size: var(--typography-small-font-size);
   line-height: var(--typography-small-line-height);
   font-weight: var(--typography-small-font-weight);

@@ -1,7 +1,7 @@
 *::-webkit-scrollbar
 {
-  width: var(--size-1-5);
-  height: var(--size-1-5);
+  width: var(--constraints-size-1-5);
+  height: var(--constraints-size-1-5);
   border-radius: var(--radius-4);
 }
 

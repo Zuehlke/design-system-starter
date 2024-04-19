@@ -39,13 +39,13 @@ svg {
 }
 
 :host([size="small"]) {
-  width: var(--size-2);
-  height: var(--size-2);
+  width: var(--constraints-size-2);
+  height: var(--constraints-size-2);
 }
 
 :host([size="medium"]) {
-  width: var(--size-3);
-  height: var(--size-3);
+  width: var(--constraints-size-3);
+  height: var(--constraints-size-3);
 }
 
 :host([size="stretch"]) {

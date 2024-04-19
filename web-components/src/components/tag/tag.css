@@ -1,13 +1,13 @@
 :host {
-  --vertical-padding: calc(var(--size-0-25) + var(--size-0-5) - var(--size-px));
+  --vertical-padding: calc(var(--constraints-size-0-25) + var(--constraints-size-0-5) - var(--constraints-size-px));
   display: block;
 }
 
 .tag-container {
   border-radius: calc((var(--typography-main-line-height) + (2 * var(--vertical-padding))) / 2);
-  border-width: var(--size-px);
+  border-width: var(--constraints-size-px);
   border-style: solid;
-  padding: var(--vertical-padding) var(--size-2);
+  padding: var(--vertical-padding) var(--constraints-size-2);
 
   min-width: 0;
   max-width: fit-content;

@@ -27,7 +27,7 @@
 }
 
 .floating-content {
-  padding: var(--size-1) var(--size-3);
+  padding: var(--constraints-size-1) var(--constraints-size-3);
   overflow: auto;
 }
 
@@ -35,8 +35,8 @@
   position: absolute;
   z-index: var(--z-index-deep);
   pointer-events: none;
-  width: var(--size-2);
-  height: var(--size-2);
+  width: var(--constraints-size-2);
+  height: var(--constraints-size-2);
   background-color: var(--color-background);
   transform: rotate(45deg);
 }

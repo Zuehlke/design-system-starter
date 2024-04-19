@@ -6,7 +6,7 @@ a {
   font-weight: var(--typography-h4-font-weight);
   font-size: var(--typography-main-font-size);
   display: inline-flex;
-  gap: var(--size-1);
+  gap: var(--constraints-size-1);
   border-radius: var(--radius-4);
 }
 

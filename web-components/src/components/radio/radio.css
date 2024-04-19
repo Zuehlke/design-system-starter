@@ -9,7 +9,7 @@ label {
   display: flex;
   align-items: center;
   cursor: pointer;
-  gap: var(--size-2);
+  gap: var(--constraints-size-2);
 }
 
 .basic-radio {
@@ -35,8 +35,8 @@ label:not(.checked,.disabled,:active):hover .basic-radio {
   position: absolute;
   content: '';
   border-radius: var(--radius-50percent);
-  height: calc(100% - var(--size-0-5));
-  width: calc(100% - var(--size-0-5));
+  height: calc(100% - var(--constraints-size-0-5));
+  width: calc(100% - var(--constraints-size-0-5));
   background-color: var(--color-brand-interaction-100);
 }
 

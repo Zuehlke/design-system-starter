@@ -5,5 +5,5 @@
 ::slotted(hr) {
   border: solid var(--color-universal-grey-50);
   border-width: 1px 0 0 0;
-  margin: 0 var(--size-1);
+  margin: 0 var(--constraints-size-1);
 }

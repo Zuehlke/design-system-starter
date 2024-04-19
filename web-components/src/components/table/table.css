@@ -1,7 +1,7 @@
 :host {
   display: block;
   width: fit-content;
-  --horizontal-cell-padding: var(--size-0-5);
+  --horizontal-cell-padding: var(--constraints-size-0-5);
 }
 
 table {
@@ -30,7 +30,7 @@ thead {
 }
 
 thead th {
-  padding: var(--size-1) var(--horizontal-cell-padding) var(--size-0-5);
+  padding: var(--constraints-size-1) var(--horizontal-cell-padding) var(--constraints-size-0-5);
   font-weight: var(--typography-main-font-weight);
   position: relative;
   white-space: nowrap;
@@ -41,11 +41,11 @@ thead th[draggable=true] {
 }
 
 thead tr:last-of-type th {
-  padding: var(--size-1) var(--horizontal-cell-padding);
+  padding: var(--constraints-size-1) var(--horizontal-cell-padding);
 }
 
 thead td {
-  padding: 0 var(--horizontal-cell-padding) var(--size-1);
+  padding: 0 var(--horizontal-cell-padding) var(--constraints-size-1);
 }
 
 th:has(dss-checkbox) {
@@ -62,7 +62,7 @@ th dss-input {
 }
 
 dss-loading-placeholder {
-  margin: var(--size-0-5);
+  margin: var(--constraints-size-0-5);
 }
 
 :not(.loading) tbody tr.odd > td {
@@ -74,7 +74,7 @@ dss-loading-placeholder {
 }
 
 .group-header {
-  border-bottom: var(--size-px) solid var(--color-universal-grey-50);
+  border-bottom: var(--constraints-size-px) solid var(--color-universal-grey-50);
 }
 
 .group-header td {
@@ -86,16 +86,16 @@ dss-loading-placeholder {
 }
 
 :is(.expand-cell,.first-content)[data-depth="1"] {
-  padding-left: calc(var(--horizontal-cell-padding) + var(--size-1-5));
+  padding-left: calc(var(--horizontal-cell-padding) + var(--constraints-size-1-5));
 }
 
 :is(.expand-cell,.first-content)[data-depth="2"] {
-  padding-left: calc(var(--horizontal-cell-padding) + var(--size-3));
+  padding-left: calc(var(--horizontal-cell-padding) + var(--constraints-size-3));
 }
 
 tbody td,
 tr.column-footer td {
-  padding: var(--size-0-25) var(--horizontal-cell-padding);
+  padding: var(--constraints-size-0-25) var(--horizontal-cell-padding);
   font-weight: var(--typography-small-font-weight);
   white-space: nowrap;
 }
@@ -109,7 +109,7 @@ tbody tr:hover {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: var(--size-0-5)
+  gap: var(--constraints-size-0-5)
 }
 
 .sortable-header:has(dss-icon) {
@@ -150,7 +150,7 @@ tfoot {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-top: var(--size-0-5);
+  padding-top: var(--constraints-size-0-5);
   font-size: var(--typography-small-font-size);
   line-height: var(--typography-small-line-height);
 }
@@ -168,11 +168,11 @@ tfoot {
   z-index: var(--z-index-base);
   top: 0;
   bottom: 0;
-  right: calc(var(--size-0-5) * -1);
-  width: var(--size-px);
+  right: calc(var(--constraints-size-0-5) * -1);
+  width: var(--constraints-size-px);
   background-color: transparent;
-  border-left: var(--size-0-5) solid transparent;
-  border-right: var(--size-0-5) solid transparent;
+  border-left: var(--constraints-size-0-5) solid transparent;
+  border-right: var(--constraints-size-0-5) solid transparent;
   cursor: col-resize;
   user-select: none;
   touch-action: none;
@@ -189,7 +189,7 @@ tfoot {
   bottom: 20%;
   left: 0;
   right: 0;
-  width: var(--size-px);
+  width: var(--constraints-size-px);
   content: '';
   transition: background-color .25s ease;
 }

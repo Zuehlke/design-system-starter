@@ -12,7 +12,7 @@ button {
   align-items: center;
   justify-content: center;
   margin: 0;
-  gap: var(--size-1);
+  gap: var(--constraints-size-1);
   cursor: pointer;
   border: var(--border-medium) solid;
   border-radius: var(--radius-4);
@@ -99,15 +99,15 @@ button:not(:disabled):focus-visible {
 }
 
 .spacing-text {
-  padding: var(--size-0-5) var(--size-2);
+  padding: var(--constraints-size-0-5) var(--constraints-size-2);
 }
 
 .spacing-icon {
-  padding: calc(var(--size-0-5) - var(--border-medium));
+  padding: calc(var(--constraints-size-0-5) - var(--border-medium));
 }
 
 .spacing-icon-only {
-  padding: var(--size-0-25);
+  padding: var(--constraints-size-0-25);
 }
 
 .remove-border-left,

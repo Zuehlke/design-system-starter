@@ -1,8 +1,8 @@
 :host {
-  --toggle-button-size: calc(var(--size-3) - var(--size-0-25));
+  --toggle-button-size: calc(var(--constraints-size-3) - var(--constraints-size-0-25));
   --border-radius: 10rem;
   --transition-duration: .15s;
-  --animation-width: var(--size-1);
+  --animation-width: var(--constraints-size-1);
   --transition-timing-function: ease-in;
   --toggle-button-spacing: 1px;
 
@@ -20,11 +20,11 @@
 
 input {
   appearance: none;
-  border: var(--size-px) solid transparent;
+  border: var(--constraints-size-px) solid transparent;
   margin: 0;
   padding: 0;
-  height: var(--size-3);
-  width: calc(var(--size-5) + var(--size-0-5));
+  height: var(--constraints-size-3);
+  width: calc(var(--constraints-size-5) + var(--constraints-size-0-5));
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: background-color var(--transition-duration) var(--transition-timing-function);
@@ -32,7 +32,7 @@ input {
 
 input:not(:disabled):focus-visible {
   outline: none;
-  border: var(--size-px) solid var(--color-brand-interaction-100);
+  border: var(--constraints-size-px) solid var(--color-brand-interaction-100);
   box-shadow: var(--effect-shadow-glow-focus);
 }
 
