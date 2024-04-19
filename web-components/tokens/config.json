@@ -12,7 +12,7 @@
           "destination": "design-tokens.css",
           "format": "css/variables",
           "theme": {
-            "basic": "light",
+            "default": "light",
             "themes": ["light", "dark"],
             "replaceNames": ["semantic-tokens", "constraints"]
           },

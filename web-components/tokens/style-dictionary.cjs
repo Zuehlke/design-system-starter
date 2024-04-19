@@ -76,9 +76,9 @@ StyleDictionary.registerFormat({
     });
     /* import all basic theme variables */
     dictionary.allProperties
-      .filter((element) => this.theme.basic == element.attributes.type)
+      .filter((element) => this.theme.default == element.attributes.type)
       .forEach((element) => {
-        rootTokens.push(`--${element.name.replace(this.theme.basic+"-","").replace(replaceRegExp,"")}: ${element.value};`);  
+        rootTokens.push(`--${element.name.replace(this.theme.default+"-","").replace(replaceRegExp,"")}: ${element.value};`);  
     });
     /* import all themes and not basic theme variables */
     dictionary.allProperties
