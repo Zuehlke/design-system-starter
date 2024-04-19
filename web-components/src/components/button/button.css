@@ -14,8 +14,8 @@ button {
   margin: 0;
   gap: var(--constraints-size-1);
   cursor: pointer;
-  border: var(--border-medium) solid;
-  border-radius: var(--radius-4);
+  border: var(--constraints-border-medium) solid;
+  border-radius: var(--constraints-radius-small);
   line-height: var(--typography-body-main-line-height);
 }
 
@@ -103,7 +103,7 @@ button:not(:disabled):focus-visible {
 }
 
 .spacing-icon {
-  padding: calc(var(--constraints-size-0-5) - var(--border-medium));
+  padding: calc(var(--constraints-size-0-5) - var(--constraints-border-medium));
 }
 
 .spacing-icon-only {

@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   z-index: var(--z-index-floating);
-  border-radius: var(--radius-4);
+  border-radius: var(--constraints-radius-small);
   background-color: var(--color-background);
   filter: drop-shadow(var(--drop-shadow));
   visibility: hidden;

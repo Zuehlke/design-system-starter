@@ -19,7 +19,7 @@ export default meta;
 
 const Template: StoryFn<Chart> = ({ series }) => html`
   <dss-chart
-    style="height: 37rem; margin: var(--size-3) var(--size-1)"
+    style="height: 37rem; margin: var(--constraints-size-3) var(--constraints-size-1)"
     .series="${series}"
   ></dss-chart>
 `;

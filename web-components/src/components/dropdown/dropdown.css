@@ -2,7 +2,7 @@
   display: grid;
   align-items: center;
   grid-column-gap: var(--constraints-size-1);
-  --disabled-dropdown-button-padding: calc(var(--constraints-size-0-5) - var(--border-small));
+  --disabled-dropdown-button-padding: calc(var(--constraints-size-0-5) - var(--constraints-border-small));
 }
 
 :host(:not([block])) dss-floating {

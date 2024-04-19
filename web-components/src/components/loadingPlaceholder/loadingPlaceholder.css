@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: var(--radius-4);
+  border-radius: var(--constraints-radius-small);
   background-image: linear-gradient(
     90deg,
     var(--color-universal-grey-10) 25%,

@@ -26,7 +26,7 @@ thead {
   top: 0;
   background-color: var(--color-brand-white-100);
   z-index: var(--z-index-sticky-plus-1);
-  border-bottom: var(--border-small) solid var(--color-brand-interaction-100);
+  border-bottom: var(--constraints-border-small) solid var(--color-brand-interaction-100);
 }
 
 thead th {
@@ -101,8 +101,8 @@ tr.column-footer td {
 }
 
 tbody tr:hover {
-  outline: var(--border-small) solid var(--color-brand-interaction-100);
-  outline-offset: calc(var(--border-small) * -1);
+  outline: var(--constraints-border-small) solid var(--color-brand-interaction-100);
+  outline-offset: calc(var(--constraints-border-small) * -1);
 }
 
 .sortable-header {
@@ -143,7 +143,7 @@ tfoot {
   bottom: 0;
   background-color: var(--color-brand-white-100);
   z-index: var(--z-index-sticky);
-  border-top: var(--border-small) solid var(--color-brand-interaction-100);
+  border-top: var(--constraints-border-small) solid var(--color-brand-interaction-100);
 }
 
 .footer {
@@ -208,7 +208,7 @@ tfoot {
 }
 
 .footer-row-border {
-  height: var(--border-small);
+  height: var(--constraints-border-small);
   padding: 0;
   background-color: var(--color-brand-interaction-100);
 }

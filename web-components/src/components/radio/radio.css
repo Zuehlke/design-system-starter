@@ -15,8 +15,8 @@ label {
 .basic-radio {
   flex: none;
   appearance: none;
-  border-radius: var(--radius-50percent);
-  border: var(--border-medium) solid var(--color-brand-interaction-100);
+  border-radius: var(--constraints-radius-50percent);
+  border: var(--constraints-border-medium) solid var(--color-brand-interaction-100);
 }
 
 label:not(.checked,.disabled,:active):hover .basic-radio {
@@ -34,7 +34,7 @@ label:not(.checked,.disabled,:active):hover .basic-radio {
 .checked .basic-radio::before {
   position: absolute;
   content: '';
-  border-radius: var(--radius-50percent);
+  border-radius: var(--constraints-radius-50percent);
   height: calc(100% - var(--constraints-size-0-5));
   width: calc(100% - var(--constraints-size-0-5));
   background-color: var(--color-brand-interaction-100);

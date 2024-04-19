@@ -18,8 +18,8 @@ button {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: var(--border-small) solid transparent;
-  border-radius: var(--radius-4);
+  border: var(--constraints-border-small) solid transparent;
+  border-radius: var(--constraints-radius-small);
   aspect-ratio: 1;
   cursor: pointer;
   width: var(--constraints-size-4);

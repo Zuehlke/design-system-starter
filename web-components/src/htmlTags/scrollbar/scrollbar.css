@@ -2,17 +2,17 @@
 {
   width: var(--constraints-size-1-5);
   height: var(--constraints-size-1-5);
-  border-radius: var(--radius-4);
+  border-radius: var(--constraints-radius-small);
 }
 
 *::-webkit-scrollbar-track
 {
-  border-radius: var(--radius-4);
+  border-radius: var(--constraints-radius-small);
   background-color: var(--color-brand-interaction-10);
 }
 
 *::-webkit-scrollbar-thumb
 {
-  border-radius: var(--radius-4);
+  border-radius: var(--constraints-radius-small);
   background-color: var(--color-brand-interaction-75);
 }

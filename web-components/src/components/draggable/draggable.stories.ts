@@ -28,7 +28,7 @@ const styles = html`
   <style>
     .draggable {
       display: inline-flex;
-      padding: var(--size-1);
+      padding: var(--constraints-size-1);
       background-color: var(--color-brand-interaction-50);
       border: 1px solid var(--color-brand-white-100);
       box-shadow: var(--effect-shadow-close);

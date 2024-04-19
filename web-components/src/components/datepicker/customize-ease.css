@@ -43,5 +43,5 @@
 }
 
 .calendar .days-grid .day {
-  border-radius: var(--radius-4);
+  border-radius: var(--constraints-radius-small);
 }

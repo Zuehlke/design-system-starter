@@ -31,7 +31,7 @@ const Template: StoryFn<TabGroup> = ({ tabs, activeTabTitle, translations }) => 
   return html`
     <style>
       .wrapper {
-        padding-left: var(--size-4);
+        padding-left: var(--constraints-size-4);
       }
     </style>
 

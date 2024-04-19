@@ -11,9 +11,9 @@ dss-input :is(input, textarea)::placeholder {
 dss-input :is(input, textarea) {
   margin: 0;
   outline: none;
-  border: var(--border-small) solid var(--color-brand-interaction-75);
-  border-radius: var(--radius-4);
-  padding: calc(var(--constraints-size-0-5) + var(--border-small)) var(--constraints-size-1);
+  border: var(--constraints-border-small) solid var(--color-brand-interaction-75);
+  border-radius: var(--constraints-radius-small);
+  padding: calc(var(--constraints-size-0-5) + var(--constraints-border-small)) var(--constraints-size-1);
   font-size: var(--typography-body-main-font-size);
   line-height: var(--typography-body-main-line-height);
 }

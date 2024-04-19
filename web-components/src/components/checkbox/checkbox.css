@@ -10,8 +10,8 @@ input {
   padding: 0;
   height: var(--dss-checkbox-size-comfortable);
   width: var(--dss-checkbox-size-comfortable);
-  border-radius: var(--radius-4);
-  border: var(--border-medium) solid var(--color-brand-interaction-100);
+  border-radius: var(--constraints-radius-small);
+  border: var(--constraints-border-medium) solid var(--color-brand-interaction-100);
 }
 
 :host([size="compact"]) input {

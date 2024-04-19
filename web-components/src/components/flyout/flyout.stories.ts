@@ -42,7 +42,7 @@ const Template: StoryFn<FlyoutStory> = ({
 
 }) => {
   return html`
-    <div style="margin-left: var(--size-1); margin-top: var(--size-1);">
+    <div style="margin-left: var(--constraints-size-1); margin-top: var(--constraints-size-1);">
       <dss-flyout
         ?arrow="${arrow}"
         .open="${open}"
@@ -97,7 +97,7 @@ export const ButtonWithForm: StoryObj<FlyoutStory> = {
   render: Template,
   args: {
     contentSlot: html`
-      <form style="padding: var(--size-1);">
+      <form style="padding: var(--constraints-size-1);">
         <dss-input>
           <input placeholder="Search...">
         </dss-input>

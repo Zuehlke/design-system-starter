@@ -56,7 +56,7 @@ const BrowserFormValidationTemplate: StoryFn = () => {
         }
       }}
     >
-      <div style="margin-bottom: var(--size-1)">
+      <div style="margin-bottom: var(--constraints-size-1)">
         <dss-dropdown label="Currency" name="currency" ?required="${true}">
           <dss-menu>
             <dss-menu-item value="chf">
@@ -99,7 +99,7 @@ const BrowserFormValidationTemplate: StoryFn = () => {
         Submit
       </dss-button>
     </form>
-    <div style="margin-top: var(--size-1)">
+    <div style="margin-top: var(--constraints-size-1)">
       <pre>${JSON.stringify(formData, null, 2)}</pre>
     </div>
   `;
@@ -191,7 +191,7 @@ const LibraryFormValidationTemplate: StoryFn = () => {
           label="Email"
           name="addEmail"
           @change="${() => setAddEmail(!addEmail)}"
-          style="margin-top: var(--size-2);"
+          style="margin-top: var(--constraints-size-2);"
         ></dss-checkbox>
         ${when(addEmail, () => html`
           <dss-input
@@ -203,11 +203,11 @@ const LibraryFormValidationTemplate: StoryFn = () => {
           </dss-input>
         `)}
       </div>
-      <dss-button style="margin-top: var(--size-2)" type="secondary" ?submit="${true}">
+      <dss-button style="margin-top: var(--constraints-size-2)" type="secondary" ?submit="${true}">
         Submit
       </dss-button>
     </form>
-    <div style="margin-top: var(--size-1)">
+    <div style="margin-top: var(--constraints-size-1)">
       <pre>${JSON.stringify(formData, null, 2)}</pre>
     </div>
   `;

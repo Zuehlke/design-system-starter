@@ -7,7 +7,7 @@ a {
   font-size: var(--typography-body-main-font-size);
   display: inline-flex;
   gap: var(--constraints-size-1);
-  border-radius: var(--radius-4);
+  border-radius: var(--constraints-radius-small);
 }
 
 a:hover {

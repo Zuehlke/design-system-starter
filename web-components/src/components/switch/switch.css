@@ -1,6 +1,6 @@
 :host {
   --toggle-button-size: calc(var(--constraints-size-3) - var(--constraints-size-0-25));
-  --border-radius: 10rem;
+  --constraints-border-radius: 10rem;
   --transition-duration: .15s;
   --animation-width: var(--constraints-size-1);
   --transition-timing-function: ease-in;
@@ -25,7 +25,7 @@ input {
   padding: 0;
   height: var(--constraints-size-3);
   width: calc(var(--constraints-size-5) + var(--constraints-size-0-5));
-  border-radius: var(--border-radius);
+  border-radius: var(--constraints-border-radius);
   cursor: pointer;
   transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
@@ -69,7 +69,7 @@ input:not(:checked) + .toggle {
   top: var(--toggle-button-spacing);
   bottom: var(--toggle-button-spacing);
   background-color: var(--color-brand-white-100);
-  border-radius: var(--border-radius);
+  border-radius: var(--constraints-border-radius);
   height: var(--toggle-button-size);
   width: var(--toggle-button-size);
   box-shadow: var(--effect-shadow-close);

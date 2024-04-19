@@ -87,7 +87,7 @@ export const Error: StoryObj<Checkbox> = {
 
 const DisabledTemplate: StoryFn<Checkbox> = ({ label, size }) => {
   return html`
-    <div style="display: flex; flex-direction: column; gap: var(--size-0-5)">
+    <div style="display: flex; flex-direction: column; gap: var(--constraints-size-0-5)">
       <dss-checkbox label=${label} size=${size} ?disabled=${true}></dss-checkbox>
       <dss-checkbox label=${`${label} — checked`} size=${size} ?disabled=${true} ?checked=${true}></dss-checkbox>
       <dss-checkbox

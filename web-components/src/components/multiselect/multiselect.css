@@ -46,7 +46,7 @@ dss-hint {
   min-height: var(--constraints-size-4);
   padding: var(--constraints-size-0-5) var(--constraints-size-1);
   border: var(--constraints-size-px) solid var(--color-brand-interaction-75);
-  border-radius: var(--radius-4);
+  border-radius: var(--constraints-radius-small);
   gap: var(--constraints-size-0-5);
 }
 

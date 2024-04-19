@@ -29,8 +29,8 @@ const styles = html`
 
     .entry {
       display: flex;
-      padding: var(--size-1) var(--size-2);
-      gap: var(--size-1);
+      padding: var(--constraints-size-1) var(--constraints-size-2);
+      gap: var(--constraints-size-1);
 
       align-items: center;
       cursor: pointer;
