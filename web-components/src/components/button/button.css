@@ -16,6 +16,7 @@ button {
   cursor: pointer;
   border: var(--border-small) solid;
   border-radius: var(--radius-small);
+  min-height: 32px;
 }
 
 button:disabled {
@@ -30,7 +31,7 @@ button:disabled:focus-visible {
 }
 
 button:not(:disabled):focus-visible {
-  outline: var(--color-brand-interaction-100) solid var(--border-medium);
+  outline: transparent; /*var(--color-brand-interaction-100) solid var(--border-medium);*/
   box-shadow: var(--effect-shadow-glow-focus);
 }
 
@@ -48,22 +49,35 @@ button:not(:disabled):hover {
 .type-primary:not(:disabled,:active):hover {
   border-color: var(--surface-fg-highlight-border);
   background: var(--surface-fg-highlight-hover);
+  border-color: transparent;
+}
+
+.type-primary:not(:disabled):active {
+  border-color: var(--surface-fg-highlight);
 }
 
 .type-secondary {
-  border-color: var(--surface-fg-main-border);
+  border-color: var(--surface-fg-main);
   background: var(--surface-fg-main);
   color: var(--surface-fg-main-content);
   --spinner-background-color: var(--surface-fg-main-content);
 }
 
 .type-secondary:not(:disabled,:active):hover {
-  border-color: var(--surface-fg-main-border);
+  border-color: var(--surface-fg-main-hover);
   background: var(--surface-fg-main-hover);
+}
+
+.type-secondary:not(:disabled):active {
+  border-color: var(--surface-fg-main);
 }
 
 .type-ghost {
   border-color: var(--surface-fg-ghost-border);
+}
+
+.type-ghost:not(:disabled):active {
+  outline: var(--surface-fg-ghost-border) solid var(--border-small);
 }
 
 .type-icon-only {
@@ -98,7 +112,7 @@ button:not(:disabled):hover {
 
 .type-icon-only:not(:disabled,:active):hover,
 .type-ghost:not(:disabled,:active):hover {
-  background: var(--color-brand-interaction-25);
+  background: var(--surface-fg-ghost-hover);
 }
 
 .spacing-text {

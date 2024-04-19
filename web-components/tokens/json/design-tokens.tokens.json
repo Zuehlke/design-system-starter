@@ -9,7 +9,7 @@
         "stops": [
           {
             "position": 0,
-            "color": "#995b9cff"
+            "color": "#cf2c79ff"
           },
           {
             "position": 1,
@@ -54,7 +54,7 @@
       "brand-100": {
         "description": "",
         "type": "color",
-        "value": "#995b9cff",
+        "value": "#cf2c79ff",
         "blendMode": "normal",
         "extensions": {
           "org.lukasoppermann.figmaDesignTokens": {
@@ -1394,6 +1394,69 @@
     }
   },
   "constraints": {
+    "radius": {
+      "small": {
+        "type": "dimension",
+        "value": 4,
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "mode": "Mode 1",
+            "collection": "constraints",
+            "scopes": [
+              "ALL_SCOPES",
+              "ALL_SCOPES"
+            ],
+            "variableId": "VariableID:6760:2",
+            "exportKey": "variables"
+          }
+        }
+      },
+      "medium": {
+        "type": "dimension",
+        "value": 16,
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "mode": "Mode 1",
+            "collection": "constraints",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "variableId": "VariableID:6760:38",
+            "exportKey": "variables"
+          }
+        }
+      },
+      "50percent": {
+        "type": "dimension",
+        "value": 9999,
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "mode": "Mode 1",
+            "collection": "constraints",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "variableId": "VariableID:6760:39",
+            "exportKey": "variables"
+          }
+        }
+      },
+      "none": {
+        "type": "dimension",
+        "value": 0,
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "mode": "Mode 1",
+            "collection": "constraints",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "variableId": "VariableID:6760:40",
+            "exportKey": "variables"
+          }
+        }
+      }
+    },
     "small": {
       "type": "dimension",
       "value": 4,
@@ -1592,68 +1655,6 @@
           }
         }
       }
-    },
-    "radius": {
-      "small": {
-        "type": "dimension",
-        "value": 4,
-        "extensions": {
-          "org.lukasoppermann.figmaDesignTokens": {
-            "mode": "Mode 1",
-            "collection": "constraints",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "variableId": "VariableID:6760:2",
-            "exportKey": "variables"
-          }
-        }
-      },
-      "medium": {
-        "type": "dimension",
-        "value": 16,
-        "extensions": {
-          "org.lukasoppermann.figmaDesignTokens": {
-            "mode": "Mode 1",
-            "collection": "constraints",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "variableId": "VariableID:6760:38",
-            "exportKey": "variables"
-          }
-        }
-      },
-      "50percent": {
-        "type": "dimension",
-        "value": 9999,
-        "extensions": {
-          "org.lukasoppermann.figmaDesignTokens": {
-            "mode": "Mode 1",
-            "collection": "constraints",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "variableId": "VariableID:6760:39",
-            "exportKey": "variables"
-          }
-        }
-      },
-      "none": {
-        "type": "dimension",
-        "value": 0,
-        "extensions": {
-          "org.lukasoppermann.figmaDesignTokens": {
-            "mode": "Mode 1",
-            "collection": "constraints",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "variableId": "VariableID:6760:40",
-            "exportKey": "variables"
-          }
-        }
-      }
     }
   },
   "primitive-tokens": {
@@ -1662,7 +1663,7 @@
         "primary": {
           "1-500": {
             "type": "color",
-            "value": "#995b9cff",
+            "value": "#cf2c79ff",
             "blendMode": "normal",
             "extensions": {
               "org.lukasoppermann.figmaDesignTokens": {
@@ -1774,7 +1775,7 @@
           },
           "1-700": {
             "type": "color",
-            "value": "#643c67ff",
+            "value": "#c12871ff",
             "blendMode": "normal",
             "extensions": {
               "org.lukasoppermann.figmaDesignTokens": {
@@ -2978,7 +2979,7 @@
       },
       "surface": {
         "bg": {
-          "default": {
+          "default-white": {
             "type": "color",
             "value": "{primitive-tokens.colors.base.1-white}",
             "extensions": {
@@ -3199,6 +3200,21 @@
                   "ALL_SCOPES"
                 ],
                 "variableId": "VariableID:6769:9891",
+                "exportKey": "variables"
+              }
+            }
+          },
+          "default-gray": {
+            "type": "color",
+            "value": "{primitive-tokens.colors.base.1-100}",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "mode": "light",
+                "collection": "semantic-tokens",
+                "scopes": [
+                  "ALL_SCOPES"
+                ],
+                "variableId": "VariableID:6828:12016",
                 "exportKey": "variables"
               }
             }
@@ -3745,7 +3761,7 @@
       },
       "surface": {
         "bg": {
-          "default": {
+          "default-white": {
             "type": "color",
             "value": "{primitive-tokens.colors.base.1-black}",
             "extensions": {
@@ -3969,6 +3985,21 @@
                 "exportKey": "variables"
               }
             }
+          },
+          "default-gray": {
+            "type": "color",
+            "value": "{primitive-tokens.colors.base.1-black}",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "mode": "dark",
+                "collection": "semantic-tokens",
+                "scopes": [
+                  "ALL_SCOPES"
+                ],
+                "variableId": "VariableID:6828:12016",
+                "exportKey": "variables"
+              }
+            }
           }
         },
         "fg": {
@@ -4064,7 +4095,7 @@
           },
           "ghost": {
             "type": "color",
-            "value": "{semantic-tokens.dark.surface.bg.default}",
+            "value": "{semantic-tokens.dark.surface.bg.default-white}",
             "extensions": {
               "org.lukasoppermann.figmaDesignTokens": {
                 "mode": "dark",
