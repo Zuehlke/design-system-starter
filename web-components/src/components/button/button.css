@@ -16,7 +16,7 @@ button {
   cursor: pointer;
   border: var(--border-medium) solid;
   border-radius: var(--radius-4);
-  line-height: var(--typography-main-line-height);
+  line-height: var(--typography-body-main-line-height);
 }
 
 button:disabled {

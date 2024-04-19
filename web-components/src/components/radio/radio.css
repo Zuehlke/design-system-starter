@@ -97,13 +97,13 @@ label:not(.checked,.disabled,:active):hover .basic-radio {
 }
 
 .compact {
-  width: var(--typography-main-line-height);
-  height: var(--typography-main-line-height);
+  width: var(--typography-body-main-line-height);
+  height: var(--typography-body-main-line-height);
 }
 
 .comfortable {
-  height: var(--typography-h3-line-height);
-  width: var(--typography-h3-line-height);
+  height: var(--typography-header-h3-line-height);
+  width: var(--typography-header-h3-line-height);
 }
 
 .focused .basic-radio {

@@ -8,8 +8,8 @@ table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  font-size: var(--typography-small-font-size);
-  line-height: var(--typography-small-line-height);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
   text-align: left;
 }
 
@@ -31,7 +31,7 @@ thead {
 
 thead th {
   padding: var(--constraints-size-1) var(--horizontal-cell-padding) var(--constraints-size-0-5);
-  font-weight: var(--typography-main-font-weight);
+  font-weight: var(--typography-body-main-font-weight);
   position: relative;
   white-space: nowrap;
 }
@@ -78,7 +78,7 @@ dss-loading-placeholder {
 }
 
 .group-header td {
-  font-weight: var(--typography-h4-font-weight);
+  font-weight: var(--typography-header-h4-font-weight);
 }
 
 .group-header .first-content {
@@ -96,7 +96,7 @@ dss-loading-placeholder {
 tbody td,
 tr.column-footer td {
   padding: var(--constraints-size-0-25) var(--horizontal-cell-padding);
-  font-weight: var(--typography-small-font-weight);
+  font-weight: var(--typography-body-small-font-weight);
   white-space: nowrap;
 }
 
@@ -113,7 +113,7 @@ tbody tr:hover {
 }
 
 .sortable-header:has(dss-icon) {
-  font-weight: var(--typography-h4-font-weight);
+  font-weight: var(--typography-header-h4-font-weight);
 }
 
 .sort-icon {
@@ -151,8 +151,8 @@ tfoot {
   justify-content: space-between;
   align-items: flex-start;
   padding-top: var(--constraints-size-0-5);
-  font-size: var(--typography-small-font-size);
-  line-height: var(--typography-small-line-height);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
 }
 
 .footer-information {

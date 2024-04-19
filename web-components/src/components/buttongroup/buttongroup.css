@@ -37,9 +37,9 @@
 
 label {
   color: var(--color-brand-interaction-100);
-  font-size: var(--typography-small-font-size);
-  line-height: var(--typography-small-line-height);
-  font-weight: var(--typography-small-font-weight);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
+  font-weight: var(--typography-body-small-font-weight);
   display: block;
   padding-left: var(--constraints-size-1);
   margin-bottom: var(--constraints-size-0-5);

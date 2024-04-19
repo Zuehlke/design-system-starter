@@ -16,14 +16,14 @@
 }
 
 .highcharts-container {
-  font: var(--font-main);
+  font: var(--font-body-main);
 }
 
 .highcharts-data-label text {
   fill: var(--color-brand-white-100);
-  font-size: var(--typography-main-font-size);
-  line-height: var(--typography-main-line-height);
-  font-weight: var(--typography-main-font-weight);
+  font-size: var(--typography-body-main-font-size);
+  line-height: var(--typography-body-main-line-height);
+  font-weight: var(--typography-body-main-font-weight);
 }
 
 .highcharts-grid-line {
@@ -33,9 +33,9 @@
 
 .highcharts-legend-item > text {
   fill: var(--color-brand-text-100);
-  font-size: var(--typography-main-font-size);
-  line-height: var(--typography-main-line-height);
-  font-weight: var(--typography-main-font-weight);
+  font-size: var(--typography-body-main-font-size);
+  line-height: var(--typography-body-main-line-height);
+  font-weight: var(--typography-body-main-font-weight);
 }
 
 :is(.highcharts-bar-series, .highcharts-column-series) .highcharts-point-hover {
@@ -64,5 +64,5 @@
 }
 
 .highcharts-y-axis-labels {
-  font-size: var(--typography-main-font-size);
+  font-size: var(--typography-body-main-font-size);
 }

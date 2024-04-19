@@ -4,7 +4,7 @@
 }
 
 .tag-container {
-  border-radius: calc((var(--typography-main-line-height) + (2 * var(--vertical-padding))) / 2);
+  border-radius: calc((var(--typography-body-main-line-height) + (2 * var(--vertical-padding))) / 2);
   border-width: var(--constraints-size-px);
   border-style: solid;
   padding: var(--vertical-padding) var(--constraints-size-2);

@@ -3,8 +3,8 @@
 a {
   text-decoration: none;
   color: var(--color-brand-interaction-100);
-  font-weight: var(--typography-h4-font-weight);
-  font-size: var(--typography-main-font-size);
+  font-weight: var(--typography-header-h4-font-weight);
+  font-size: var(--typography-body-main-font-size);
   display: inline-flex;
   gap: var(--constraints-size-1);
   border-radius: var(--radius-4);
