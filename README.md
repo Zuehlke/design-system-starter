@@ -40,4 +40,5 @@ If you're interested in more detailed aspects of the project, head over to our `
 
 * [Design Tokens](docs/design-tokens.md)
 * [Font Handling](docs/font-handling.md)
+* [Shadow DOM](docs/shadow-dom.md)
 
