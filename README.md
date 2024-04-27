@@ -1,31 +1,43 @@
 # Design System Starter
+![verify and publish workflow](https://github.com/Zuehlke/design-system-starter/actions/workflows/verify-and-publish.yml/badge.svg)
 
-## Installation
-To use this package install it via:
-```bash
-npm install design-systems-showcase
-```
+The **Design System Starter** provides a solid foundation for creating your own custom design system. This starter kit 
+aims to streamline the process of building consistent and visually appealing web components for your design system.
 
-Additionally to set up the proper CSS variables, you need to import the provided `style.css` file in your project.
-```css
-@import "@zuhlke/design-system-components/style.css";
-```
+## Key Features
 
-## Usage
-To use all components, you can import the `index.js` file in your project:
-```js
-import '@zuhlke/design-system-components';
-```
+### 🚀 Design Token Integration
+Use design tokens as basis of all components. Provided in this repository you can see our design tokens that have been
+exported from Figma with [this plugin](https://www.figma.com/community/plugin/888356646278934516/design-tokens).
+Keep your design system consistent across your tools, devices and frameworks.
 
-If you want to lazy load the components where you need them, you can import the individual components:
-```js
-import '@zuhlke/design-system-components/src/components/button/button.component';
-```
+### ♻️ Web Components
+All components in this starter kit are built as reusable web components. Build them once, use them everywhere in any 
+framework. With the use of Shadow DOM these components look the same wherever you use them without any side effects on 
+your surrounding application.
 
-## Development
+### 📖 Storybook Integration
+We use Storybook to showcase all components in isolation. This is a great starting point for new users of your design
+system to discover and play around with the existing components and their API.
 
-### Initial setup
-Check out the Git repository and run the following commands in the root directory to get started:
-* `npm install`
-* `npm run build --workspace web-components`
-* `npm run storybook --workspace web-components`
+## Getting started
+
+1. Installation:
+   * Clone this repository: `git clone https://github.com/Zuehlke/design-system-starter.git`
+   * Install dependencies: `npm install --workspaces`
+   * Build the project: `npm run build --workspace web-components`
+
+2. Usage:
+   * Run: `npm run storybook --workspace web-components` to boot up a local storybook dev server
+   * Explore the design tokens in the `web-components/tokens` directory
+
+3. Contributing:
+   * Contributions are welcome! Fork the repo and submit pull requests.
+
+## Further Documentation
+
+If you're interested in more detailed aspects of the project, head over to our `docs` directory:
+
+* [Design Tokens](docs/design-tokens.md)
+* [Font Handling](docs/font-handling.md)
+
