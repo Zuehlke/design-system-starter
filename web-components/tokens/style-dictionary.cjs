@@ -58,6 +58,49 @@ StyleDictionary.registerTransform({
   },
 });
 
+StyleDictionary.registerFormat({
+  name: 'css/variables',
+  formatter: function(dictionary, config) {
+    const rootTokens = [];
+    const themeTokens = [];
+    const replaceRegExp = new RegExp(this.theme.replaceNames.map(prop => prop+"-").join("|"),"gi"); //replace namespaces that come from Figma
+
+    /* build structure of theme array */
+    this.theme.themes.forEach(element => {themeTokens[element] = [];});
+
+    /* import all not theming variables */
+    dictionary.allProperties
+      .filter((element) => !this.theme.themes.includes(element.attributes.type))
+      .forEach((element) => {
+        rootTokens.push(`--${element.name.replace(replaceRegExp,"")}: ${element.value};`);
+    });
+    /* import all basic theme variables */
+    dictionary.allProperties
+      .filter((element) => this.theme.default == element.attributes.type)
+      .forEach((element) => {
+        rootTokens.push(`--${element.name.replace(this.theme.default+"-","").replace(replaceRegExp,"")}: ${element.value};`);  
+    });
+    /* import all themes and not basic theme variables */
+    dictionary.allProperties
+      .filter((element) => this.theme.themes.includes(element.attributes.type)
+      ).forEach((element) => {        
+        this.theme.themes
+          .filter(theme => element.name.includes(theme))
+          .forEach(theme => {
+            themeTokens[element.attributes.type].push(`--${element.name.replace(theme+"-","").replace(replaceRegExp,"")}: ${element.value};`);  
+        });
+    });
+
+    return `
+:root { 
+  ${rootTokens.join('\n')}
+}
+${this.theme.themes.map(element => `.${element}{
+  ${themeTokens[element].map(prop => prop).join('\n')}
+}`).join('\n')}`;
+  }
+});
+
 StyleDictionary.registerTransformGroup({
   name: 'custom/css',
   transforms: StyleDictionary.transformGroup['css'].concat([

@@ -11,6 +11,11 @@
         {
           "destination": "design-tokens.css",
           "format": "css/variables",
+          "theme": {
+            "default": "light",
+            "themes": ["light", "dark"],
+            "replaceNames": ["semantic-tokens", "constraints"]
+          },
           "filter": "validToken",
           "options": {
             "showFileHeader": false

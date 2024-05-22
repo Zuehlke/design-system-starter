@@ -10,7 +10,11 @@ const turbosnap = require('vite-plugin-turbosnap');
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-essentials')],
+  addons: [
+    getAbsolutePath('@storybook/addon-links'), 
+    getAbsolutePath('@storybook/addon-essentials'), 
+    getAbsolutePath('storybook-addon-themes')
+  ],
   framework: {
     name: getAbsolutePath('@storybook/web-components-vite'),
     options: {},
