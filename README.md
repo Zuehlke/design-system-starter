@@ -4,6 +4,8 @@
 The **Design System Starter** provides a solid foundation for creating your own custom design system. This starter kit 
 aims to streamline the process of building consistent and visually appealing web components for your design system.
 
+It's built on the vision of a circular workflow between UX designers and developers, keeping both parties in sync and provide a setup for a close collaboration.
+
 ## Key Features
 
 ### 🚀 Design Token Integration
