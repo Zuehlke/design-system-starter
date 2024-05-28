@@ -44,7 +44,7 @@ export default class Chart extends BaseElement {
 
   protected render() {
     return html`
-      <div class="chart-container"></div>
+      <div class="chart-container" data-chromatic="ignore"></div>
     `;
   }
 
