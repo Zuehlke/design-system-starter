@@ -39,6 +39,7 @@
     ]
   },
   "include": [
+    ".storybook/*.ts",
     "**/*.ts"
   ],
   "exclude": [

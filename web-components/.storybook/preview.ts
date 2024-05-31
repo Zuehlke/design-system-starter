@@ -1,13 +1,14 @@
 import 'element-internals-polyfill';
-import {setCustomElementsManifest} from '@storybook/web-components';
+import { setCustomElementsManifest } from '@storybook/web-components';
 import customElements from '../dist/custom-elements.json';
 import '../src/rootStyles/style.css';
 
 customElements?.modules?.forEach((module) => {
   module?.declarations?.forEach(declaration => {
-    Object.keys(declaration).forEach(key => {
-      if (Array.isArray(declaration[key])) {
-        declaration[key] = declaration[key].filter((member) => !member.privacy?.includes('private'));
+    Object.entries(declaration).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        // @ts-ignore
+        declaration[key] = value.filter((member) => !member.privacy?.includes('private'));
       }
     });
   });

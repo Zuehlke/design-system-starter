@@ -1,9 +1,6 @@
-const {
-  dirname,
-  join,
-} = require('path');
+import { dirname, join } from 'path';
 
-module.exports = {
+export default {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-essentials')],
   framework: {
@@ -15,6 +12,6 @@ module.exports = {
   },
 };
 
-function getAbsolutePath(value) {
+function getAbsolutePath(value: string) {
   return dirname(require.resolve(join(value, 'package.json')));
 }
