@@ -1,7 +1,6 @@
-import {Canvas, ColorItem, ColorPalette, Meta} from '@storybook/blocks';
+import {ColorItem, ColorPalette, Meta} from '@storybook/blocks';
 import tokens from './design-tokens.json';
 import {groupColors} from './color.helper';
-import * as TypographyStories from './typography.stories';
 
 <Meta title="Design Tokens"/>
 
@@ -50,7 +49,31 @@ properties.
 
 ## Typography
 
-<Canvas of={TypographyStories.Default}/>
+**Typeface:** {tokens.typography.main.fontFamily.value}
+
+<div style={{ display: 'grid', gridTemplateColumns: 'max-content auto', gap: tokens.size['2'].value, alignItems: 'center' }}>
+  {Object.entries(tokens.typography)
+    .map(([name, token]) => (
+      <div style={{ display: 'contents' }}>
+        <small>{name}</small>
+        <div
+          style={{
+            fontFamily: token.fontFamily.value,
+            fontSize: token.fontSize.value,
+            lineHeight: token.lineHeight.value,
+            fontWeight: token.fontWeight.value,
+            fontStretch: token.fontStretch.value,
+            letterSpacing: token.letterSpacing.value,
+            textDecorationStyle: token.textDecoration.value,
+            paragraphIndent: token.paragraphIndent.value,
+          }}
+        >
+          The quick brown fox jumps over the lazy dog
+        </div>
+      </div>
+    ))
+  }
+</div>
 
 ## Sizes
 
