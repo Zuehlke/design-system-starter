@@ -1,7 +1,7 @@
-import React from 'react';
 import {Canvas, ColorItem, ColorPalette, Meta} from '@storybook/blocks';
 import tokens from './design-tokens.json';
-import {groupColors} from "./color.helper";
+import {groupColors} from './color.helper';
+import * as TypographyStories from './typography.stories';
 
 <Meta title="Design Tokens"/>
 
@@ -50,16 +50,7 @@ properties.
 
 ## Typography
 
-<Canvas>
-  <div>
-    <small>Small</small>
-    <p>Text</p>
-    <h4>h4. Title</h4>
-    <h3>h3. Title</h3>
-    <h2>h2. Title</h2>
-    <h1>h1. Title</h1>
-  </div>
-</Canvas>
+<Canvas of={TypographyStories.Default}/>
 
 ## Sizes
 
@@ -84,7 +75,7 @@ properties.
       return numberA - numberB;
     })
     .map(([, token], index) => (
-      <React.Fragment key={index}>
+      <div key={index} style={{display: 'contents'}}>
         <div
           style={{
             width: token.value,
@@ -94,7 +85,7 @@ properties.
         />
         <span>{token.value}</span>
         <strong>{token.name}</strong>
-      </React.Fragment>
+      </div>
     ))}
 </div>
 
@@ -109,7 +100,7 @@ properties.
   }}
 >
   {Object.entries(tokens.effect).map(([name, token], index) => (
-    <React.Fragment key={index}>
+    <div key={index} style={{display: 'contents'}}>
       <div
         style={{
           boxShadow: token.value,
@@ -120,7 +111,7 @@ properties.
         }}
       />
       <strong>{token.name}</strong>
-    </React.Fragment>
+    </div>
   ))}
 </div>
 
@@ -135,7 +126,7 @@ properties.
   }}
 >
   {Object.entries(tokens.radius).map(([, token], index) => (
-    <React.Fragment key={index}>
+    <div key={index} style={{display: 'contents'}}>
       <div
         style={{
           border: `var(--size-0-25) solid var(--color-brand-brand-100)`,
@@ -146,6 +137,6 @@ properties.
       />
       <span>{token.value}</span>
       <strong>{token.name}</strong>
-    </React.Fragment>
+    </div>
   ))}
 </div>
