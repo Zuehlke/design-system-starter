@@ -15,7 +15,6 @@ const config: StorybookConfig = {
       plugins: configType === 'PRODUCTION' ? [turbosnap({ rootDir: config.root ?? process.cwd() })] : [],
     });
   },
-  docs: {},
 };
 
 export default config;
