@@ -1,9 +1,9 @@
 import './outsideClick.component';
 import { html } from 'lit-html';
-import { useState } from '@storybook/addons';
 import { Meta, StoryObj } from '@storybook/web-components';
 import docs from './outsideClick.md?raw';
 import OutsideClick from './outsideClick.component';
+import { useState } from '@storybook/preview-api';
 
 const meta: Meta<OutsideClick> = {
   title: 'Components/OutsideClick',
