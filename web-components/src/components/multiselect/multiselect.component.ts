@@ -1,7 +1,7 @@
 import { PropertyDeclaration, unsafeCSS } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { createRef, ref, Ref } from 'lit-html/directives/ref.js';
-import { html } from 'lit-html';
+import { createRef, ref, Ref } from 'lit/directives/ref.js';
+import { html } from 'lit';
 import styles from './multiselect.css?inline';
 import '../button/button.component';
 import '../icon/icon.component';
@@ -11,7 +11,7 @@ import '../menu/menu.component';
 import '../menuItem/menuItem.component';
 import '../../internals/hint/hint';
 import BaseElement, { ActionKeystrokes } from '../../internals/baseElement/baseElement';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { InputErrorState } from '../input/input.component';
 import { LabelPlacement } from '../label/label.component';
 import { Placement } from '@floating-ui/dom';

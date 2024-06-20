@@ -1,10 +1,10 @@
 import { customElement, property, state } from 'lit/decorators.js';
 import { nothing, PropertyDeclaration, unsafeCSS } from 'lit';
-import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import styles from './icon.css?inline';
 import BaseElement from '../../internals/baseElement/baseElement';
 import { Icons } from './icons';
-import { DirectiveResult } from 'lit-html/directive';
+import { DirectiveResult } from 'lit/directive';
 
 const ICON_CACHE: { [K in Icons]?: DirectiveResult } = {};
 

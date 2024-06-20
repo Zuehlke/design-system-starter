@@ -1,9 +1,9 @@
-import { html } from 'lit-html';
+import { html } from 'lit';
 import './multiselect.component';
 import Multiselect from './multiselect.component';
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import docs from './multiselect.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { labelPlacementOptions } from '../label/label.component';
 
 const meta: Meta<Multiselect> = {

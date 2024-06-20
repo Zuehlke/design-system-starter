@@ -5,9 +5,9 @@ import BaseElement from '../../internals/baseElement/baseElement';
 import '../../internals/hint/hint';
 import '../label/label.component';
 import '../spinner/spinner.component';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { when } from 'lit-html/directives/when.js';
-import { classMap } from 'lit-html/directives/class-map.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
+import { when } from 'lit/directives/when.js';
+import { classMap } from 'lit/directives/class-map.js';
 import { LabelPlacement } from '../label/label.component';
 
 const textEncoder = new TextEncoder();

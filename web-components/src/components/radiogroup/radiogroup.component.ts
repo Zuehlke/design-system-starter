@@ -6,7 +6,7 @@ import '../../internals/hint/hint';
 import BaseElement from '../../internals/baseElement/baseElement';
 import { InputErrorState } from '../input/input.component';
 import Radio from '../radio/radio.component';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 
 /**

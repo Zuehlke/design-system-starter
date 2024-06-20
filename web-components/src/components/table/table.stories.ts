@@ -1,7 +1,7 @@
 import './table.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { format } from 'date-fns';
-import { classMap } from 'lit-html/directives/class-map.js';
+import { classMap } from 'lit/directives/class-map.js';
 import DssTable from './table.component';
 import Table, { ColumnDef } from './table.component';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';

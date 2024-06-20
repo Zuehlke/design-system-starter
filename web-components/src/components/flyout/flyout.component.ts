@@ -2,7 +2,7 @@ import { html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './flyout.css?inline';
 import BaseElement, { ActionKeystrokes } from '../../internals/baseElement/baseElement';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { Placement } from '@floating-ui/dom';
 import '../outsideClick/outsideClick.component';
 import '../../internals/floatingElement/floatingElement';
