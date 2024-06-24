@@ -1,9 +1,9 @@
 import './checkbox.component';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import Checkbox from './checkbox.component';
 import docs from './checkbox.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { inputErrorStates, inputSizes } from '../input/input.component';
 import { withActions } from '@storybook/addon-actions/decorator';
 

@@ -2,7 +2,7 @@ import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-c
 import docs from './toast.md?raw';
 import Toast, { toastTypes } from './toast.component';
 import { html } from 'lit';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import './toast.component';
 import { withActions } from '@storybook/addon-actions/decorator';
 

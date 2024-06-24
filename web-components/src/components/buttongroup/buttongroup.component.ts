@@ -9,9 +9,9 @@ import BaseElement from '../../internals/baseElement/baseElement';
 import ToggleButton from '../toggleButton/toggleButton.component';
 import { InputErrorState } from '../input/input.component';
 import { createRef, ref, Ref } from 'lit/directives/ref.js';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { LabelPlacement } from '../label/label.component';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 
 export interface ButtonGroupTranslations {
   valueMissing?: string;

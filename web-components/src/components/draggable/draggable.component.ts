@@ -1,6 +1,6 @@
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 import BaseElement from '../../internals/baseElement/baseElement';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import type { DragAxis, DragEventData, Draggable as NeoDraggable, DragOptions } from '@neodrag/vanilla';
 import { PropertyValues, unsafeCSS } from 'lit';
 import styles from './draggable.css?inline';

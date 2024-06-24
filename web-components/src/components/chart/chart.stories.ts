@@ -1,5 +1,5 @@
 import './chart.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import docs from './chart.md?raw';
 import Chart from './chart.component';

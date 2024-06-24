@@ -21,8 +21,8 @@ import {
   TableState,
   Updater,
 } from '@tanstack/table-core';
-import { repeat } from 'lit-html/directives/repeat.js';
-import { when } from 'lit-html/directives/when.js';
+import { repeat } from 'lit/directives/repeat.js';
+import { when } from 'lit/directives/when.js';
 import styles from './table.css?inline';
 import BaseElement from '../../internals/baseElement/baseElement';
 import '../icon/icon.component';
@@ -34,15 +34,15 @@ import './filter/columnFilter';
 import { DssPaginationPageIndexSelectedEvent } from '../pagination/pagination.component';
 import { dateRange, multiSelect, numeric, select } from './filter/customFilters';
 import ColumnFilter, { ColumnFilterTranslations } from './filter/columnFilter';
-import { StyleInfo, styleMap } from 'lit-html/directives/style-map.js';
-import { ClassInfo, classMap } from 'lit-html/directives/class-map.js';
+import { StyleInfo, styleMap } from 'lit/directives/style-map.js';
+import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 import { flexRender, flexRenderWithLoadingState } from './flexRender';
 import { createRef, ref, Ref } from 'lit/directives/ref.js';
 import { DssMenuSelectionEvent } from '../menu/menu.component';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
-export type { StyleInfo } from 'lit-html/directives/style-map.js';
-export type { ClassInfo } from 'lit-html/directives/class-map.js';
+export type { StyleInfo } from 'lit/directives/style-map.js';
+export type { ClassInfo } from 'lit/directives/class-map.js';
 export type { ColumnDef } from '@tanstack/table-core';
 export type DssTableSelectionChangeEvent = CustomEvent<any[]>;
 export type DssTableRowClickEvent = CustomEvent;

@@ -1,7 +1,7 @@
 import './menuItem.component';
 import '../menuItem/menuItem.component';
 import '../checkbox/checkbox.component';
-import { html, TemplateResult } from 'lit-html';
+import { html, TemplateResult } from 'lit';
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import docs from './menuItem.md?raw';
 import MenuItem from './menuItem.component';

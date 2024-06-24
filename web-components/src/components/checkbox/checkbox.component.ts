@@ -1,9 +1,9 @@
 import { html, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './checkbox.css?inline';
-import { classMap } from 'lit-html/directives/class-map.js';
+import { classMap } from 'lit/directives/class-map.js';
 import BaseElement from '../../internals/baseElement/baseElement';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 import { createRef, Ref, ref } from 'lit/directives/ref.js';
 import { InputErrorState, InputSize } from '../input/input.component';
 import '../icon/icon.component';

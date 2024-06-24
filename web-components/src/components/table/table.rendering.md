@@ -33,8 +33,8 @@ This allows it to apply conditional styling based on the data displayed.
 Additionally, the `alignRight` boolean flag allows to easily align the entire column to the right, including header.
 
 ```ts
-import { StyleInfo } from 'lit-html/directives/style-map.js';
-import { ClassInfo } from 'lit-html/directives/class-map.js';
+import { StyleInfo } from 'lit/directives/style-map.js';
+import { ClassInfo } from 'lit/directives/class-map.js';
 
 interface ColumnMeta<TData extends RowData, TValue> {
   styles?: (data: TData) => StyleInfo;

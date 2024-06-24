@@ -1,11 +1,11 @@
 import './toggleButton.component';
 import '../icon/icon.component';
 import ToggleButton, { toggleButtonTypes } from './toggleButton.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import docs from './toggleButton.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { buttonSpacings } from '../button/button.component';
 import { withActions } from '@storybook/addon-actions/decorator';
 

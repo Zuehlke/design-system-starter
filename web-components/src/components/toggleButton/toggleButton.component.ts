@@ -3,7 +3,7 @@ import styles from './toggleButton.css?inline';
 import BaseElement from '../../internals/baseElement/baseElement';
 import '../button/button.component';
 import { ButtonSide, ButtonSpacing, ButtonType } from '../button/button.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { LitElement, PropertyValues, unsafeCSS } from 'lit';
 
 export const toggleButtonTypes = [

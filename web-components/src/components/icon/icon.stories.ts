@@ -1,6 +1,6 @@
 import './icon.component';
 import Icon, { ICON_SIZE } from './icon.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryObj } from '@storybook/web-components';
 import '@lit-labs/virtualizer';
 import { grid } from '@lit-labs/virtualizer/layouts/grid.js';

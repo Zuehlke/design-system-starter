@@ -1,11 +1,11 @@
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import './tooltip.component';
 import '../button/button.component';
 import Tooltip from './tooltip.component';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import docs from './tooltip.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { placements } from '@floating-ui/utils';
 
 const meta: Meta<Tooltip> = {

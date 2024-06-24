@@ -3,7 +3,7 @@ import { html, unsafeCSS } from 'lit';
 import styles from './toast.css?inline';
 import { customElement, property } from 'lit/decorators.js';
 import { Icons } from '../icon/icons';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 import '../icon/icon.component';
 import '../button/button.component';
 

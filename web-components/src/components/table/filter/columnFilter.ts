@@ -15,12 +15,12 @@ import '../../menuItem/menuItem.component';
 import '../../checkbox/checkbox.component';
 import Datepicker, { DatepickerTranslations } from '../../datepicker/datepicker.component';
 import { endOfDay, isValid, startOfDay } from 'date-fns';
-import { TemplateResult } from 'lit-html';
+import { TemplateResult } from 'lit';
 import Dropdown from '../../dropdown/dropdown.component';
 import { DssMenuSelectionEvent } from '../../menu/menu.component';
 import { NumericFilterBand, NumericFilterMask } from './customFilters';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { classMap } from 'lit-html/directives/class-map.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
+import { classMap } from 'lit/directives/class-map.js';
 
 export interface ColumnFilterTranslations {
   numericTranslations?: NumericTranslations;

@@ -2,7 +2,7 @@ import docs from './label.md?raw';
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import Label from './label.component';
 import { html } from 'lit';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import './label.component';
 
 const meta: Meta<Label> = {

@@ -1,15 +1,15 @@
-import { html, TemplateResult } from 'lit-html';
+import { html, TemplateResult } from 'lit';
 import Flyout from './flyout.component';
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import docs from './flyout.md?raw';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 import './flyout.component';
 import '../menu/menu.component';
 import '../menuItem/menuItem.component';
 import '../icon/icon.component';
 import '../button/button.component';
 import '../input/input.component';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { placements } from '@floating-ui/utils';
 
 const meta: Meta<Flyout> = {

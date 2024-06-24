@@ -1,5 +1,5 @@
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import Switch from './switch.component';
 import docs from './switch.md?raw';
 import './switch.component';

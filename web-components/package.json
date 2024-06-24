@@ -38,8 +38,7 @@
     "@tanstack/table-core": "8.13.2",
     "csv": "6.3.8",
     "highcharts": "11.4.0",
-    "lit": "3.1.2",
-    "lit-html": "3.1.2"
+    "lit": "3.1.2"
   },
   "devDependencies": {
     "@babel/core": "7.24.0",

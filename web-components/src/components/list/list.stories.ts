@@ -2,7 +2,7 @@ import './list.component';
 import '../checkbox/checkbox.component';
 import '../icon/icon.component';
 import { Meta, StoryObj } from '@storybook/web-components';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import docs from './list.md?raw';
 import List from './list.component';
 

@@ -1,9 +1,9 @@
 import './datepicker.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import Datepicker from './datepicker.component';
 import docs from './datepicker.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { inputSizes } from '../input/input.component';
 import { withActions } from '@storybook/addon-actions/decorator';
 

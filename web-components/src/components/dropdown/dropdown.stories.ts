@@ -1,12 +1,12 @@
 import './dropdown.component';
-import { html, TemplateResult } from 'lit-html';
+import { html, TemplateResult } from 'lit';
 import Dropdown from './dropdown.component';
 import '../checkbox/checkbox.component';
 import '../menu/menu.component';
 import '../menuItem/menuItem.component';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './dropdown.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { inputSizes } from '../input/input.component';
 import { withActions } from '@storybook/addon-actions/decorator';
 import { labelPlacementOptions } from '../label/label.component';

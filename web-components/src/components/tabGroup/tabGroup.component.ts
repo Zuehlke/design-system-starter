@@ -3,7 +3,7 @@ import styles from './tabGroup.css?inline';
 import { customElement, property, state } from 'lit/decorators.js';
 import { TabDataInterface } from '../tab/tab.component';
 import { html, PropertyValues, unsafeCSS } from 'lit';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 import '../tab/tab.component';
 import '../flyout/flyout.component';
 import '../menu/menu.component';

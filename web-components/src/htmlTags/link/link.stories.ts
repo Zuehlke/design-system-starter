@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryObj } from '@storybook/web-components';
 import docs from './link.md?raw';
 import '../../components/icon/icon.component';

@@ -4,7 +4,7 @@ import styles from './tooltip.css?inline';
 import BaseElement from '../../internals/baseElement/baseElement';
 import '../../internals/floatingElement/floatingElement';
 import { Placement } from '@floating-ui/dom';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 const showEvents: Array<keyof WindowEventMap> = ['mouseenter', 'focus'];
 const hideEvents: Array<keyof WindowEventMap> = ['mouseleave', 'blur'];

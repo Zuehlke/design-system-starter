@@ -1,6 +1,6 @@
 import { describe, expect, test, vi } from 'vitest';
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import userEvent from '@testing-library/user-event';
 import { screen } from 'shadow-dom-testing-library';
 import './draggable.component';
