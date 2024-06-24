@@ -25,11 +25,11 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "prebuild-storybook": "npm run build",
     "build-storybook": "storybook build",
+    "build-storybook:chromatic": "VITE_IS_CHROMATIC=true storybook build",
     "test": "vitest run --reporter=verbose --reporter=junit --coverage",
     "test:watch": "vitest",
     "design-tokens:generate": "node ./tokens/style-dictionary.cjs",
-    "icons:generate": "node src/components/icon/generate-icon-types.js",
-    "chromatic": "VITE_IS_CHROMATIC=true chromatic"
+    "icons:generate": "node src/components/icon/generate-icon-types.js"
   },
   "dependencies": {
     "@floating-ui/dom": "1.6.3",

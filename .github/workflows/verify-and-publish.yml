@@ -57,6 +57,7 @@ jobs:
           exitOnceUploaded: true
           onlyChanged: true
           workingDir: web-components
+          buildScriptName: 'build-storybook:chromatic'
           autoAcceptChanges: main
           zip: true
 
