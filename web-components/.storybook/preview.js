@@ -1,13 +1,16 @@
-import 'element-internals-polyfill';
-import {setCustomElementsManifest} from '@storybook/web-components';
-import customElements from '../dist/custom-elements.json';
-import '../src/rootStyles/style.css';
+import "element-internals-polyfill";
+import { setCustomElementsManifest } from "@storybook/web-components";
+import { withThemeByClassName } from "@storybook/addon-themes";
+import customElements from "../dist/custom-elements.json";
+import "../src/rootStyles/style.css";
 
 customElements?.modules?.forEach((module) => {
-  module?.declarations?.forEach(declaration => {
-    Object.keys(declaration).forEach(key => {
+  module?.declarations?.forEach((declaration) => {
+    Object.keys(declaration).forEach((key) => {
       if (Array.isArray(declaration[key])) {
-        declaration[key] = declaration[key].filter((member) => !member.privacy?.includes('private'));
+        declaration[key] = declaration[key].filter(
+          (member) => !member.privacy?.includes("private")
+        );
       }
     });
   });
@@ -27,14 +30,17 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Intro', 'Design Guidelines', 'Design Tokens', '*'],
+      order: ["Intro", "Design Guidelines", "Design Tokens", "*"],
     },
   },
-  themes: {
-    default: 'light',
-    list: [
-      { name: 'light', class: 'light', color: '#ffffff' },
-      { name: 'dark', class: 'dark', color: '#000000' },
-    ],
-  },
 };
+
+export const decorators = [
+  withThemeByClassName({
+    themes: {
+      light: "light",
+      dark: "dark",
+    },
+    defaultTheme: "light",
+  }),
+];

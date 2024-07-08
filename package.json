@@ -23,8 +23,5 @@
     "url": "https://github.com/Zuehlke/design-system-starter"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "storybook-addon-themes": "^6.1.0"
-  }
+  "license": "ISC"
 }
