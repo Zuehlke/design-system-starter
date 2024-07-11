@@ -1,55 +1,94 @@
-const SHORTEN_NAMES = ["semantic-tokens", "constraints"];
+const PATHS = {
+  themes: "semantic-tokens",
+  viewPorts: "constraints",
+};
+
+// TODO: extract the break points from figma
+const MEDIA_QUERIES = {
+  desktop: "@media (min-width: 481px)",
+  mobile: "@media (max-width: 480px)",
+};
 
 function extractThemesFrom(dictionary) {
-  const semanticTokens = dictionary.properties["semantic-tokens"];
+  const themesObject = dictionary.properties[PATHS.themes];
 
-  return Object.keys(semanticTokens);
+  return Object.keys(themesObject);
 }
 
-function toCssVariable(property, { availableThemes = [] } = {}) {
-  const theme =
-    availableThemes.find((theme) => theme === property.attributes.type) ??
-    "default";
+function extractViewPortsFrom(dictionary) {
+  const viewPortsObject = dictionary.properties[PATHS.viewPorts];
+
+  return Object.keys(viewPortsObject);
+}
+
+function toCssVariable(property, { availableCategories = [] } = {}) {
+  const category =
+    availableCategories.find(
+      (category) => category === property.attributes.type
+    ) ?? "default";
 
   let name = property.name;
-  if (theme !== "default") name = name.replace(`${theme}-`, "");
-  SHORTEN_NAMES.forEach(
-    (nameToShorten) => (name = name.replace(`${nameToShorten}-`, ""))
-  );
+  if (category !== "default") {
+    name = property.name.replace(`${category}-`, "");
+    Object.values(PATHS).forEach(
+      (path) => (name = name.replace(`${path}-`, ""))
+    );
+  }
 
-  return { name, value: property.value, theme };
+  const value = property.value;
+
+  return { name, value, category };
 }
 
 class CssVariables {
   #variables = { default: [] };
 
-  constructor(themes) {
-    themes.forEach((theme) => (this.#variables[theme] = []));
+  constructor(categories) {
+    categories.forEach((category) => (this.#variables[category] = []));
   }
 
-  add({ theme, name, value }) {
-    this.#variables[theme]?.push(`--${name}: ${value};`);
+  add({ category, name, value }) {
+    this.#variables[category]?.push(`--${name}: ${value};`);
   }
 
-  getFormatted(theme, { cssSelector = `.${theme}` } = {}) {
-    const formattedVariables = this.#variables[theme].join("\n");
+  getFormatted(
+    category,
+    { cssSelector = `.${category}`, mediaQuery = null } = {}
+  ) {
+    const categoryVariables = this.#variables[category].join("\n");
 
-    return `${cssSelector} {\n${formattedVariables}\n}`;
+    let result = `${cssSelector} {\n${categoryVariables}\n}`;
+    if (mediaQuery) result = `${mediaQuery} {\n${result}\n}`;
+
+    return result;
   }
 }
 
 module.exports = {
   formatter: function ({ dictionary }) {
     const themes = extractThemesFrom(dictionary);
-    const cssVariables = new CssVariables(themes);
+    const viewPorts = extractViewPortsFrom(dictionary);
+    const categories = [...themes, ...viewPorts];
+
+    const cssVariables = new CssVariables(categories);
 
     dictionary.allProperties
-      .map((property) => toCssVariable(property, { availableThemes: themes }))
+      .map((property) =>
+        toCssVariable(property, { availableCategories: categories })
+      )
       .forEach((cssVariable) => cssVariables.add(cssVariable));
 
-    return (
-      cssVariables.getFormatted("default", { cssSelector: ":root" }) +
-      themes.map((theme) => cssVariables.getFormatted(theme)).join("\n")
-    );
+    return [
+      cssVariables.getFormatted("default", { cssSelector: ":root" }),
+      ...themes.map((theme) =>
+        cssVariables.getFormatted(theme, { cssSelector: `.${theme}` })
+      ),
+      ...viewPorts.map((viewport) =>
+        cssVariables.getFormatted(viewport, {
+          mediaQuery: MEDIA_QUERIES[viewport],
+          cssSelector: ":root",
+        })
+      ),
+    ].join("\n");
   },
 };

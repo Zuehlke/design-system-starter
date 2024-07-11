@@ -2,6 +2,7 @@ import "element-internals-polyfill";
 import { setCustomElementsManifest } from "@storybook/web-components";
 import { withThemeByClassName } from "@storybook/addon-themes";
 import customElements from "../dist/custom-elements.json";
+import designTokens from "../src/rootStyles/design-tokens.json";
 import "../src/rootStyles/style.css";
 
 customElements?.modules?.forEach((module) => {
@@ -35,12 +36,12 @@ export const parameters = {
   },
 };
 
+const themes = Object.keys(designTokens["semantic-tokens"]);
+const themesObject = Object.fromEntries(themes.map((theme) => [theme, theme]));
+
 export const decorators = [
   withThemeByClassName({
-    themes: {
-      light: "light",
-      dark: "dark",
-    },
-    defaultTheme: "light",
+    themes: themesObject,
+    defaultTheme: themes[0],
   }),
 ];
