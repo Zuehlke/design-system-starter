@@ -4,16 +4,17 @@
   gap: var(--size-0-5);
   font-size: var(--typography-body-small-font-size);
   line-height: var(--typography-body-small-line-height);
+  color: var(--text-primary);
 }
 
 :host(:not([state])) {
-  color: var(--color-brand-text-75);
+  color: var(--primitive-tokens-colors-base-1-500);
 }
 
 :host([state="error"]) dss-icon {
-  color: var(--color-universal-red-100);
+  color: var(--primitive-tokens-colors-universal-red-1-500);
 }
 
 :host([state="warning"]) dss-icon {
-  color: var(--color-universal-yellow-100);
+  color: var(--primitive-tokens-colors-universal-yellow-1-500);
 }

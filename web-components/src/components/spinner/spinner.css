@@ -7,35 +7,35 @@ svg {
 }
 
 :host([type="primary"]) circle {
-  stroke: var(--spinner-background-color, var(--color-brand-brand-50));
+  stroke: var(--spinner-background-color, var(--primitive-tokens-colors-brand-primary-1-300));
 }
 
 :host([type="primary"]) path {
-  stroke: var(--color-brand-brand-100);
+  stroke: var(--surface-fg-highlight);
 }
 
 :host([type="secondary"]) circle {
-  stroke: var(--spinner-background-color, var(--color-brand-interaction-25));
+  stroke: var(--spinner-background-color, var(--surface-bg-interaction-300));
 }
 
 :host([type="secondary"]) path {
-  stroke: var(--color-brand-interaction-100);
+  stroke: var(--text-primary);
 }
 
 :host([type="ghost"]) circle {
-  stroke: var(--spinner-background-color, var(--color-universal-grey-10));
+  stroke: var(--spinner-background-color, var(--surface-fg-ghost));
 }
 
 :host([type="ghost"]) path {
-  stroke: var(--color-universal-grey-75);
+  stroke: var(--surface-fg-ghost);
 }
 
 :host([type="success"]) circle {
-  stroke: var(--spinner-background-color, var(--color-universal-green-25));
+  stroke: var(--spinner-background-color, var(--primitive-tokens-colors-universal-green-1-200));
 }
 
 :host([type="success"]) path {
-  stroke: var(--color-universal-green-100);
+  stroke: var(--primitive-tokens-colors-universal-green-1-500);
 }
 
 :host([size="small"]) {

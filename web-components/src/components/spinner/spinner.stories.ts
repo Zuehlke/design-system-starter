@@ -64,7 +64,7 @@ export const OverwriteBackground: StoryObj<SpinnerStory> = {
   render: Template,
   args: {
     type: 'secondary',
-    backgroundColor: 'papayawhip',
+    backgroundColor: 'salmon',
   },
 };
 

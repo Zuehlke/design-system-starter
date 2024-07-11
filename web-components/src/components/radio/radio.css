@@ -10,17 +10,18 @@ label {
   align-items: center;
   cursor: pointer;
   gap: var(--size-2);
+  color: var(--text-primary);
 }
 
 .basic-radio {
   flex: none;
   appearance: none;
-  border-radius: var(--radius-50percent);
-  border: var(--border-medium) solid var(--color-brand-interaction-100);
+  border-radius: var(--radius-50precent);
+  border: var(--border-medium) solid var(--text-primary);
 }
 
-label:not(.checked,.disabled,:active):hover .basic-radio {
-  background-color: var(--color-brand-interaction-25);
+label:not(.checked, .disabled, :active):hover .basic-radio {
+  background-color: var(--surface-bg-interaction-300);
 }
 
 .checked .basic-radio {
@@ -28,24 +29,24 @@ label:not(.checked,.disabled,:active):hover .basic-radio {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-color: var(--color-brand-interaction-100);
+  border-color: var(--text-primary);
 }
 
 .checked .basic-radio::before {
   position: absolute;
-  content: '';
-  border-radius: var(--radius-50percent);
+  content: "";
+  border-radius: var(--radius-50precent);
   height: calc(100% - var(--size-0-5));
   width: calc(100% - var(--size-0-5));
-  background-color: var(--color-brand-interaction-100);
+  background-color: var(--text-primary);
 }
 
-.checked:not(:active,.disabled):hover .basic-radio {
-  border-color: var(--color-brand-interaction-75);
+.checked:not(:active, .disabled):hover .basic-radio {
+  border-color: var(--surface-bg-interaction-400);
 }
 
-.checked:not(:active,.disabled):hover .basic-radio::before {
-  background-color: var(--color-brand-interaction-75);
+.checked:not(:active, .disabled):hover .basic-radio::before {
+  background-color: var(--surface-bg-interaction-400);
 }
 
 .disabled {
@@ -53,47 +54,47 @@ label:not(.checked,.disabled,:active):hover .basic-radio {
 }
 
 .disabled .basic-radio {
-  border-color: var(--color-universal-grey-50);
+  border-color: var(--primitive-tokens-colors-base-1-300);
 }
 
 .disabled.checked .basic-radio {
-  border-color: var(--color-universal-grey-50);
+  border-color: var(--primitive-tokens-colors-base-1-300);
 }
 
 .disabled.checked .basic-radio::before {
-  background-color: var(--color-universal-grey-50);
+  background-color: var(--primitive-tokens-colors-base-1-300);
 }
 
 .error .basic-radio {
-  border-color: var(--color-universal-red-100);
+  border-color: var(--primitive-tokens-colors-universal-red-1-500);
 }
 
 .error.checked .basic-radio::before {
-  background-color: var(--color-universal-red-100);
+  background-color: var(--primitive-tokens-colors-universal-red-1-500);
 }
 
 .error.checked:not(:active):hover .basic-radio {
-  border-color: var(--color-universal-red-75);
+  border-color: var(--primitive-tokens-colors-universal-red-1-300);
 }
 
 .error.checked:not(:active):hover .basic-radio::before {
-  background-color: var(--color-universal-red-75);
+  background-color: var(--primitive-tokens-colors-universal-red-1-300);
 }
 
 .warning .basic-radio {
-  border-color: var(--color-universal-yellow-100);
+  border-color: var(--primitive-tokens-colors-universal-yellow-1-500);
 }
 
 .warning.checked .basic-radio::before {
-  background-color: var(--color-universal-yellow-100);
+  background-color: var(--primitive-tokens-colors-universal-yellow-1-500);
 }
 
 .warning.checked:not(:active):hover .basic-radio {
-  border-color: var(--color-universal-yellow-75);
+  border-color: var(--primitive-tokens-colors-universal-yellow-1-300);
 }
 
 .warning.checked:not(:active):hover .basic-radio::before {
-  background-color: var(--color-universal-yellow-75);
+  background-color: var(--primitive-tokens-colors-universal-yellow-1-300);
 }
 
 .compact {
@@ -107,6 +108,6 @@ label:not(.checked,.disabled,:active):hover .basic-radio {
 }
 
 .focused .basic-radio {
-  border-color: var(--color-brand-interaction-100);
+  border-color: var(--text-primary);
   box-shadow: var(--effect-shadow-glow-focus);
 }

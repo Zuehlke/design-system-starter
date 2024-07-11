@@ -15,14 +15,14 @@ button {
   gap: var(--size-1);
   cursor: pointer;
   border: var(--border-medium) solid;
-  border-radius: var(--radius-4);
-  line-height: var(--typography-body-main-line-height);
+  border-radius: var(--radius-small);
+  line-height: var(--typography-font-line-height-md);
 }
 
 button:disabled {
-  background: var(--color-universal-grey-10);
-  border-color: var(--color-universal-grey-10);
-  color: var(--color-universal-grey-75);
+  background: var(--surface-fg-disabled);
+  border-color: var(--surface-fg-disabled);
+  color: var(--text-cta-disabled);
   cursor: not-allowed;
 }
 
@@ -31,36 +31,36 @@ button:disabled:focus-visible {
 }
 
 button:not(:disabled):focus-visible {
-  outline: var(--color-brand-interaction-100) solid .1rem;
+  outline: var(--surface-fg-highlight-border) solid 0.1rem;
   box-shadow: var(--effect-shadow-glow-focus);
 }
 
 .type-primary {
-  border-color: var(--color-brand-brand-100);
-  background: var(--color-brand-brand-100);
-  color: var(--color-brand-white-100);
-  --spinner-background-color: var(--color-brand-white-100);
+  border-color: var(--surface-fg-highlight-border);
+  background: var(--surface-fg-highlight);
+  color: var(--surface-fg-highlight-content);
+  --spinner-background-color: var(--surface-fg-main-content);
 }
 
-.type-primary:not(:disabled,:active):hover {
+.type-primary:not(:disabled, :active):hover {
   border-color: transparent;
-  background: var(--color-brand-brand-75);
+  background: var(--surface-fg-highlight-hover);
 }
 
 .type-secondary {
-  border-color: var(--color-brand-interaction-100);
-  background: var(--color-brand-interaction-100);
-  color: var(--color-brand-white-100);
-  --spinner-background-color: var(--color-brand-white-100);
+  border-color: var(--surface-fg-main);
+  background: var(--surface-fg-main);
+  color: var(--surface-fg-main-content);
+  --spinner-background-color: var(--surface-fg-main-content);
 }
 
-.type-secondary:not(:disabled,:active):hover {
+.type-secondary:not(:disabled, :active):hover {
   border-color: transparent;
-  background: var(--color-brand-interaction-75);
+  background: var(--surface-fg-main-hover);
 }
 
 .type-ghost {
-  border-color: var(--color-brand-interaction-100);
+  border-color: var(--surface-fg-ghost-content);
 }
 
 .type-icon-only {
@@ -70,32 +70,32 @@ button:not(:disabled):focus-visible {
 .type-icon-only,
 .type-ghost {
   background: transparent;
-  color: var(--color-brand-interaction-100);
+  color: var(--surface-fg-ghost-content);
 }
 
 .type-ghost:disabled {
-  border-color: var(--color-universal-grey-25);
+  border-color: var(--surface-fg-disabled);
 }
 
 .type-icon-only:disabled {
   border-color: transparent;
 }
 
-:is(.type-ghost,.type-icon-only):disabled {
+:is(.type-ghost, .type-icon-only):disabled {
   background: transparent;
-  color: var(--color-universal-grey-75);
+  color: var(--text-cta-disabled);
 }
 
 /* This style is split into two, since host-context is not being implemented outside Chromium browsers.
    In other browsers this would break the whole hover effect. We need host-context here since there is no other way to
    have the button trigger the hover state when inside an input that is being hovered */
 :host-context(dss-input:hover) .type-icon-only:not(:disabled) {
-  background: var(--color-brand-interaction-25);
+  background: var(--surface-fg-ghost-hover);
 }
 
-.type-icon-only:not(:disabled,:active):hover,
-.type-ghost:not(:disabled,:active):hover {
-  background: var(--color-brand-interaction-25);
+.type-icon-only:not(:disabled, :active):hover,
+.type-ghost:not(:disabled, :active):hover {
+  background: var(--surface-fg-ghost-hover);
 }
 
 .spacing-text {
