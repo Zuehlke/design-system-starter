@@ -22,18 +22,18 @@
 }
 
 :host([state="error"]) .tag-container {
-  color: var(--color-universal-red-100);
-  border-color: var(--color-universal-red-100);
+  color: var(--primitive-tokens-colors-universal-red-1-500);
+  border-color: var(--primitive-tokens-colors-universal-red-1-500);
 }
 
 :host([state="warning"]) .tag-container {
-  color: var(--color-universal-yellow-100);
-  border-color: var(--color-universal-yellow-100);
+  color: var(--primitive-tokens-colors-universal-yellow-1-500);
+  border-color: var(--primitive-tokens-colors-universal-yellow-1-500);
 }
 
 :host([state="success"]) .tag-container {
-  color: var(--color-universal-green-100);
-  border-color: var(--color-universal-green-100);
+  color: var(--primitive-tokens-colors-universal-green-1-500);
+  border-color: var(--primitive-tokens-colors-universal-green-1-500);
 }
 
 :host([state="info"]) .tag-container {

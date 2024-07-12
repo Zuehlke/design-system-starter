@@ -26,7 +26,7 @@ button {
 }
 
 button.active-page {
-  border-color: var(--color-brand-interaction-100);
+  border-color: var(--text-primary);
   cursor: auto;
 }
 
@@ -36,6 +36,6 @@ button:is(.active-page,:hover,:focus-visible) {
 
 button:focus-visible {
   outline: none;
-  border-color: var(--color-brand-interaction-100);
+  border-color: var(--text-primary);
   box-shadow: var(--effect-shadow-glow-focus);
 }

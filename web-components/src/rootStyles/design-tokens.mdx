@@ -2,7 +2,7 @@ import {ColorItem, ColorPalette, Meta} from '@storybook/blocks';
 import tokens from './design-tokens.json';
 import {groupColors} from './color.helper';
 
-<Meta title="Design Tokens"/>
+<Meta title="Design Tokens" />
 
 ## Brand Colors
 
@@ -11,40 +11,31 @@ abstract colors below. This allows for later color changes/theming/dark mode wit
 properties.
 
 <ColorPalette>
-  {Object.entries(groupColors(tokens.color.brand)).map(([name, swatches], index) => (
-    <ColorItem
-      key={index}
-      title={name}
-      subtitle={''}
-      colors={swatches}
-    />
-  ))}
+  {Object.entries(groupColors(tokens.color.brand)).map(
+    ([name, swatches], index) => (
+      <ColorItem key={index} title={name} subtitle={""} colors={swatches} />
+    )
+  )}
 </ColorPalette>
 
 ## Universal Colors
 
 <ColorPalette>
-  {Object.entries(groupColors(tokens.color.universal)).map(([name, swatches], index) => (
-    <ColorItem
-      key={index}
-      title={name}
-      subtitle={''}
-      colors={swatches}
-    />
-  ))}
+  {Object.entries(groupColors(tokens.color.universal)).map(
+    ([name, swatches], index) => (
+      <ColorItem key={index} title={name} subtitle={""} colors={swatches} />
+    )
+  )}
 </ColorPalette>
 
 ## Gradients
 
 <ColorPalette>
-  {Object.entries(groupColors(tokens.gradient)).map(([name, swatches], index) => (
-    <ColorItem
-      key={index}
-      title={name}
-      subtitle={''}
-      colors={swatches}
-    />
-  ))}
+  {Object.entries(groupColors(tokens.gradient)).map(
+    ([name, swatches], index) => (
+      <ColorItem key={index} title={name} subtitle={""} colors={swatches} />
+    )
+  )}
 </ColorPalette>
 
 ## Typography
@@ -75,22 +66,50 @@ properties.
   }
 </div>
 
-## Sizes
+## Typography
+
+{/* **Typeface:** {tokens.typography.desktop.font.family.title.value} */}
+
+{/* <div style={{ display: 'grid', gridTemplateColumns: 'max-content auto', gap: tokens.size['1'].value, alignItems: 'center' }}>
+  {Object.entries(tokens.typography)
+    .map(([name, token]) => (
+      <div style={{ display: 'contents' }}>
+        <small>{name}</small>
+        <div
+          style={{
+            fontFamily: token.fontFamily.value,
+            fontSize: token.fontSize.value,
+            lineHeight: token.lineHeight.value,
+            fontWeight: token.fontWeight.value,
+            fontStretch: token.fontStretch.value,
+            letterSpacing: token.letterSpacing.value,
+            textDecorationStyle: token.textDecoration.value,
+            paragraphIndent: token.paragraphIndent.value,
+          }}
+        >
+          The quick brown fox jumps over the lazy dog
+        </div>
+      </div>
+    ))
+  }
+</div> */}
+
+{/* ## Sizes
 
 <div
   style={{
     display: "grid",
     gridTemplateColumns: "min-content 5rem auto",
     gap: "var(--size-2)",
-    alignItems: "center"
+    alignItems: "center",
   }}
 >
   {Object.entries(tokens.size)
     .sort(([, tokenA], [, tokenB]) => {
-      if (tokenA.value.includes('px')) {
+      if (tokenA.value.includes("px")) {
         return -1;
       }
-      if (tokenB.value.includes('px')) {
+      if (tokenB.value.includes("px")) {
         return 1;
       }
       const numberA = parseFloat(tokenA.value);
@@ -110,15 +129,15 @@ properties.
         <strong>{token.name}</strong>
       </div>
     ))}
-</div>
+</div> */}
 
-## Effects
+{/* ## Effects
 
 <div
   style={{
     display: "grid",
     gridTemplateColumns: "min-content auto",
-    gap: "var(--size-4)",
+    gap: "var(size-4)",
     alignItems: "center",
   }}
 >
@@ -127,25 +146,25 @@ properties.
       <div
         style={{
           boxShadow: token.value,
-          height: 'var(--size-6)',
-          width: 'var(--size-6)',
-          borderRadius: 'var(--radius-4)',
+          height: "var(--size-6)",
+          width: "var(--size-6)",
+          borderRadius: "var(--radius-4)",
           backgroundColor: "var(--color-brand-brand-100)",
         }}
       />
       <strong>{token.name}</strong>
     </div>
   ))}
-</div>
+</div> */}
 
-## Border radius
+{/* ## Border radius
 
 <div
   style={{
     display: "grid",
     gridTemplateColumns: "min-content min-content auto",
-    gap: "var(--size-4)",
-    alignItems: "center"
+    gap: "var(size-4)",
+    alignItems: "center",
   }}
 >
   {Object.entries(tokens.radius).map(([, token], index) => (
@@ -153,8 +172,8 @@ properties.
       <div
         style={{
           border: `var(--size-0-25) solid var(--color-brand-brand-100)`,
-          height: 'var(--size-6)',
-          width: 'var(--size-6)',
+          height: "var(--size-6)",
+          width: "var(--size-6)",
           borderRadius: token.value,
         }}
       />
@@ -162,4 +181,4 @@ properties.
       <strong>{token.name}</strong>
     </div>
   ))}
-</div>
+</div> */}

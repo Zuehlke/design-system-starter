@@ -45,7 +45,7 @@ dss-hint {
   position: relative;
   min-height: var(--size-4);
   padding: var(--size-0-5) var(--size-1);
-  border: var(--size-px) solid var(--color-brand-interaction-75);
+  border: var(--size-px) solid var(--surface-bg-interaction-400);
   border-radius: var(--radius-4);
   gap: var(--size-0-5);
 }
@@ -56,7 +56,7 @@ dss-hint {
   min-width: max-content;
   padding: var(--size-0-25) var(--size-1);
   border-radius: 10rem;
-  background-color: var(--color-brand-interaction-100);
+  background-color: var(--text-primary);
   color: var(--color-brand-white-100);
   height: var(--size-3);
 }
@@ -106,5 +106,5 @@ li {
 li:hover, li:focus {
   outline: none;
   color: var(--color-brand-white-100);
-  background-color: var(--color-brand-interaction-25);
+  background-color: var(--surface-bg-interaction-300);
 }

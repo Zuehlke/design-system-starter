@@ -18,7 +18,7 @@
   border-image-source: linear-gradient(
     to bottom,
     transparent 0 var(--size-1),
-    var(--color-universal-grey-50) var(--size-1) 100%
+    var(--primitive-tokens-colors-base-1-300) var(--size-1) 100%
   );
   border-image-slice: 0 1 1 1;
 }
@@ -41,14 +41,14 @@
 .basic-tab:hover:not(.active,.folded) {
   background: var(--color-brand-background-100);
   border-radius: var(--radius-4) var(--radius-4) 0 0;
-  border: var(--size-px) solid var(--color-universal-grey-50);
+  border: var(--size-px) solid var(--primitive-tokens-colors-base-1-300);
   z-index: var(--z-index-base);
 }
 
 .active {
   background: var(--color-brand-background-100);
   border-radius: var(--radius-4) var(--radius-4) 0 0;
-  border: var(--size-px) solid var(--color-universal-grey-50);
+  border: var(--size-px) solid var(--primitive-tokens-colors-base-1-300);
   z-index: var(--z-index-base);
 
   border-bottom-color: var(--color-brand-background-100);

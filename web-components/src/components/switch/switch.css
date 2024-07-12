@@ -11,7 +11,7 @@
 }
 
 :host(:not([checked])) {
-  --spinner-background-color: var(--color-universal-grey-10);
+  --spinner-background-color: var(--surface-fg-ghost);
 }
 
 :host([loading]) {
@@ -32,7 +32,7 @@ input {
 
 input:not(:disabled):focus-visible {
   outline: none;
-  border: var(--size-px) solid var(--color-brand-interaction-100);
+  border: var(--size-px) solid var(--text-primary);
   box-shadow: var(--effect-shadow-glow-focus);
 }
 
@@ -41,7 +41,7 @@ input:disabled {
 }
 
 input:checked {
-  background-color: var(--color-universal-green-100);
+  background-color: var(--primitive-tokens-colors-universal-green-1-500);
 }
 
 input:checked:disabled {
@@ -53,7 +53,7 @@ input:checked + .toggle {
 }
 
 input:not(:checked) {
-  background-color: var(--color-universal-grey-10);
+  background-color: var(--surface-fg-ghost);
 }
 
 input:not(:checked):disabled {

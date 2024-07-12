@@ -53,7 +53,7 @@ In this example, for every underage person:
 const customStyles = `
     .underage {
       font-weight: var(--typography-h4-font-weight);
-      color: var(--color-universal-red-100);
+      color: var(--primitive-tokens-colors-universal-red-1-500);
     }
 `;
 

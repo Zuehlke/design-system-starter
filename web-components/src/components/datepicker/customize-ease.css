@@ -2,12 +2,12 @@
 @import '@easepick/range-plugin/dist/index.css';
 
 :host {
-  --color-fg-primary: var(--color-brand-interaction-100);
-  --color-fg-muted: var(--color-universal-grey-75);
-  --color-fg-accent: var(--color-brand-brand-100);
-  --color-bg-secondary: var(--color-brand-interaction-75);
-  --color-btn-secondary-fg: var(--color-brand-interaction-100);
-  --color-bg-inrange: var(--color-brand-interaction-25);
+  --color-fg-primary: var(--text-primary);
+  --color-fg-muted: var(--surface-fg-ghost);
+  --color-fg-accent: var(--surface-fg-highlight);
+  --color-bg-secondary: var(--surface-bg-interaction-400);
+  --color-btn-secondary-fg: var(--text-primary);
+  --color-bg-inrange: var(--surface-bg-interaction-300);
 }
 
 .container {
@@ -39,7 +39,7 @@
 }
 
 .calendar .header button:active {
-  background-color: var(--color-brand-interaction-75);
+  background-color: var(--surface-bg-interaction-400);
 }
 
 .calendar .days-grid .day {

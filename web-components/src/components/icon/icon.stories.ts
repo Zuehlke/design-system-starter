@@ -53,7 +53,7 @@ export const IconGallery: StoryObj<IconStory> = {
       }
 
       .icon-wrapper p {
-        background-color: var(--color-brand-interaction-25);
+        background-color: var(--surface-bg-interaction-300);
         flex-grow: 1;
         display: flex;
         align-items: center;

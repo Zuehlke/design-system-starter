@@ -49,7 +49,7 @@ export const Default: StoryObj<OutsideClick> = {
         }
 
         .inside-container:active {
-          background-color: var(--color-brand-brand-100);
+          background-color: var(--surface-fg-highlight);
         }
       </style>
 

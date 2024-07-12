@@ -23,11 +23,11 @@
 }
 
 .error::before {
-  background-color: var(--color-universal-red-100);
+  background-color: var(--primitive-tokens-colors-universal-red-1-500);
 }
 
 .error .icon-container {
-  color: var(--color-universal-red-100);
+  color: var(--primitive-tokens-colors-universal-red-1-500);
 }
 
 .warning {
@@ -35,11 +35,11 @@
 }
 
 .warning::before {
-  background-color: var(--color-universal-yellow-100);
+  background-color: var(--primitive-tokens-colors-universal-yellow-1-500);
 }
 
 .warning .icon-container {
-  color: var(--color-universal-yellow-100);
+  color: var(--primitive-tokens-colors-universal-yellow-1-500);
 }
 
 .info {
@@ -47,11 +47,11 @@
 }
 
 .info::before {
-  background-color: var(--color-brand-interaction-75);
+  background-color: var(--surface-bg-interaction-400);
 }
 
 .info .icon-container {
-  color: var(--color-brand-interaction-75);
+  color: var(--surface-bg-interaction-400);
 }
 
 .text-container {

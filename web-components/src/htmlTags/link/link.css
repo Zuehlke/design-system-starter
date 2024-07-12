@@ -2,7 +2,7 @@
 
 a {
   text-decoration: none;
-  color: var(--color-brand-interaction-100);
+  color: var(--text-primary);
   font-weight: var(--typography-header-h4-font-weight);
   font-size: var(--typography-main-font-size);
   display: inline-flex;
@@ -11,5 +11,5 @@ a {
 }
 
 a:hover {
-  background-color: var(--color-brand-interaction-25);
+  background-color: var(--surface-bg-interaction-300);
 }

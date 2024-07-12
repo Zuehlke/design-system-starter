@@ -11,7 +11,7 @@ input {
   height: var(--dss-checkbox-size-comfortable);
   width: var(--dss-checkbox-size-comfortable);
   border-radius: var(--radius-4);
-  border: var(--border-medium) solid var(--color-brand-interaction-100);
+  border: var(--border-medium) solid var(--text-primary);
 }
 
 :host([size="compact"]) input {
@@ -21,12 +21,12 @@ input {
 
 input:focus {
   outline: none;
-  border-color: var(--color-brand-interaction-100);
+  border-color: var(--text-primary);
   box-shadow: var(--effect-shadow-glow-focus);
 }
 
 .filled input {
-  background-color: var(--color-brand-interaction-100);
+  background-color: var(--text-primary);
 }
 
 .filled dss-icon {
@@ -34,11 +34,11 @@ input:focus {
 }
 
 input:disabled {
-  border-color: var(--color-universal-grey-50);
+  border-color: var(--primitive-tokens-colors-base-1-300);
 }
 
 .filled input:disabled {
-  background-color: var(--color-universal-grey-50);
+  background-color: var(--primitive-tokens-colors-base-1-300);
 }
 
 .input-wrapper {
@@ -71,38 +71,38 @@ input:disabled {
 
 /* default */
 label:not(:active):hover input:not(:active,:disabled) {
-  background-color: var(--color-brand-interaction-25);
+  background-color: var(--surface-bg-interaction-300);
 }
 
 .filled:not(:active):hover input:not(:active,:disabled) {
-  background-color: var(--color-brand-interaction-75);
-  border-color: var(--color-brand-interaction-75);
+  background-color: var(--surface-bg-interaction-400);
+  border-color: var(--surface-bg-interaction-400);
 }
 
 /* error */
 .error input {
-  border-color: var(--color-universal-red-100);
+  border-color: var(--primitive-tokens-colors-universal-red-1-500);
 }
 
 .error.filled input {
-  background-color: var(--color-universal-red-100);
+  background-color: var(--primitive-tokens-colors-universal-red-1-500);
 }
 
 .error.filled:not(:active):hover input:not(:active,:disabled) {
   border-color: transparent;
-  background-color: var(--color-universal-red-75);
+  background-color: var(--primitive-tokens-colors-universal-red-1-300);
 }
 
 /* warning */
 .warning input {
-  border-color: var(--color-universal-yellow-100);
+  border-color: var(--primitive-tokens-colors-universal-yellow-1-500);
 }
 
 .warning.filled input {
-  background-color: var(--color-universal-yellow-100);
+  background-color: var(--primitive-tokens-colors-universal-yellow-1-500);
 }
 
 .warning.filled:not(:active):hover input:not(:active,:disabled) {
   border-color: transparent;
-  background-color: var(--color-universal-yellow-75);
+  background-color: var(--primitive-tokens-colors-universal-yellow-1-300);
 }

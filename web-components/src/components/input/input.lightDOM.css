@@ -11,7 +11,7 @@ dss-input :is(input, textarea)::placeholder {
 dss-input :is(input, textarea) {
   margin: 0;
   outline: none;
-  border: var(--border-small) solid var(--color-brand-interaction-75);
+  border: var(--border-small) solid var(--surface-bg-interaction-400);
   border-radius: var(--radius-4);
   padding: calc(var(--size-0-5) + var(--border-small)) var(--size-1);
   font-size: var(--typography-body-main-font-size);
@@ -24,7 +24,7 @@ dss-input:has(:is(input,textarea):required)::part(required) {
 
 dss-input:has(dss-button) :is(input,textarea):not(:disabled):hover,
 dss-input:has(dss-button:hover) :is(input,textarea):not(:disabled) {
-  border-color: var(--color-brand-interaction-75);
+  border-color: var(--surface-bg-interaction-400);
 }
 
 :is(dss-input:has(dss-button), dss-input[loading]) input {
@@ -37,7 +37,7 @@ dss-input[size="compact"] input {
 }
 
 dss-input :is(input,textarea):focus-visible {
-  outline: var(--color-brand-interaction-100) solid 0.1rem;
+  outline: var(--text-primary) solid 0.1rem;
   box-shadow: var(--effect-shadow-glow-focus);
 }
 
@@ -49,11 +49,11 @@ dss-input :is(input,textarea):disabled {
 }
 
 dss-input[errorstate="error"] :is(input,textarea) {
-  border-color: var(--color-universal-red-100);
+  border-color: var(--primitive-tokens-colors-universal-red-1-500);
 }
 
 dss-input[errorstate="warning"] :is(input,textarea) {
-  border-color: var(--color-universal-yellow-100);
+  border-color: var(--primitive-tokens-colors-universal-yellow-1-500);
 }
 
 dss-input input[type="date"]::-webkit-inner-spin-button,

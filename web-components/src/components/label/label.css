@@ -1,5 +1,5 @@
 label {
-  color: var(--color-brand-interaction-100);
+  color: var(--text-primary);
   font-size: var(--typography-body-small-font-size);
   font-weight: var(--typography-body-small-font-weight);
   display: block;

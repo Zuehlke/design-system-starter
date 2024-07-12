@@ -3,7 +3,7 @@
 }
 
 ::slotted(hr) {
-  border: solid var(--color-universal-grey-50);
+  border: solid var(--primitive-tokens-colors-base-1-300);
   border-width: 1px 0 0 0;
   margin: 0 var(--size-1);
 }
