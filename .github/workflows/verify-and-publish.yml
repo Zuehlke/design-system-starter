@@ -17,16 +17,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Project
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ vars.NODE_VERSION }}
+          node-version-file: '.nvmrc'
           cache: npm
           cache-dependency-path: 'package-lock.json'
           registry-url: 'https://registry.npmjs.org'
@@ -34,6 +34,9 @@ jobs:
 
       - name: Install Root
         run: npm ci
+
+      - name: Build
+        run: npm run build
 
       - name: Lint
         run: npm run lint
@@ -47,9 +50,6 @@ jobs:
       - name: Test
         run: npm run test
 
-      - name: Build
-        run: npm run build
-
       - name: Publish to Chromatic
         uses: chromaui/action@latest
         with:
@@ -57,6 +57,7 @@ jobs:
           exitOnceUploaded: true
           onlyChanged: true
           workingDir: web-components
+          buildScriptName: 'build-storybook:chromatic'
           autoAcceptChanges: main
           zip: true
 

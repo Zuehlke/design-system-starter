@@ -162,7 +162,8 @@ export const CustomRender: StoryObj<Table> = {
 
         }).format(wealth.amount),
         header: () => html`
-          <marquee>Wealth</marquee>`,
+          <span style="text-transform: uppercase">Wealth</span>
+        `,
         cell: ({ row: { original } }) => {
           const { amount, currency } = original.wealth;
           const formattedParts = new Intl.NumberFormat(navigator.language, {

@@ -45,3 +45,5 @@ export const decorators = [
     defaultTheme: themes[0],
   }),
 ];
+
+export const tags = ["autodocs"];

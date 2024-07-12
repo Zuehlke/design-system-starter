@@ -11,7 +11,7 @@ import '../../components/dropdown/dropdown.component';
 import '../../components/menu/menu.component';
 import '../../components/menuItem/menuItem.component';
 import '../../components/multiselect/multiselect.component';
-import { useState } from '@storybook/addons';
+import { useState } from '@storybook/preview-api';
 import * as yup from 'yup';
 import { when } from 'lit-html/directives/when.js';
 import { StoryFn, StoryObj } from '@storybook/web-components';
@@ -20,10 +20,6 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 export default {
   title: 'Pages/Forms',
   parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/vN8eRqwHQLrnGFkcxL7Z4W/UI-Design-System-2.1?node-id=1793%3A10899&t=1nGYeu3l214iXSEh-0',
-    },
     docs: {
       description: {
         component: docs,
