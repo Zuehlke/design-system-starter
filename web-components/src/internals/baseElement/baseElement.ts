@@ -1,11 +1,14 @@
 import { LitElement, unsafeCSS } from 'lit';
 import global from './global.css?inline';
+import disableAnimations from './disable-animations.css?inline';
 
 export const ActionKeystrokes = [' ', 'Enter'];
 
 export default class BaseElement<EventsPayloadMap = Record<string, never>> extends LitElement {
 
-  protected static globalStyles = unsafeCSS(global);
+  protected static globalStyles = import.meta.env.VITE_IS_CHROMATIC
+    ? unsafeCSS(disableAnimations + global)
+    : unsafeCSS(global);
 
   /**
    * Change events are relevant for many form libraries and general form handling. According to the spec they bubble
