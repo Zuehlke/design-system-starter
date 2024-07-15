@@ -1,16 +1,16 @@
-import "element-internals-polyfill";
-import { setCustomElementsManifest } from "@storybook/web-components";
-import { withThemeByClassName } from "@storybook/addon-themes";
-import customElements from "../dist/custom-elements.json";
-import designTokens from "../src/rootStyles/design-tokens.json";
-import "../src/rootStyles/style.css";
+import 'element-internals-polyfill';
+import { setCustomElementsManifest } from '@storybook/web-components';
+import { withThemeByClassName } from '@storybook/addon-themes';
+import customElements from '../dist/custom-elements.json';
+import designTokens from '../src/rootStyles/design-tokens.json';
+import '../src/rootStyles/style.css';
 
 customElements?.modules?.forEach((module) => {
   module?.declarations?.forEach((declaration) => {
     Object.keys(declaration).forEach((key) => {
       if (Array.isArray(declaration[key])) {
         declaration[key] = declaration[key].filter(
-          (member) => !member.privacy?.includes("private")
+          (member) => !member.privacy?.includes('private'),
         );
       }
     });
@@ -31,12 +31,12 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ["Intro", "Design Guidelines", "Design Tokens", "*"],
+      order: ['Intro', 'Design Guidelines', 'Design Tokens', '*'],
     },
   },
 };
 
-const themes = Object.keys(designTokens["semantic-tokens"]);
+const themes = Object.keys(designTokens['semantic-tokens']);
 const themesObject = Object.fromEntries(themes.map((theme) => [theme, theme]));
 
 export const decorators = [
@@ -46,4 +46,4 @@ export const decorators = [
   }),
 ];
 
-export const tags = ["autodocs"];
+export const tags = ['autodocs'];

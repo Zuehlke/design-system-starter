@@ -59,8 +59,8 @@ StyleDictionary.registerTransform({
 });
 
 StyleDictionary.registerFormat({
-  name: "css/figma-variables",
-  ...require("./formatters/cssFigmaVariables.cjs"),
+  name: 'css/figma-variables',
+  ...require('./formatters/cssFigmaVariables.cjs'),
 });
 
 StyleDictionary.registerTransformGroup({

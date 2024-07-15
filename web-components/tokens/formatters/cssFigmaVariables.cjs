@@ -1,12 +1,12 @@
 const PATHS = {
-  themes: "semantic-tokens",
-  viewPorts: "constraints",
+  themes: 'semantic-tokens',
+  viewPorts: 'constraints',
 };
 
 // TODO: extract the break points from figma
 const MEDIA_QUERIES = {
-  desktop: "@media (min-width: 481px)",
-  mobile: "@media (max-width: 480px)",
+  desktop: '@media (min-width: 481px)',
+  mobile: '@media (max-width: 480px)',
 };
 
 function extractThemesFrom(dictionary) {
@@ -25,13 +25,13 @@ function toCssVariable(property, { availableCategories = [] } = {}) {
   const category =
     availableCategories.find(
       (category) => category === property.attributes.type
-    ) ?? "default";
+    ) ?? 'default';
 
   let name = property.name;
-  if (category !== "default") {
-    name = property.name.replace(`${category}-`, "");
+  if (category !== 'default') {
+    name = property.name.replace(`${category}-`, '');
     Object.values(PATHS).forEach(
-      (path) => (name = name.replace(`${path}-`, ""))
+      (path) => (name = name.replace(`${path}-`, ''))
     );
   }
 
@@ -55,7 +55,7 @@ class CssVariables {
     category,
     { cssSelector = `.${category}`, mediaQuery = null } = {}
   ) {
-    const categoryVariables = this.#variables[category].join("\n");
+    const categoryVariables = this.#variables[category].join('\n');
 
     let result = `${cssSelector} {\n${categoryVariables}\n}`;
     if (mediaQuery) result = `${mediaQuery} {\n${result}\n}`;
@@ -79,16 +79,16 @@ module.exports = {
       .forEach((cssVariable) => cssVariables.add(cssVariable));
 
     return [
-      cssVariables.getFormatted("default", { cssSelector: ":root" }),
+      cssVariables.getFormatted('default', { cssSelector: ':root' }),
       ...themes.map((theme) =>
-        cssVariables.getFormatted(theme, { cssSelector: `.${theme}` })
+        cssVariables.getFormatted(theme, { cssSelector: `.${theme}` }),
       ),
       ...viewPorts.map((viewport) =>
         cssVariables.getFormatted(viewport, {
           mediaQuery: MEDIA_QUERIES[viewport],
-          cssSelector: ":root",
-        })
+          cssSelector: ':root',
+        }),
       ),
-    ].join("\n");
+    ].join('\n');
   },
 };
