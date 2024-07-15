@@ -3,7 +3,7 @@ const PATHS = {
   viewPorts: 'constraints',
 };
 
-// TODO: extract the break points from figma
+// TODO: extract the break points from figma (https://github.com/Zuehlke/design-system-starter/issues/42)
 const MEDIA_QUERIES = {
   desktop: '@media (min-width: 481px)',
   mobile: '@media (max-width: 480px)',
