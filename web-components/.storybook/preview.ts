@@ -6,11 +6,11 @@ import designTokens from '../src/rootStyles/design-tokens.json';
 import '../src/rootStyles/style.css';
 
 customElements?.modules?.forEach((module) => {
-  module?.declarations?.forEach((declaration) => {
+  module?.declarations?.forEach((declaration: any) => {
     Object.keys(declaration).forEach((key) => {
       if (Array.isArray(declaration[key])) {
         declaration[key] = declaration[key].filter(
-          (member) => !member.privacy?.includes('private'),
+          (member: { privacy: string }) => !member.privacy?.includes('private'),
         );
       }
     });
