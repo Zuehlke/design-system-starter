@@ -957,7 +957,7 @@
         "value": {
           "fontSize": 16,
           "textDecoration": "none",
-          "fontFamily": "Inter",
+          "fontFamily": "Open Sans",
           "fontWeight": 600,
           "fontStyle": "normal",
           "fontStretch": "normal",
@@ -979,7 +979,7 @@
         "value": {
           "fontSize": 18,
           "textDecoration": "none",
-          "fontFamily": "Inter",
+          "fontFamily": "Open Sans",
           "fontWeight": 400,
           "fontStyle": "normal",
           "fontStretch": "normal",
@@ -1001,7 +1001,7 @@
         "value": {
           "fontSize": 22,
           "textDecoration": "none",
-          "fontFamily": "Inter",
+          "fontFamily": "Open Sans",
           "fontWeight": 400,
           "fontStyle": "normal",
           "fontStretch": "normal",
@@ -1023,7 +1023,7 @@
         "value": {
           "fontSize": 42,
           "textDecoration": "none",
-          "fontFamily": "Inter",
+          "fontFamily": "Open Sans",
           "fontWeight": 400,
           "fontStyle": "normal",
           "fontStretch": "normal",
@@ -1047,7 +1047,7 @@
         "value": {
           "fontSize": 16,
           "textDecoration": "none",
-          "fontFamily": "Inter",
+          "fontFamily": "Open Sans",
           "fontWeight": 400,
           "fontStyle": "normal",
           "fontStretch": "normal",
@@ -1069,7 +1069,7 @@
         "value": {
           "fontSize": 12,
           "textDecoration": "none",
-          "fontFamily": "Inter",
+          "fontFamily": "Open Sans",
           "fontWeight": 300,
           "fontStyle": "normal",
           "fontStretch": "normal",
@@ -1091,7 +1091,7 @@
         "value": {
           "fontSize": 12,
           "textDecoration": "none",
-          "fontFamily": "Inter",
+          "fontFamily": "Open Sans",
           "fontWeight": 600,
           "fontStyle": "normal",
           "fontStretch": "normal",
@@ -4793,7 +4793,7 @@
         "family": {
           "title": {
             "type": "string",
-            "value": "Inter",
+            "value": "Open Sans",
             "extensions": {
               "org.lukasoppermann.figmaDesignTokens": {
                 "mode": "mobile",
@@ -4808,7 +4808,7 @@
           },
           "body": {
             "type": "string",
-            "value": "Inter",
+            "value": "Open Sans",
             "extensions": {
               "org.lukasoppermann.figmaDesignTokens": {
                 "mode": "mobile",
@@ -5075,7 +5075,7 @@
         "family": {
           "title": {
             "type": "string",
-            "value": "Inter",
+            "value": "Open Sans",
             "extensions": {
               "org.lukasoppermann.figmaDesignTokens": {
                 "mode": "desktop",
@@ -5090,7 +5090,7 @@
           },
           "body": {
             "type": "string",
-            "value": "Inter",
+            "value": "Open Sans",
             "extensions": {
               "org.lukasoppermann.figmaDesignTokens": {
                 "mode": "desktop",
@@ -5364,7 +5364,7 @@
         },
         "fontFamily": {
           "type": "string",
-          "value": "Inter"
+          "value": "Open Sans"
         },
         "fontWeight": {
           "type": "number",
@@ -5410,7 +5410,7 @@
         },
         "fontFamily": {
           "type": "string",
-          "value": "Inter"
+          "value": "Open Sans"
         },
         "fontWeight": {
           "type": "number",
@@ -5456,7 +5456,7 @@
         },
         "fontFamily": {
           "type": "string",
-          "value": "Inter"
+          "value": "Open Sans"
         },
         "fontWeight": {
           "type": "number",
@@ -5502,7 +5502,7 @@
         },
         "fontFamily": {
           "type": "string",
-          "value": "Inter"
+          "value": "Open Sans"
         },
         "fontWeight": {
           "type": "number",
@@ -5550,7 +5550,7 @@
         },
         "fontFamily": {
           "type": "string",
-          "value": "Inter"
+          "value": "Open Sans"
         },
         "fontWeight": {
           "type": "number",
@@ -5596,7 +5596,7 @@
         },
         "fontFamily": {
           "type": "string",
-          "value": "Inter"
+          "value": "Open Sans"
         },
         "fontWeight": {
           "type": "number",
@@ -5642,7 +5642,7 @@
         },
         "fontFamily": {
           "type": "string",
-          "value": "Inter"
+          "value": "Open Sans"
         },
         "fontWeight": {
           "type": "number",
