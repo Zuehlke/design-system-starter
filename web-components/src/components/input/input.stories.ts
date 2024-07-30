@@ -1,13 +1,13 @@
 import './input.component';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
-import { html, TemplateResult } from 'lit-html';
+import { html, TemplateResult } from 'lit';
 import Input, { inputErrorStates, inputSizes } from './input.component';
 import docs from './input.md?raw';
 import docsDisabled from './input.disabled.md?raw';
 import docsReadonly from './input.readonly.md?raw';
 import docsTextarea from './input.textarea.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { when } from 'lit-html/directives/when.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
+import { when } from 'lit/directives/when.js';
 import { withActions } from '@storybook/addon-actions/decorator';
 import { labelPlacementOptions } from '../label/label.component';
 import '../button/button.component';

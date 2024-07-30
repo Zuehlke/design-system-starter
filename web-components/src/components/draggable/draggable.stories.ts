@@ -2,9 +2,9 @@ import './draggable.component';
 import '../icon/icon.component';
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import Draggable, { draggableBounds } from './draggable.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import docs from './draggable.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 const meta: Meta<Draggable> = {
   title: 'Components/Draggable',

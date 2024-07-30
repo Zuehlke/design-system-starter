@@ -1,9 +1,9 @@
 import './menu.component';
 import '../menuItem/menuItem.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import Menu from './menu.component';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import docs from './menu.md?raw';
 import { withActions } from '@storybook/addon-actions/decorator';
 

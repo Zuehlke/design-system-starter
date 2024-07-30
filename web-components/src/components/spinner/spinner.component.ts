@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import BaseElement from '../../internals/baseElement/baseElement';
 import { unsafeCSS } from 'lit';

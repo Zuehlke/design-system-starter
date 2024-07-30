@@ -1,6 +1,6 @@
 import { Cell, Header, Table } from '@tanstack/table-core';
 import { stringify } from 'csv-stringify/browser/esm/sync';
-import { render } from 'lit-html';
+import { render } from 'lit';
 import { TemplateResult } from 'lit';
 import { flexRender } from '../flexRender';
 

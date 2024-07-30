@@ -1,9 +1,9 @@
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './overlay.md?raw';
-import { html, TemplateResult } from 'lit-html';
+import { html, TemplateResult } from 'lit';
 import Overlay from './overlay.component';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { when } from 'lit-html/directives/when.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
+import { when } from 'lit/directives/when.js';
 import './overlay.component';
 import '../button/button.component';
 import { useArgs } from '@storybook/preview-api';

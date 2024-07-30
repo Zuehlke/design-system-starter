@@ -1,5 +1,5 @@
 import './outsideClick.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryObj } from '@storybook/web-components';
 import docs from './outsideClick.md?raw';
 import OutsideClick from './outsideClick.component';
