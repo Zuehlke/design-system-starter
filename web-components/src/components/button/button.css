@@ -110,6 +110,10 @@ button:not(:disabled):focus-visible {
   padding: var(--size-0-25);
 }
 
+.spacing-none {
+  padding: 0;
+}
+
 .remove-border-left,
 .remove-radius-left {
   border-bottom-left-radius: 0;

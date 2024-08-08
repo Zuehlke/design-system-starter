@@ -1,11 +1,10 @@
-import { html, unsafeCSS } from 'lit';
+import { html, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import styles from './button.css?inline';
 import BaseElement from '../../internals/baseElement/baseElement';
-import { TemplateResult } from 'lit-html';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { ElementInternals } from 'element-internals-polyfill/dist/element-internals';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 import '../tooltip/tooltip.component';
 import '../spinner/spinner.component';
 import { SpinnerType } from '../spinner/spinner.component';
@@ -21,6 +20,7 @@ export const buttonSpacings = [
   'text',
   'icon',
   'icon-only',
+  'none'
 ] as const;
 export type ButtonSpacing = typeof buttonSpacings[number];
 
@@ -97,8 +97,8 @@ export default class Button extends BaseElement {
       <button
         slot="${ifDefined(slotName)}"
         part="button"
-        class=${`type-${this.type} spacing-${this.buttonSpacing} remove-radius-${this.removeRadius} remove-border-${this.removeBorder}`}
-        ?disabled=${this.disabled}
+        class="${`type-${this.type} spacing-${this.buttonSpacing} remove-radius-${this.removeRadius} remove-border-${this.removeBorder}`}"
+        ?disabled="${this.disabled}"
       >
         <slot @click="${this.handleClickEvent}"></slot>
         ${when(this.loading, () => html`
@@ -123,7 +123,7 @@ export default class Button extends BaseElement {
   }
 
   private get buttonSpacing(): ButtonSpacing {
-    if (this.type === 'icon-only') {
+    if (this.type === 'icon-only' && this.spacing === 'text') {
       return 'icon-only';
     }
 

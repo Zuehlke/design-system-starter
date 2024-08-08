@@ -5,7 +5,8 @@ import { html } from 'lit-html';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import docs from './button.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import ellipsisDocs from './ellipsis.md?raw';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { withActions } from '@storybook/addon-actions/decorator';
 
 const meta: Meta<Button> = {
@@ -41,13 +42,18 @@ const Template: StoryFn<Button> = ({
   tooltip,
   loading,
 }) => html`
+  <style>
+    dss-button {
+      max-width: 100%;
+    }
+  </style>
   <dss-button
-    type=${ifDefined(type)}
-    spacing=${ifDefined(spacing)}
-    removeRadius=${ifDefined(removeRadius)}
-    removeBorder=${ifDefined(removeBorder)}
-    tooltip=${ifDefined(tooltip)}
-    ?disabled=${disabled}
+    type="${ifDefined(type)}"
+    spacing="${ifDefined(spacing)}"
+    removeRadius="${ifDefined(removeRadius)}"
+    removeBorder="${ifDefined(removeBorder)}"
+    tooltip="${ifDefined(tooltip)}"
+    ?disabled="${disabled}"
     ?loading="${loading}"
   >
     ${unsafeHTML(slot)}
@@ -145,4 +151,20 @@ export const LoadingButton: StoryObj<Button> = {
     loading: true,
     slot: 'Loading',
   },
+};
+
+export const WithEllipsis = Template.bind({});
+WithEllipsis.parameters = {
+  docs: {
+    description: {
+      story: ellipsisDocs,
+    },
+  },
+};
+WithEllipsis.args = {
+  slot: `
+    <span style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </span>
+  `,
 };
