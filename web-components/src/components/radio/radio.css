@@ -50,6 +50,7 @@ label:not(.checked,.disabled,:active):hover .basic-radio {
 
 .disabled {
   cursor: not-allowed;
+  color:var(--text-cta-disabled);
 }
 
 .disabled .basic-radio {

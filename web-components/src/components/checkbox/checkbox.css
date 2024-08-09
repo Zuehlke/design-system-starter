@@ -64,9 +64,9 @@ label, input {
   cursor: pointer;
 }
 
-label:has(input:disabled),
-input:disabled {
+label:has(input:disabled), input:disabled {
   cursor: not-allowed;
+  color:var(--text-cta-disabled);
 }
 
 /* default */
