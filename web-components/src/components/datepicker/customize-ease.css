@@ -13,8 +13,8 @@
 .container {
   display: block;
   font-family: inherit;
-  font-size: var(--typography-main-font-size);
-  line-height: var(--typography-main-line-height);
+  font-size: var(--typography-body-main-font-size);
+  line-height: var(--typography-body-main-line-height);
 }
 
 .container.inline {

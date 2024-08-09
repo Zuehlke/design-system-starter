@@ -10,7 +10,7 @@
       "files": [
         {
           "destination": "design-tokens.css",
-          "format": "css/variables",
+          "format": "css/figma-variables",
           "filter": "validToken",
           "options": {
             "showFileHeader": false

@@ -133,6 +133,8 @@ export default class Button extends BaseElement {
   private mapButtonTypeToSpinnerType(): SpinnerType {
     if (this.type === 'primary') {
       return 'primary';
+    } else if (this.type === 'ghost'){
+      return 'ghost';  
     }
     return 'secondary';
   }

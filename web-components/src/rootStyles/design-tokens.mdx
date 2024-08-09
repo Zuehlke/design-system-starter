@@ -49,10 +49,31 @@ properties.
 
 ## Typography
 
-**Typeface:** {tokens.typography.main.fontFamily.value}
+**Typeface:** {tokens.typography.desktop.font.family.title.value}
 
 <div style={{ display: 'grid', gridTemplateColumns: 'max-content auto', gap: tokens.size['2'].value, alignItems: 'center' }}>
-  {Object.entries(tokens.typography)
+  {Object.entries(tokens.typography.body)
+    .map(([name, token]) => (
+      <div style={{ display: 'contents' }}>
+        <small>{name}</small>
+        <div
+          style={{
+            fontFamily: token.fontFamily.value,
+            fontSize: token.fontSize.value,
+            lineHeight: token.lineHeight.value,
+            fontWeight: token.fontWeight.value,
+            fontStretch: token.fontStretch.value,
+            letterSpacing: token.letterSpacing.value,
+            textDecorationStyle: token.textDecoration.value,
+            paragraphIndent: token.paragraphIndent.value,
+          }}
+        >
+          The quick brown fox jumps over the lazy dog
+        </div>
+      </div>
+    ))
+  }
+  {Object.entries(tokens.typography.header)
     .map(([name, token]) => (
       <div style={{ display: 'contents' }}>
         <small>{name}</small>

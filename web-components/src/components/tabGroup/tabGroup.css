@@ -16,7 +16,7 @@
 }
 
 .show-more-text {
-  font-size: var(--typography-h3-font-size);
-  line-height: var(--typography-h3-line-height);
+  font-size: var(--typography-header-h3-font-size);
+  line-height: var(--typography-header-h3-line-height);
   margin-left: var(--size-1-5);
 }

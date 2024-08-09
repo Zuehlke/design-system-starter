@@ -14,8 +14,8 @@ dss-input :is(input, textarea) {
   border: var(--border-small) solid var(--color-brand-interaction-75);
   border-radius: var(--radius-4);
   padding: calc(var(--size-0-5) + var(--border-small)) var(--size-1);
-  font-size: var(--typography-main-font-size);
-  line-height: var(--typography-main-line-height);
+  font-size: var(--typography-body-main-font-size);
+  line-height: var(--typography-body-main-line-height);
 }
 
 dss-input:has(:is(input,textarea):required)::part(required) {
@@ -32,8 +32,8 @@ dss-input:has(dss-button:hover) :is(input,textarea):not(:disabled) {
 }
 
 dss-input[size="compact"] input {
-  font-size: var(--typography-small-font-size);
-  line-height: var(--typography-small-line-height);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
 }
 
 dss-input :is(input,textarea):focus-visible {
