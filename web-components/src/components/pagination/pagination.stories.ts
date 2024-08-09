@@ -1,5 +1,5 @@
 import './pagination.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
 import docs from './pagination.md?raw';
 import Pagination from './pagination.component';

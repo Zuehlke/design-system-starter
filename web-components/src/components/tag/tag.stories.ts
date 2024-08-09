@@ -1,9 +1,9 @@
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import './tag.component';
 import Tag, { tagStates } from './tag.component';
 import docs from './tag.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 const meta: Meta<Tag> = {
   title: 'Components/Tag',

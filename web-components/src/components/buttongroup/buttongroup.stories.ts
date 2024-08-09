@@ -1,11 +1,11 @@
 import '../toggleButton/toggleButton.component';
 import './buttongroup.component';
 import ButtonGroup from './buttongroup.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryFn, StoryObj, WebComponentsRenderer } from '@storybook/web-components';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import docs from './buttongroup.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { withActions } from '@storybook/addon-actions/decorator';
 import { labelPlacementOptions } from '../label/label.component';
 

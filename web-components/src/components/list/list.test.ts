@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { screen } from 'shadow-dom-testing-library';
 import './list.component';
 import { fireEvent } from '@testing-library/dom';

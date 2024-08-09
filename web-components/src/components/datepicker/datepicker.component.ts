@@ -5,7 +5,7 @@ import styles from './datepicker.css?inline';
 import customStyles from './customize-ease.css?inline';
 import { createRef, Ref, ref } from 'lit/directives/ref.js';
 import BaseElement from '../../internals/baseElement/baseElement';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import '../input/input.component';
 import '../flyout/flyout.component';
 import { InputErrorState, InputSize } from '../input/input.component';
