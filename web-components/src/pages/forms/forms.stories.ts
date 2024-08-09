@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { html } from 'lit';
 import docs from './forms.md?raw';
 import browserValidationDocs from './browserValidation.md?raw';
 import libraryValidationDocs from './libraryValidation.md?raw';
@@ -13,9 +13,9 @@ import '../../components/menuItem/menuItem.component';
 import '../../components/multiselect/multiselect.component';
 import { useState } from '@storybook/preview-api';
 import * as yup from 'yup';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 import { StoryFn, StoryObj } from '@storybook/web-components';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 export default {
   title: 'Pages/Forms',

@@ -2,10 +2,10 @@ import './spinner.component';
 import '../icon/icon.component';
 import '../button/button.component';
 import Spinner, { spinnerSizes, spinnerThickness, spinnerTypes } from './spinner.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import { Meta, StoryFn, StoryObj } from '@storybook/web-components';
 import docs from './spinner.md?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 type SpinnerStory = Spinner & { '--spinner-background-color': string };
 const meta: Meta<SpinnerStory> = {

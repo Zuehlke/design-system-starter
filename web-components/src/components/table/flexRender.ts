@@ -1,5 +1,5 @@
-import { html } from 'lit-html';
-import { when } from 'lit-html/directives/when.js';
+import { html } from 'lit';
+import { when } from 'lit/directives/when.js';
 import '../loadingPlaceholder/loadingPlaceholder.component';
 
 export function flexRender<TProps extends object>(component: any, props: TProps) {

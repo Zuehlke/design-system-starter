@@ -2,10 +2,10 @@ import { html, unsafeCSS } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import styles from './radio.css?inline';
 import BaseElement from '../../internals/baseElement/baseElement';
-import { classMap } from 'lit-html/directives/class-map.js';
+import { classMap } from 'lit/directives/class-map.js';
 import { InputErrorState, InputSize } from '../input/input.component';
 import '../../internals/hint/hint';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 
 export const radioStates = [
   'unchecked',

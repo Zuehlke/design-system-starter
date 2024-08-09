@@ -1,11 +1,11 @@
 import BaseElement from '../baseElement/baseElement';
 import { customElement, property } from 'lit/decorators.js';
 import { InputErrorState } from '../../components/input/input.component';
-import { html } from 'lit-html';
+import { html } from 'lit';
 import styles from './hint.css?inline';
 import { unsafeCSS } from 'lit';
 import '../../components/icon/icon.component';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 
 const NON_BREAKING_SPACE = html`&nbsp;`;
 

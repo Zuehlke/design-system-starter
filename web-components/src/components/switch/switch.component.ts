@@ -2,9 +2,9 @@ import { html, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './switch.css?inline';
 import BaseElement from '../../internals/baseElement/baseElement';
-import { createRef, Ref, ref } from 'lit-html/directives/ref.js';
+import { createRef, Ref, ref } from 'lit/directives/ref.js';
 import '../spinner/spinner.component';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 
 /**
  * @property name - Specify name property for form handling

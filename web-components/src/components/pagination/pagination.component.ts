@@ -2,7 +2,7 @@ import BaseElement from '../../internals/baseElement/baseElement';
 import { customElement, property } from 'lit/decorators.js';
 import { html, unsafeCSS } from 'lit';
 import styles from './pagination.css?inline';
-import { classMap } from 'lit-html/directives/class-map.js';
+import { classMap } from 'lit/directives/class-map.js';
 import '../icon/icon.component';
 import '../button/button.component';
 

@@ -1,9 +1,9 @@
 import { html, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
-import { createRef, ref, Ref } from 'lit-html/directives/ref.js';
+import { createRef, ref, Ref } from 'lit/directives/ref.js';
 import styles from './floatingElement.css?inline';
 import BaseElement from '../../internals/baseElement/baseElement';
-import { when } from 'lit-html/directives/when.js';
+import { when } from 'lit/directives/when.js';
 import {
   arrow,
   autoPlacement,
