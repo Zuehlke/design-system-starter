@@ -5,15 +5,18 @@ import { StorybookConfig } from '@storybook/web-components-vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+
   addons: [
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-themes'),
   ],
+
   framework: {
-    name: '@storybook/web-components-vite',
+    name: getAbsolutePath("@storybook/web-components-vite"),
     options: {},
   },
+
   async viteFinal(config, { configType }) {
     return mergeConfig(config, {
       plugins:
@@ -22,6 +25,10 @@ const config: StorybookConfig = {
           : [],
     });
   },
+
+  docs: {
+    autodocs: true
+  }
 };
 
 export default config;
