@@ -34,6 +34,7 @@ export const parameters = {
       order: ['Intro', 'Design Guidelines', 'Design Tokens', '*'],
     },
   },
+  tags: ['autodocs'],
 };
 
 const themes = Object.keys(designTokens['semantic-tokens']);
